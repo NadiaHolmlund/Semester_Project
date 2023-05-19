@@ -1,5 +1,7 @@
 # PoC Streamlit application
 
+-m pip install --upgrade pip
+
 # Imports
 import streamlit as st
 import pandas as pd
