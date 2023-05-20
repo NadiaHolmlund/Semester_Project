@@ -20,3 +20,9 @@ image = Image.open(requests.get(url, stream=True).raw)
 
 processor = ViTImageProcessor.from_pretrained('google/vit-base-patch16-224')
 model = ViTForImageClassification.from_pretrained('NadiaHolmlund/Semester_Project', ignore_mismatched_sizes=True)
+
+emotion_id = [0, 1, 2, 3, 4, 5, 6]
+emotion_label = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
+
+id2label = {id: label for id, label in zip(emotion_id, emotion_label)}
+label2id = {label: id for id, label in id2label.items()}
