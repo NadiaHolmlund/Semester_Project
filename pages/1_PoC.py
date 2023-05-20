@@ -38,6 +38,6 @@ processor, model, id2label = read_objects()
 
 
 
-img_angry = st.image('NadiaHolmlund/Semester_Project/pages/Streamlit_content/img_angry.jpg')
+img_angry = st.image('https://github.com/NadiaHolmlund/Semester_Project/blob/main/Streamlit_content/img_angry.jpg')
 img_sad = st.image('NadiaHolmlund/Semester_Project/pages/Streamlit_content/img_sad.jpg')
 img_happy = st.image('NadiaHolmlund/Semester_Project/pages/Streamlit_content/img_happy.jpg')
