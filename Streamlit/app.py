@@ -4,7 +4,6 @@
 import streamlit as st
 from transformers import ViTImageProcessor, ViTForImageClassification
 from PIL import Image
-import requests
 import torch
 
 # Setting up page configurations
@@ -55,5 +54,11 @@ with col1:
     st.image('https://c0.wallpaperflare.com/preview/990/418/320/adorable-black-and-white-black-and-white-boy.jpg')
 
 with col2:
-    st.image(image)
+    st.image('https://c0.wallpaperflare.com/preview/990/418/320/adorable-black-and-white-black-and-white-boy.jpg')
 
+import streamlit as st
+
+picture = st.camera_input("Take a picture")
+
+if picture:
+    st.image(picture)
