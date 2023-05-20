@@ -35,4 +35,4 @@ logits = outputs.logits
 predicted_class_idx = logits.argmax(-1).item()
 print("Predicted class:", id2label[predicted_class_idx])
 
-st.image('image')
+st.image(imaiimage)
