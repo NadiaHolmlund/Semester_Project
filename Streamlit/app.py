@@ -46,8 +46,16 @@ def classify_img():
 
     # model predicts one of the 1000 ImageNet classes
     predicted_class_idx = logits.argmax(-1).item()
+    st.write("Predicted class:", id2label[predicted_class_idx])
 
     return predicted_class_idx
 
-st.image(image)
-st.write("Predicted class:", id2label[predicted_class_idx])
+
+col1, col2 = st.columns(2)
+
+    with col1:
+        st.image(image)
+
+    with col2:
+        st.image(image)
+
