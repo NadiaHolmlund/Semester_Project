@@ -99,3 +99,29 @@ col2.image(img_happiness)
 col3.image(img_sadness)
 
 
+import streamlit as st
+import matplotlib.pyplot as plt
+
+logits = outputs.logits
+labels = emotion_label
+
+values = logits.tolist()[0]
+
+fig, ax = plt.subplots(figsize=(8, 6))
+bars = ax.barh(labels, values, height=0.1)
+
+ax.spines['right'].set_visible(False)
+ax.spines['top'].set_visible(False)
+ax.spines['left'].set_visible(False)
+ax.spines['bottom'].set_visible(False)
+
+text_position = max(values) + 0.05  # Define the fixed position for the text
+
+for i, bar in enumerate(bars):
+    ax.text(text_position, bar.get_y() + bar.get_height() / 2,
+            f'{values[i]*100:.2f}%', va='center', ha='right')
+
+plt.xticks([])  # Hide the x-axis tick labels
+
+# Display the plot using st.pyplot()
+st.pyplot(fig)
