@@ -4,6 +4,7 @@
 import streamlit as st
 from transformers import ViTImageProcessor, ViTForImageClassification
 from PIL import Image
+import requests
 import torch
 #import matplotlib.pyplot as plt
 
