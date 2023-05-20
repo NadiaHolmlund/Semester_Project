@@ -18,7 +18,7 @@ st.set_page_config(
 
 
 
-# Loading data, models, scalers, explainers, etc., only once
+# Loading processor, model, labels and images only once
 @st.experimental_singleton
 def read_objects():
     # Importing processor and model
