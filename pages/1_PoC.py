@@ -32,8 +32,8 @@ def read_objects():
 
     # Importing images
     img_angry = ('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_angry.jpg')
-    img_happy = st.image('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_happy.jpg')
-    img_sad = st.image('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_sad.jpg')
+    img_happy = ('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_happy.jpg')
+    img_sad = ('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_sad.jpg')
 
     return processor, model, emotion_id, emotion_label, id2label, img_angry, img_happy, img_sad
 
