@@ -7,7 +7,6 @@ from PIL import Image
 import requests
 import torch
 import matplotlib
-#import matplotlib.pyplot as plt
 
 # Setting up page configurations
 st.set_page_config(
@@ -56,10 +55,11 @@ def classify_image(image):
     logits = outputs.logits
 
     # Model predicts one of the 7 emotion classes
+    values = logits.tolist()[0]
     predicted_class_id = logits.argmax(-1).item()
     predicted_class_label = id2label[predicted_class_id]
 
-    return predicted_class_label
+    return values, predicted_class_label
 
 
 
@@ -102,13 +102,9 @@ col3.image(img_sadness)
 
 
 
-logits = outputs.logits
-labels = emotion_label
-
-values = logits.tolist()[0]
 
 fig, ax = plt.subplots(figsize=(8, 6))
-bars = ax.barh(labels, values, height=0.1)
+bars = ax.barh(emotion_label, values, height=0.1)
 
 ax.spines['right'].set_visible(False)
 ax.spines['top'].set_visible(False)
