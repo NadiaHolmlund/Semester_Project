@@ -80,7 +80,7 @@ with tab1:
 
     with col2:
         if genre == 'Anger':
-            stock_classification = classify_image(img_anger)
+            stock_classification, logits_values = classify_image(img_anger)
             st.metric(label='Emotion', value=stock_classification)
         if genre == 'Happiness':
             stock_classification = classify_image(img_happiness)
