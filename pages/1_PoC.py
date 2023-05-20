@@ -129,7 +129,9 @@ with tab2:
 
         if img_file_buffer is not None:
             # Read image file buffer as a PIL Image:
-            img = Image.open(img_file_buffer)
-            
-            # Apply classification model to the image
-            classification = classify_image(img)
+            camera_classification = Image.open(img_file_buffer)
+    
+    with col2:
+        if img_file_buffer is not None:
+            stock_classification, logits_values = classify_image(camera_classification)
+            st.metric(label='Emotion', value=stock_classification)
