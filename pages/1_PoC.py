@@ -89,27 +89,47 @@ with tab1:
             stock_classification, logits_values = classify_image(img_sadness)
             st.metric(label='Emotion', value=stock_classification)
 
-col1, col2, col3 = st.columns(3)
-col1.image(img_anger)
-col2.image(img_happiness)
-col3.image(img_sadness)
+    col1, col2, col3 = st.columns(3)
+    col1.image(img_anger)
+    col2.image(img_happiness)
+    col3.image(img_sadness)
 
 
-fig, ax = plt.subplots(figsize=(8, 6))
-bars = ax.barh(emotion_label, logits_values, height=0.1)
+    fig, ax = plt.subplots(figsize=(8, 6))
+    bars = ax.barh(emotion_label, logits_values, height=0.1)
 
-ax.spines['right'].set_visible(False)
-ax.spines['top'].set_visible(False)
-ax.spines['left'].set_visible(False)
-ax.spines['bottom'].set_visible(False)
+    ax.spines['right'].set_visible(False)
+    ax.spines['top'].set_visible(False)
+    ax.spines['left'].set_visible(False)
+    ax.spines['bottom'].set_visible(False)
 
-text_position = max(logits_values) + 0.05  # Define the fixed position for the text
+    text_position = max(logits_values) + 0.05  # Define the fixed position for the text
 
-for i, bar in enumerate(bars):
-    ax.text(text_position, bar.get_y() + bar.get_height() / 2,
-            f'{logits_values[i]*100:.2f}%', va='center', ha='right')
+    for i, bar in enumerate(bars):
+        ax.text(text_position, bar.get_y() + bar.get_height() / 2,
+                f'{logits_values[i]*100:.2f}%', va='center', ha='right')
 
-plt.xticks([])  # Hide the x-axis tick labels
+    plt.xticks([])  # Hide the x-axis tick labels
 
-# Display the plot using st.pyplot()
-st.pyplot(fig)
+    # Display the plot using st.pyplot()
+    st.pyplot(fig)
+
+
+
+
+
+
+
+
+with tab2:
+    col1, col2 = st.columns(2)
+
+    with col1:
+        img_file_buffer = st.camera_input("Take a picture")
+
+        if img_file_buffer is not None:
+            # Read image file buffer as a PIL Image:
+            img = Image.open(img_file_buffer)
+            
+            # Apply classification model to the image
+            classification = classify_image(img)
