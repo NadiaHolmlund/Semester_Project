@@ -81,7 +81,7 @@ with tab1:
         ('Anger', 'Happiness', 'Sadness'))
 
     with col2:
-        if genre = 'Anger':
+        if genre = 'Anger'
             stock_classification = classify_image(img_anger)
 
 
