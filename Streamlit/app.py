@@ -5,6 +5,7 @@ import streamlit as st
 from transformers import ViTImageProcessor, ViTForImageClassification
 from PIL import Image
 import requests
+import torch
 
 # Setting up page configurations
 st.set_page_config(
