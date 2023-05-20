@@ -72,5 +72,5 @@ with col2:
     #Sadness =
     #Surprise =
     #Neutral =
-    #st.write(classification)
+    st.write(classification)
 
