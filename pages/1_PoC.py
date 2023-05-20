@@ -33,7 +33,7 @@ def read_objects():
     return processor, model, emotion_id, emotion_label, id2label
 
 
-processor, model, emotion_id, emotion_label, id2label = read_objects()
+processor, model, id2label = read_objects()
 
 
 
