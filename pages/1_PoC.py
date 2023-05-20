@@ -85,15 +85,13 @@ with tab1:
     with col2:
         if genre == 'Anger':
             stock_classification = classify_image(img_anger)
-            st.write(stock_classification)
+            st.metric(label='Emotion', value=stock_classification)
         if genre == 'Happiness':
             stock_classification = classify_image(img_happiness)
-            st.write(stock_classification)
+            st.metric(label='Emotion', value=stock_classification)
         if genre == 'Sadness':
             stock_classification = classify_image(img_sadness)
-            st.write(stock_classification)
-
-
+            st.metric(label='Emotion', value=stock_classification)
 
 col1, col2, col3 = st.columns(3)
 col1.image(img_anger)
