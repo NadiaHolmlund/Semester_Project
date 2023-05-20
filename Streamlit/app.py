@@ -26,3 +26,7 @@ emotion_label = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise',
 
 id2label = {id: label for id, label in zip(emotion_id, emotion_label)}
 label2id = {label: id for id, label in id2label.items()}
+
+inputs = processor(images=image, return_tensors="pt")
+outputs = model(**inputs)
+logits = outputs.logits
