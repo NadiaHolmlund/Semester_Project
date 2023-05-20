@@ -50,7 +50,7 @@ emotion_id = [0, 1, 2, 3, 4, 5, 6]
 emotion_label = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
 
 
-tab1, tab2 = st.tabs('Try stock images', 'Try yourself')
+tab1, tab2 = st.tabs(['Try stock images', 'Try yourself'])
 
 with tab1:
     st.write("tab1")
