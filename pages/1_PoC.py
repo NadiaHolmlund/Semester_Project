@@ -38,3 +38,10 @@ def read_objects():
     return processor, model, emotion_id, emotion_label, id2label, img_angry, img_happy, img_sad
 
 processor, model, emotion_id, emotion_label, id2label, img_angry, img_happy, img_sad = read_objects()
+
+
+
+
+
+
+tab1, tab2 = st.tabs(['PoC on stock images', 'PoC on yourself'])
