@@ -96,6 +96,7 @@ col2.image(img_happiness)
 col3.image(img_sadness)
 
 
+import plotly.graph_objects as go
 
 layout = go.Layout(
     paper_bgcolor='rgba(0,0,0,0)',
