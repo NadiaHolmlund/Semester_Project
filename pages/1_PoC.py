@@ -45,3 +45,18 @@ processor, model, emotion_id, emotion_label, id2label, img_angry, img_happy, img
 
 
 tab1, tab2 = st.tabs(['PoC on stock images', 'PoC on yourself'])
+
+
+
+
+
+with tab1:
+    col1, col2 = st.columns(2)
+
+    with col1:
+        genre = st.radio(
+        "Choose an image",
+        (img_angry, img_happy, img_sad))
+
+    with col1:
+        st.write("hello")
