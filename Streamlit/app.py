@@ -60,5 +60,5 @@ with col1:
 
 with col2:
     classification = classify_image(img)
-    st.write('class' + classification)
+    st.write('class')
 
