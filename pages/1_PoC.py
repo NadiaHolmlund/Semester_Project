@@ -6,6 +6,7 @@ from transformers import ViTImageProcessor, ViTForImageClassification
 from PIL import Image
 import torch
 import numpy as np
+import matplotlib.pyplot as plt
 
 # Setting up page configurations
 st.set_page_config(
@@ -71,12 +72,16 @@ with tab2:
 
     with col2:
         if img_file_buffer is not None:
-        #Anger = 
-        #Disgust =
-        #Fear =
-        #Happiness =
-        #Sadness =
-        #Surprise =
-        #Neutral =
-            st.write(classification)
+            logits = outputs.logits
+            labels = emotion_label
+
+            values = logits.tolist()[0]
+
+            plt.figure(figsize=(8, 6))
+            plt.barh(labels, values)
+            plt.xlabel('Logit Value')
+            plt.ylabel('Label')
+            plt.title('Tensor Values vs. Labels')
+            plt.grid(True)
+            plt.show()
 
