@@ -12,9 +12,6 @@ st.set_page_config(
     page_icon="💀",
     layout="wide")
 
-url = 'https://c0.wallpaperflare.com/preview/990/418/320/adorable-black-and-white-black-and-white-boy.jpg'
-image = Image.open(requests.get(url, stream=True).raw)
-
 # Loading data, models, scalers, explainers, etc., only once
 @st.experimental_singleton
 def read_objects():
