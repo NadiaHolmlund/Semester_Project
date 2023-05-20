@@ -30,14 +30,11 @@ def read_objects():
     emotion_label = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
     id2label = {id: label for id, label in zip(emotion_id, emotion_label)}
 
-    return processor, model, id2label
+    # Importing images
+    img_angry = st.image('https://github.com/NadiaHolmlund/Semester_Project/blob/main/Streamlit_content/img_angry.jpg')
+    img_happy = st.image('https://github.com/NadiaHolmlund/Semester_Project/blob/main/Streamlit_content/img_happy.jpg')
+    img_sad = st.image('https://github.com/NadiaHolmlund/Semester_Project/blob/main/Streamlit_content/img_sad.jpg')
 
+    return processor, model, emotion_id, emotion_label, id2label, img_angry, img_happy, img_sad
 
-processor, model, id2label = read_objects()
-
-
-
-
-img_angry = st.image('https://github.com/NadiaHolmlund/Semester_Project/blob/main/Streamlit_content/img_angry.jpg')
-img_happy = st.image('https://github.com/NadiaHolmlund/Semester_Project/blob/main/Streamlit_content/img_happy.jpg')
-img_sad = st.image('https://github.com/NadiaHolmlund/Semester_Project/blob/main/Streamlit_content/img_sad.jpg')
+processor, model, emotion_id, emotion_label, id2label, img_angry, img_happy, img_sad = read_objects()
