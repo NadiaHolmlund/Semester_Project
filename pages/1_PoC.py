@@ -59,7 +59,7 @@ with tab1:
         ('Anger', 'Happiness', 'Sadness'))
 
         col1, col2, col3 = st.columns(3)
-        col1.st.image(img_angry)
+        col1.image(img_angry)
 
     with col1:
         st.write("hello")
