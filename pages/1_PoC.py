@@ -44,6 +44,28 @@ processor, model, emotion_id, emotion_label, id2label, img_anger, img_happiness,
 
 
 
+
+
+# Defining a function to classify the image
+def classify_image(image):
+    inputs = processor(images=image, return_tensors="pt")
+    outputs = model(**inputs)
+    logits = outputs.logits
+
+    # Model predicts one of the 7 emotion classes
+    predicted_class_id = logits.argmax(-1).item()
+    predicted_class_label = id2label[predicted_class_id]
+
+    return predicted_class_label
+
+
+
+
+
+
+
+
+
 tab1, tab2 = st.tabs(['PoC on stock images', 'PoC on yourself'])
 
 
@@ -59,7 +81,9 @@ with tab1:
         ('Anger', 'Happiness', 'Sadness'))
 
     with col2:
-        st.write("hello")
+        if genre = 'Anger':
+            stock_classification = classify_image(img_anger)
+
 
 
 col1, col2, col3 = st.columns(3)
