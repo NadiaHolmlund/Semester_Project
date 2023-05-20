@@ -96,7 +96,11 @@ col3.image(img_sadness)
 
 
 
+arr = np.random.normal(1, 1, size=100)
+fig, ax = plt.subplots()
+ax.hist(arr, bins=20)
 
+st.pyplot(fig)
 
 fig, ax = plt.subplots(figsize=(8, 6))
 bars = ax.barh(emotion_label, values, height=0.1)
