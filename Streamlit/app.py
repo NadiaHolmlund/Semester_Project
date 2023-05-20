@@ -34,3 +34,5 @@ logits = outputs.logits
 # model predicts one of the 1000 ImageNet classes
 predicted_class_idx = logits.argmax(-1).item()
 print("Predicted class:", id2label[predicted_class_idx])
+
+st.image('image')
