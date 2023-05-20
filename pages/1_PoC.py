@@ -56,7 +56,10 @@ with tab1:
     with col1:
         genre = st.radio(
         "Choose an image",
-        (st.image(img_angry), img_happy, img_sad))
+        ('Anger', 'Happiness', 'Sadness'))
+
+        col1, col2, col3 = st.columns(3)
+        col1.st.image(img_angry)
 
     with col1:
         st.write("hello")
