@@ -33,7 +33,7 @@ processor, model, id2label, label2id = read_objects()
 
 
 # Defining a function to classify the image
-def classify_img():
+def classify_image(image):
     inputs = processor(images=image, return_tensors="pt")
     outputs = model(**inputs)
     logits = outputs.logits
@@ -48,14 +48,8 @@ def classify_img():
 col1, col2 = st.columns(2)
 
 with col1:
-    st.image('https://c0.wallpaperflare.com/preview/990/418/320/adorable-black-and-white-black-and-white-boy.jpg')
+    camera_image = st.camera_input("Take a picture")
 
 with col2:
-    st.image('https://c0.wallpaperflare.com/preview/990/418/320/adorable-black-and-white-black-and-white-boy.jpg')
+    classify_image(camera_image)
 
-import streamlit as st
-
-picture = st.camera_input("Take a picture")
-
-if picture:
-    st.image(picture)
