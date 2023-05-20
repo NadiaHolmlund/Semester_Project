@@ -46,6 +46,10 @@ def classify_image(image):
     return predicted_class_idx
 
 
+emotion_id = [0, 1, 2, 3, 4, 5, 6]
+emotion_label = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
+
+
 col1, col2 = st.columns(2)
 
 with col1:
@@ -60,7 +64,13 @@ with col1:
 
         classification = classify_image(img) 
 
-
-
 with col2:
-    st.write("class")
+    Anger = 
+    Disgust =
+    Fear =
+    Happiness =
+    Sadness =
+    Surprise =
+    Neutral =
+    st.write(classification)
+
