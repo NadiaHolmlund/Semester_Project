@@ -40,9 +40,9 @@ def classify_image(image):
 
     # model predicts one of the 1000 ImageNet classes
     predicted_class_idx = logits.argmax(-1).item()
-    #st.write("Predicted class:", id2label[predicted_class_idx])
+    predicted_class_label = id2label[predicted_class_idx]
 
-    return predicted_class_idx
+    return predicted_class_label
 
 
 emotion_id = [0, 1, 2, 3, 4, 5, 6]
@@ -67,8 +67,7 @@ with tab2:
             # To convert PIL Image to numpy array:
             img_array = np.array(img)   
 
-            classification = classify_image(img) 
-            classification_label = id2label[predicted_class_idx]
+            classification = classify_image(img)
 
     with col2:
         if img_file_buffer is not None:
@@ -79,5 +78,5 @@ with tab2:
         #Sadness =
         #Surprise =
         #Neutral =
-            st.write(classification_label)
+            st.write(classification)
 
