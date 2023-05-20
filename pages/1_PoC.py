@@ -95,9 +95,14 @@ col2.image(img_happiness)
 col3.image(img_sadness)
 
 
+import plotly.graph_objects as go
 
+layout = go.Layout(
+    paper_bgcolor='rgba(0,0,0,0)',
+    plot_bgcolor='rgba(0,0,0,0)'
+)
 
-fig, ax = plt.subplots(figsize=(8, 6), facecolor='black')
+fig, ax = plt.subplots(figsize=(8, 6))
 bars = ax.barh(emotion_label, logits_values, height=0.1)
 
 ax.spines['right'].set_visible(False)
@@ -113,5 +118,9 @@ for i, bar in enumerate(bars):
 
 plt.xticks([])  # Hide the x-axis tick labels
 
-# Display the plot using st.pyplot()
-st.pyplot(fig)
+# Convert the Matplotlib figure to Plotly format
+fig.update_layout(layout)
+fig = go.Figure(fig)
+
+# Display the plot using st.plotly_chart()
+st.plotly_chart(fig)
