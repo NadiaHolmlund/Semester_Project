@@ -53,12 +53,8 @@ with tab1:
     col1, col2 = st.columns(2)
 
     with col1:
-
-
-        image_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_anger.jpg'
-
-        response = requests.get(image_url)
-        #image = Image.open(BytesIO(response.content))
+        url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_anger.jpg'
+        image = Image.open(requests.get(url, stream=True).raw)
                 
         genre = st.radio(
         "Choose an image",
