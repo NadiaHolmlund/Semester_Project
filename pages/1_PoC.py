@@ -55,9 +55,9 @@ def classify_image(image):
     logits = outputs.logits
 
     # Model predicts one of the 7 emotion classes
-    values = logits.tolist()[0]
     predicted_class_id = logits.argmax(-1).item()
     predicted_class_label = id2label[predicted_class_id]
+    values = logits.tolist()[0]
 
     return values, predicted_class_label
 
