@@ -58,7 +58,7 @@ with tab1:
         image_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_anger.jpg'
 
         response = requests.get(image_url)
-        image = Image.open(BytesIO(response.content))
+        #image = Image.open(BytesIO(response.content))
                 
         genre = st.radio(
         "Choose an image",
