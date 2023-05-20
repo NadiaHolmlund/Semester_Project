@@ -39,7 +39,7 @@ processor, model, id2label, label2id = read_objects()
 
 
 # Defining a function to classify the image
-def classify_img:
+def classify_img():
     inputs = processor(images=image, return_tensors="pt")
     outputs = model(**inputs)
     logits = outputs.logits
