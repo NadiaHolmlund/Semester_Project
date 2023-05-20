@@ -68,7 +68,7 @@ with tab2:
             img_array = np.array(img)   
 
             classification = classify_image(img) 
-            classification_label = id2label[predicted_class_idx])
+            classification_label = id2label[predicted_class_idx]
 
     with col2:
         if img_file_buffer is not None:
