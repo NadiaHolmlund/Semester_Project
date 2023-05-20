@@ -31,9 +31,9 @@ def read_objects():
     id2label = {id: label for id, label in zip(emotion_id, emotion_label)}
 
     # Importing images
-    img_angry = ('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_angry.jpg')
-    img_happy = ('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_happy.jpg')
-    img_sad = ('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_sad.jpg')
+    img_anger = ('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_anger.jpg')
+    img_happiness = ('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_happiness.jpg')
+    img_sadness = ('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_sadness.jpg')
 
     return processor, model, emotion_id, emotion_label, id2label, img_angry, img_happy, img_sad
 
@@ -59,7 +59,9 @@ with tab1:
         ('Anger', 'Happiness', 'Sadness'))
 
         col1, col2, col3 = st.columns(3)
-        col1.image(img_angry)
+        col1.image(anger)
+        col2.image(img_happiness)
+        col3.image(img_sadness)
 
-    with col1:
+    with col2:
         st.write("hello")
