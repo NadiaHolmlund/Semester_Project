@@ -97,8 +97,8 @@ col3.image(img_sadness)
 
 
 
-fig, ax = plt.subplots(figsize=(8, 6))
-bars = ax.barh(emotion_label, logits_values, height=0.1, alpha=0.5)
+fig, ax = plt.subplots(figsize=(8, 6), facecolor='black')
+bars = ax.barh(emotion_label, logits_values, height=0.1)
 
 ax.spines['right'].set_visible(False)
 ax.spines['top'].set_visible(False)
