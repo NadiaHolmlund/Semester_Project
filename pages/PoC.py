@@ -50,28 +50,34 @@ emotion_id = [0, 1, 2, 3, 4, 5, 6]
 emotion_label = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
 
 
-col1, col2 = st.columns(2)
+tab1, tab2 = st.tabs('Try stock images', 'Try yourself')
 
-with col1:
-    img_file_buffer = st.camera_input("Take a picture")
+with tab1:
+    st.write("tab1")
 
-    if img_file_buffer is not None:
-        # To read image file buffer as a PIL Image:
-        img = Image.open(img_file_buffer)
+with tab2:
+    col1, col2 = st.columns(2)
 
-        # To convert PIL Image to numpy array:
-        img_array = np.array(img)   
+    with col1:
+        img_file_buffer = st.camera_input("Take a picture")
 
-        classification = classify_image(img) 
+        if img_file_buffer is not None:
+            # To read image file buffer as a PIL Image:
+            img = Image.open(img_file_buffer)
 
-with col2:
-    if img_file_buffer is not None:
-    #Anger = 
-    #Disgust =
-    #Fear =
-    #Happiness =
-    #Sadness =
-    #Surprise =
-    #Neutral =
-        st.write(classification)
+            # To convert PIL Image to numpy array:
+            img_array = np.array(img)   
+
+            classification = classify_image(img) 
+
+    with col2:
+        if img_file_buffer is not None:
+        #Anger = 
+        #Disgust =
+        #Fear =
+        #Happiness =
+        #Sadness =
+        #Surprise =
+        #Neutral =
+            st.write(classification)
 
