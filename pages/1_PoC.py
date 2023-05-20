@@ -35,7 +35,7 @@ def read_objects():
     img_happiness = ('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_happiness.jpg')
     img_sadness = ('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_sadness.jpg')
 
-    return processor, model, emotion_id, emotion_label, id2label, img_angry, img_happy, img_sad
+    return processor, model, emotion_id, emotion_label, id2label, img_anger, img_happiness, img_sadness
 
 processor, model, emotion_id, emotion_label, id2label, img_anger, img_happiness, img_sadness = read_objects()
 
