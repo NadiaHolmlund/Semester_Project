@@ -86,6 +86,12 @@ with tab1:
         if genre == 'Anger':
             stock_classification = classify_image(img_anger)
             st.write(stock_classification)
+        if genre == 'Happiness':
+            stock_classification = classify_image(img_happiness)
+            st.write(stock_classification)
+        if genre == 'Sadness':
+            stock_classification = classify_image(img_sadness)
+            st.write(stock_classification)
 
 
 
