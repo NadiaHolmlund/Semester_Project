@@ -32,10 +32,10 @@ def read_objects():
     id2label = {id: label for id, label in zip(emotion_id, emotion_label)}
     label2id = {label: id for id, label in id2label.items()}
 
-    return processor, model, 
+    return processor, model, id2label, label2id
 
 
-xxx = read_objects()
+processor, model, id2label, label2id = read_objects()
 
 
 # Defining a function to classify the image
