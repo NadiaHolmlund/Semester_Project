@@ -68,6 +68,6 @@ with col1:
     
 
 with col2:
-    classification = classify_image(img_file_buffer)
+    classification = classify_image(img)
     st.write(classification)
 
