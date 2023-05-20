@@ -31,17 +31,14 @@ def read_objects():
     id2label = {id: label for id, label in zip(emotion_id, emotion_label)}
 
     # Importing images
-    img_anger = Image('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_anger.jpg')
-    img_happiness = ('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_happiness.jpg')
-    img_sadness = ('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_sadness.jpg')
+
+    img_anger = Image.open(BytesIO(requests.get('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_anger.jpg').content))
+    img_hapiness = Image.open(BytesIO(requests.get('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_happiness.jpg').content))
+    img_sadness = Image.open(BytesIO(requests.get('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_sadness.jpg').content))
 
     return processor, model, emotion_id, emotion_label, id2label, img_anger, img_happiness, img_sadness
 
 processor, model, emotion_id, emotion_label, id2label, img_anger, img_happiness, img_sadness = read_objects()
-
-
-
-
 
 
 
