@@ -13,8 +13,6 @@ st.set_page_config(
     page_icon="💀",
     layout="wide")
 
-st.title("Facial Emotion Recognition")
-
 url = 'https://c0.wallpaperflare.com/preview/990/418/320/adorable-black-and-white-black-and-white-boy.jpg'
 image = Image.open(requests.get(url, stream=True).raw)
 
@@ -54,7 +52,7 @@ def classify_img():
 col1, col2 = st.columns(2)
 
 with col1:
-    st.image(image)
+    st.image('https://c0.wallpaperflare.com/preview/990/418/320/adorable-black-and-white-black-and-white-boy.jpg')
 
 with col2:
     st.image(image)
