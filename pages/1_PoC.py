@@ -19,10 +19,42 @@ st.set_page_config(
 
 
 
+# Loading processor, model, labels and images only once
+@st.experimental_singleton
+def read_objects():
+    # Importing processor and model
+    processor = ViTImageProcessor.from_pretrained('google/vit-base-patch16-224')
+    model = ViTForImageClassification.from_pretrained('NadiaHolmlund/Semester_Project', num_labels= 7, ignore_mismatched_sizes=True)
+   
+    # Creating labels
+    emotion_id = [0, 1, 2, 3, 4, 5, 6]
+    emotion_label = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
+    id2label = {id: label for id, label in zip(emotion_id, emotion_label)}
+
+    # Importing images
+    img_anger_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_anger.jpg'
+    img_anger = Image.open(requests.get(img_anger_url, stream=True).raw)
+
+    img_happiness_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_happiness.jpg'
+    img_happiness = Image.open(requests.get(img_happiness_url, stream=True).raw)
+
+    img_sadness_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_sadness.jpg'
+    img_sadness = Image.open(requests.get(img_sadness_url, stream=True).raw)
+
+    return processor, model, emotion_id, emotion_label, id2label, img_anger, img_happiness, img_sadness
+
+processor, model, emotion_id, emotion_label, id2label, img_anger, img_happiness, img_sadness = read_objects()
 
 
 
 
+
+
+
+
+
+        url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_anger.jpg'
+        image = Image.open(requests.get(url, stream=True).raw)
 
 # Defining a function to classify the image
 def classify_image(image):
@@ -53,10 +85,7 @@ tab1, tab2 = st.tabs(['PoC on stock images', 'PoC on yourself'])
 with tab1:
     col1, col2 = st.columns(2)
 
-    with col1:
-        url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_anger.jpg'
-        image = Image.open(requests.get(url, stream=True).raw)
-                
+    with col1:                
         genre = st.radio(
         "Choose an image",
         ('Anger', 'Happiness', 'Sadness'))
