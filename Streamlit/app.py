@@ -65,12 +65,12 @@ with col1:
         classification = classify_image(img) 
 
 with col2:
-    Anger = 
-    Disgust =
-    Fear =
-    Happiness =
-    Sadness =
-    Surprise =
-    Neutral =
-    st.write(classification)
+    #Anger = 
+    #Disgust =
+    #Fear =
+    #Happiness =
+    #Sadness =
+    #Surprise =
+    #Neutral =
+    #st.write(classification)
 
