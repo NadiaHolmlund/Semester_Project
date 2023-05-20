@@ -30,7 +30,7 @@ def read_objects():
     emotion_label = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
     id2label = {id: label for id, label in zip(emotion_id, emotion_label)}
 
-    return processor, model, emotion_id, emotion_label, id2label
+    return processor, model, id2label
 
 
 processor, model, id2label = read_objects()
