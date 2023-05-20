@@ -53,7 +53,13 @@ emotion_label = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise',
 tab1, tab2 = st.tabs(['Try stock images', 'Try yourself'])
 
 with tab1:
-    st.write("tab1")
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.write("hello")
+
+    with col1:
+        st.write("hello")
 
 with tab2:
     col1, col2 = st.columns(2)
