@@ -7,6 +7,7 @@ from PIL import Image
 import requests
 import torch
 import matplotlib.pyplot as plt
+import plotly
 
 # Setting up page configurations
 st.set_page_config(
