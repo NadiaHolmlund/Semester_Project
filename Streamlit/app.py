@@ -65,6 +65,7 @@ with col1:
         classification = classify_image(img) 
 
 with col2:
+    if img_file_buffer is not None:
     #Anger = 
     #Disgust =
     #Fear =
@@ -72,5 +73,5 @@ with col2:
     #Sadness =
     #Surprise =
     #Neutral =
-    st.write(classification)
+        st.write(classification)
 
