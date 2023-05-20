@@ -18,3 +18,4 @@ url = 'https://c0.wallpaperflare.com/preview/990/418/320/adorable-black-and-whit
 image = Image.open(requests.get(url, stream=True).raw)
 
 processor = ViTImageProcessor.from_pretrained('google/vit-base-patch16-224')
+model = ViTForImageClassification.from_pretrained('NadiaHolmlund/Semester_Project', ignore_mismatched_sizes=True)
