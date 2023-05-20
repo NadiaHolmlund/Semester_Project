@@ -6,7 +6,7 @@ from transformers import ViTImageProcessor, ViTForImageClassification
 from PIL import Image
 import torch
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 # Setting up page configurations
 st.set_page_config(
@@ -81,7 +81,7 @@ with tab2:
             plt.barh(labels, values)
             plt.xlabel('Logit Value')
             plt.ylabel('Label')
-            plt.title('Tensor Values vs. Labels')
-            plt.grid(True)
-            plt.show()
+            
+            # Display the graph in Streamlit
+            st.pyplot(plt)
 
