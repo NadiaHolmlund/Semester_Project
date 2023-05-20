@@ -58,11 +58,7 @@ def classify_image(image):
     predicted_class_id = logits.argmax(-1).item()
     predicted_class_label = id2label[predicted_class_id]
 
-    return predicted_class_label
-
-
-
-
+    return predicted_class_label, logits.tolist()[0]
 
 
 
