@@ -56,10 +56,11 @@ with col1:
         img = Image.open(img_file_buffer)
 
         # To convert PIL Image to numpy array:
-        img_array = np.array(img)    
+        img_array = np.array(img)   
+
+        classification = classify_image(img) 
+
+
 
 with col2:
-    classification = classify_image(img)
-    st.write(logits)
     st.write("class")
-
