@@ -68,6 +68,6 @@ with col1:
     
 
 with col2:
-    classification = classify_image(camera_image)
+    classification = classify_image(img_file_buffer)
     st.write('predicted_class_idx')
 
