@@ -20,17 +20,26 @@ def read_objects():
     # Importing processor and model
     processor = ViTImageProcessor.from_pretrained('google/vit-base-patch16-224')
     model = ViTForImageClassification.from_pretrained('NadiaHolmlund/Semester_Project', num_labels= 7, ignore_mismatched_sizes=True)
+   
     # Creating labels
     emotion_id = [0, 1, 2, 3, 4, 5, 6]
     emotion_label = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
-
     id2label = {id: label for id, label in zip(emotion_id, emotion_label)}
-    label2id = {label: id for id, label in id2label.items()}
 
-    return processor, model, id2label, label2id
+    img_angry = st.image('NadiaHolmlund/Semester_Project/pages/Streamlit_content/img_angry.jpg')
+    img_sad = st.image('NadiaHolmlund/Semester_Project/pages/Streamlit_content/img_sad.jpg')
+    img_happy = st.image('NadiaHolmlund/Semester_Project/pages/Streamlit_content/img_happy.jpg')
+
+    return processor, model, emotion_id, emotion_label, id2label, img_angry, img_sad, img_happy
 
 
-processor, model, id2label, label2id = read_objects()
+processor, model, emotion_id, emotion_label, id2label, img_angry, img_sad, img_happy = read_objects()
+
+
+
+
+
+
 
 
 # Defining a function to classify the image
@@ -39,27 +48,52 @@ def classify_image(image):
     outputs = model(**inputs)
     logits = outputs.logits
 
-    # model predicts one of the 1000 ImageNet classes
-    predicted_class_idx = logits.argmax(-1).item()
-    predicted_class_label = id2label[predicted_class_idx]
+    # Model predicts one of the 7 emotion classes
+    predicted_class_id = logits.argmax(-1).item()
+    predicted_class_label = id2label[predicted_class_id]
 
     return predicted_class_label
 
 
-emotion_id = [0, 1, 2, 3, 4, 5, 6]
-emotion_label = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
 
 
-tab1, tab2 = st.tabs(['Try stock images', 'Try yourself'])
+
+
+
+
+
+
+
+tab1, tab2 = st.tabs(['PoC on stock images', 'PoC on yourself'])
+
+
+
+
+
 
 with tab1:
     col1, col2 = st.columns(2)
 
     with col1:
-        st.write("hello")
+        
 
     with col1:
         st.write("hello")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 with tab2:
     col1, col2 = st.columns(2)
@@ -68,26 +102,34 @@ with tab2:
         img_file_buffer = st.camera_input("Take a picture")
 
         if img_file_buffer is not None:
-            # To read image file buffer as a PIL Image:
+            # Read image file buffer as a PIL Image:
             img = Image.open(img_file_buffer)
-
-            # To convert PIL Image to numpy array:
-            img_array = np.array(img)   
-
+            
+            # Apply classification model to the image
             classification = classify_image(img)
 
+
+
+
+
+
+
+
+
+
     with col2:
-        if img_file_buffer is not None:
-            logits = outputs.logits
-            labels = emotion_label
+        st.write()'hello')
+        #if img_file_buffer is not None:
+            #logits = outputs.logits
+            #labels = emotion_label
 
-            values = logits.tolist()[0]
+            #values = logits.tolist()[0]
 
-            plt.figure(figsize=(8, 6))
-            plt.barh(labels, values)
-            plt.xlabel('Logit Value')
-            plt.ylabel('Label')
+            #plt.figure(figsize=(8, 6))
+            #plt.barh(labels, values)
+            #plt.xlabel('Logit Value')
+            #plt.ylabel('Label')
             
             # Display the graph in Streamlit
-            st.pyplot(plt)
+            #st.pyplot(plt)
 
