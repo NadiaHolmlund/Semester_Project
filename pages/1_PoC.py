@@ -31,7 +31,7 @@ def read_objects():
     id2label = {id: label for id, label in zip(emotion_id, emotion_label)}
 
     # Importing images
-    img_angry = st.image('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_angry.jpg')
+    img_angry = ('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_angry.jpg')
     img_happy = st.image('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_happy.jpg')
     img_sad = st.image('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_sad.jpg')
 
