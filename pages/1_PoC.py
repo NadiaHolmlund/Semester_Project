@@ -37,7 +37,7 @@ def read_objects():
 
     return processor, model, emotion_id, emotion_label, id2label, img_angry, img_happy, img_sad
 
-processor, model, emotion_id, emotion_label, id2label, img_angry, img_happy, img_sad = read_objects()
+processor, model, emotion_id, emotion_label, id2label, img_anger, img_happiness, img_sadness = read_objects()
 
 
 
