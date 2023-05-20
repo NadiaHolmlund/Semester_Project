@@ -48,14 +48,6 @@ processor, model, emotion_id, emotion_label, id2label, img_anger, img_happiness,
 
 
 
-
-
-
-
-
-        url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_anger.jpg'
-        image = Image.open(requests.get(url, stream=True).raw)
-
 # Defining a function to classify the image
 def classify_image(image):
     inputs = processor(images=image, return_tensors="pt")
