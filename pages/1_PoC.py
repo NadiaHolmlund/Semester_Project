@@ -6,6 +6,7 @@ from transformers import ViTImageProcessor, ViTForImageClassification
 from PIL import Image
 import requests
 import torch
+import matplotlib
 import matplotlib.pyplot as plt
 
 # Setting up page configurations
