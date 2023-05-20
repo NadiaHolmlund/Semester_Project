@@ -53,7 +53,13 @@ with tab1:
     col1, col2 = st.columns(2)
 
     with col1:
-        img_anger = Image.open(BytesIO(requests.get('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_anger.jpg').content))
+
+
+        image_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_anger.jpg'
+
+        response = requests.get(image_url)
+        image = Image.open(BytesIO(response.content))
+                
         genre = st.radio(
         "Choose an image",
         ('Anger', 'Happiness', 'Sadness'))
