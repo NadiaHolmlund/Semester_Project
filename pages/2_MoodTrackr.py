@@ -36,9 +36,9 @@ with st.sidebar:
         ('Nadia', 'Nicklas', 'Nikolaj'))
 
     col1, col2, col3 = st. columns(3)
-        col1.image(img_nadia, caption='Nadia')
-        col2.image(img_nicklas, caption='Nicklas')
-        col3.image(img_nikolaj, caption='Nikolaj')
+    col1.image(img_nadia, caption='Nadia')
+    col2.image(img_nicklas, caption='Nicklas')
+    col3.image(img_nikolaj, caption='Nikolaj')
 
 
 with st.expander("Select a timeframe:"):
