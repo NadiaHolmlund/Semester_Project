@@ -89,7 +89,7 @@ with tab1:
     
     with col2:
         st.write('')
-        #predicted_class, logits_values = predict_class(img_1)
+        predicted_class, logits_values = predict_class(img_1)
         #st.metric(label='Emotion', value=predicted_class, )
 
 with tab2:
