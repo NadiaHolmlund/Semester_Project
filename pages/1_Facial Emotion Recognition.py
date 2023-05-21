@@ -68,7 +68,7 @@ def predict_class(image):
 
 # Setting up the tab for Images
 #with tab1:
-col1, col2 = st.columns(2)
+col1, col2 = st.columns(3)
 
     # Visualzing the images on the page
 with col1:
@@ -100,3 +100,6 @@ with col2:
 # Setting up the tab for Camera
 #with tab2:
 #    st.write('hello')
+
+with col3:
+    st.write('hello')
