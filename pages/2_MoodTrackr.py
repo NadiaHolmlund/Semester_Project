@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image
 import requests
+from datetime import time
 
 # Setting up page configurations
 st.set_page_config(
@@ -38,14 +39,9 @@ with st.sidebar:
     st.image(img_nicklas, caption='Nicklas')
     st.image(img_nikolaj, caption='Nikolaj')
 
-values = st.slider(
-    'Select a range of values',
-    0.0, 100.0, (25.0, 75.0))
-st.write('Values:', values)
 
-from datetime import time
 
-appointment = st.slider(
-    "Schedule your appointment:",
+
+timeframe = st.slider(
+    "Select a timeframe:",
     value=(time(11, 30), time(12, 45)))
-st.write("You're scheduled for:", appointment)
