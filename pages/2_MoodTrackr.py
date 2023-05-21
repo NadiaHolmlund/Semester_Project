@@ -31,7 +31,7 @@ img_nadia, img_nicklas, img_nikolaj = read_objects()
 
 
 with st.sidebar:
-    avatar = st.radio(
+    avatar = st.selectbox(
         "Choose Your Avatar:",
         ('Nadia', 'Nicklas', 'Nikolaj'))
 
