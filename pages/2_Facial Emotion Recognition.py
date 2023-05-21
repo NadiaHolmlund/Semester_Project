@@ -25,7 +25,7 @@ def read_objects():
     id2label = {id: label for id, label in zip(class_id, class_label)}
 
     # Loading images for PoC
-    img_1 = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_1.jpg'
+    img_1_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_1.jpg'
     img_2 = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_2.jpg'
     img_3 = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_3.jpg'
     img_4 = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_4.jpg'
@@ -35,7 +35,7 @@ def read_objects():
     img_8 = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_8.jpg'
     img_9 = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_9.jpg'
 
-    img_1 = Image.open(requests.get(img_1, stream=True).raw)
+    img_1 = Image.open(requests.get(img_1_url, stream=True).raw)
     img_2 = Image.open(requests.get(img_2, stream=True).raw)
     img_3 = Image.open(requests.get(img_3, stream=True).raw)
     img_4 = Image.open(requests.get(img_4, stream=True).raw)
