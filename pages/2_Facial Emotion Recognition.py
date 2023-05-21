@@ -25,25 +25,29 @@ def read_objects():
     id2label = {id: label for id, label in zip(class_id, class_label)}
 
     # Loading images for PoC
-    img_anger_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_anger.jpg'
-    img_disgust_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_disgust.jpg'
-    img_fear_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_fear.jpg'
-    img_happiness_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_happiness.jpg'
-    img_sadness_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_sadness.jpg'
-    img_surprise_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_surprise.jpg'
-    img_neutral_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_neutral.jpg'
+    img_1 = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_1.jpg'
+    img_2 = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_2.jpg'
+    img_3 = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_3.jpg'
+    img_4 = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_4.jpg'
+    img_5 = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_5.jpg'
+    img_6 = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_6.jpg'
+    img_7 = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_7.jpg'
+    img_8 = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_8.jpg'
+    img_9 = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_9.jpg'
 
-    img_anger = Image.open(requests.get(img_anger_url, stream=True).raw)
-    img_disgust = Image.open(requests.get(img_disgust_url, stream=True).raw)
-    img_fear = Image.open(requests.get(img_fear_url, stream=True).raw)
-    img_happiness = Image.open(requests.get(img_happiness_url, stream=True).raw)
-    img_sadness = Image.open(requests.get(img_sadness_url, stream=True).raw)
-    img_surprise = Image.open(requests.get(img_surprise_url, stream=True).raw)
-    img_neutral = Image.open(requests.get(img_neutral_url, stream=True).raw)
+    img_1 = Image.open(requests.get(img_1, stream=True).raw)
+    img_2 = Image.open(requests.get(img_2, stream=True).raw)
+    img_3 = Image.open(requests.get(img_3, stream=True).raw)
+    img_4 = Image.open(requests.get(img_4, stream=True).raw)
+    img_5 = Image.open(requests.get(img_5, stream=True).raw)
+    img_6 = Image.open(requests.get(img_6, stream=True).raw)
+    img_7 = Image.open(requests.get(img_7, stream=True).raw)
+    img_8 = Image.open(requests.get(img_8, stream=True).raw)
+    img_9 = Image.open(requests.get(img_9, stream=True).raw)
 
-    return processor, model, class_id, class_label, id2label, img_anger, img_disgust, img_fear, img_happiness, img_sadness, img_surprise, img_neutral
+    return processor, model, class_id, class_label, id2label, img_1, img_2, img_3, img_4, img_5, img_6, img_7, img_8, img_9
 
-processor, model, class_id, class_label, id2label, img_anger, img_disgust, img_fear, img_happiness, img_sadness, img_surprise, img_neutral = read_objects()
+processor, model, class_id, class_label, id2label, img_1, img_2, img_3, img_4, img_5, img_6, img_7, img_8, img_9 = read_objects()
 
 
 # Defining a function to predict the class of emotion
@@ -67,9 +71,9 @@ with tab1:
 
     with col1:
         col1, col2, col3 = st.columns(3)
-        col1.image(img_anger, 'Image 1')
-        col2.image(img_disgust, 'Image 2')
-        col3.image(img_fear, 'Image 3')
+        col1.image(img_1, 'Image 1')
+        col2.image(img_1, 'Image 2')
+        col3.image(img_1, 'Image 3')
         
         option = st.selectbox('', ('Select an Image', 'Image 1', 'Image 2', 'Image 3'))
     
