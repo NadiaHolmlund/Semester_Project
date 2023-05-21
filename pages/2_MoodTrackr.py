@@ -44,7 +44,7 @@ with st.sidebar:
 
 
 if avatar == 'Select':
-    st.write('')
+    st.title('Choose Your Avatar to see MoodTrackr')
 
 else:    
     st.title("MoodTrackr")
