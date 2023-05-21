@@ -70,10 +70,8 @@ with tab1:
         col1.image(img_anger, 'Image 1')
         col2.image(img_disgust, 'Image 2')
         col3.image(img_fear, 'Image 3')
-
-        option = st.selectbox(
-        '',
-        ('Select an Image', 'Image 1', 'Image 2', 'Image 3'))
+        
+        option = st.selectbox('', ('Select an Image', 'Image 1', 'Image 2', 'Image 3'))
     
     with col2:
         st.write('hel')
