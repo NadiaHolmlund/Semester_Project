@@ -38,4 +38,7 @@ with st.sidebar:
     st.image(img_nicklas, caption='Nicklas')
     st.image(img_nikolaj, caption='Nikolaj')
 
-st.slider()
+timeframe = st.slider(
+    'Select a timeframe',
+    ((time(11, 30), time(12, 45)))
+st.write('Timeframe:', timeframe)
