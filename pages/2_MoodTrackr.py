@@ -31,17 +31,14 @@ img_nadia, img_nicklas, img_nikolaj = read_objects()
 
 
 with st.sidebar:
-    col1, col2 = st.columns([1,2])
+    avatar = st.radio(
+        "Choose Your Avatar:",
+        ('Nadia', 'Nicklas', 'Nikolaj'))
 
-    with col1:
-        avatar = st.radio(
-            "Choose Your Avatar:",
-            ('Nadia', 'Nicklas', 'Nikolaj'))
-
-    with col2:
-        st.image(img_nadia, caption='Nadia')
-        st.image(img_nicklas, caption='Nicklas')
-        st.image(img_nikolaj, caption='Nikolaj')
+    col1, col2, col3 = st. columns(3)
+        col1.image(img_nadia, caption='Nadia')
+        col2.image(img_nicklas, caption='Nicklas')
+        col3.image(img_nikolaj, caption='Nikolaj')
 
 
 with st.expander("Select a timeframe:"):
