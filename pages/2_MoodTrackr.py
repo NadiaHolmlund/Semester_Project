@@ -40,6 +40,8 @@ with st.sidebar:
     col2.image(img_nicklas, caption='Nicklas')
     col3.image(img_nikolaj, caption='Nikolaj')
 
+    timeframe = st.slider('', value=(time(11, 30), time(12, 45)))
+
 
 st.title("MoodTrackr")
 
