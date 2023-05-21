@@ -42,5 +42,9 @@ with st.sidebar:
     
     timeframe = st.slider('Select a Timeframe', value=(time(7, 30), time(16, 30)))
 
-st.title("MoodTrackr")
-st.write('Hi ' + avatar +'! So nice to have you back, let\' see how you are today, shall we?')
+
+if avatar == 'Select':
+
+else:    
+    st.title("MoodTrackr")
+    st.write('Hi ' + avatar +'! So nice to have you back, let\' see how you are today, shall we?')
