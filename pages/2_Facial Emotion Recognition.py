@@ -88,8 +88,9 @@ with tab1:
         option = st.selectbox('', ('Select an Image', 'img_1', 'img_2', 'img_3'))
     
     with col2:
-        predicted_class, logits_values = predict_class(img_1)
-        st.metric(label='Emotion', value=predicted_class, )
+        st.write('')
+        #predicted_class, logits_values = predict_class(img_1)
+        #st.metric(label='Emotion', value=predicted_class, )
 
 with tab2:
     st.write('hello')
