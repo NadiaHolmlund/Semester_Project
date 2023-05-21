@@ -31,4 +31,6 @@ def read_objects():
 
 img_nadia, img_nicklas, img_nikolaj = read_objects()
 
-st.image(image, caption='Sunrise by the mountains')
+st.image(img_nadia, caption='Nadia')
+st.image(img_nicklas, caption='Nicklas')
+st.image(img_nikolaj, caption='Nikolaj')
