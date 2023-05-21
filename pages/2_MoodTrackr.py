@@ -38,7 +38,14 @@ with st.sidebar:
     st.image(img_nicklas, caption='Nicklas')
     st.image(img_nikolaj, caption='Nikolaj')
 
-timeframe = st.slider(
-    'Select a timeframe',
-    ((time(11, 30), time(12, 45)))
-st.write('Timeframe:', timeframe)
+values = st.slider(
+    'Select a range of values',
+    0.0, 100.0, (25.0, 75.0))
+st.write('Values:', values)
+
+from datetime import time
+
+appointment = st.slider(
+    "Schedule your appointment:",
+    value=(time(11, 30), time(12, 45)))
+st.write("You're scheduled for:", appointment)
