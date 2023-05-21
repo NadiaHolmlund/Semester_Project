@@ -88,7 +88,7 @@ with tab1:
         col3.image(img_9, 'Image 9')
         
         # Adding a selectbox option to select which image to apply the model to
-        option = st.selectbox('', ('Select an Image', 'img_1', 'img_2', 'img_3'))
+        option = st.selectbox('', ('Select an Image', img_1,))
     
     with col2:
         predicted_class, logits_values = predict_class(option)
