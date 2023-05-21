@@ -94,7 +94,7 @@ with tab1:
         if option == 'Image 1':
             selected_option = img_1
 
-            predicted_class, logits_values = predict_class(option)
+            predicted_class, logits_values = predict_class(selected_option)
             st.metric(label='Emotion', value=predicted_class)
 
 # Setting up the tab for Camera
