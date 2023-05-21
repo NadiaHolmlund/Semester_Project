@@ -90,8 +90,8 @@ with tab1:
     with col2:
         st.write('')
         if option == 'img_1':
-        predicted_class, logits_values = classify_image(img_1)
-        st.metric(label='Emotion', value=predicted_class)
+            predicted_class, logits_values = classify_image(img_1)
+            st.metric(label='Emotion', value=predicted_class)
         #predicted_class, logits_values = predict_class(img_1)
         #st.metric(label='Emotion', value=predicted_class, )
 
