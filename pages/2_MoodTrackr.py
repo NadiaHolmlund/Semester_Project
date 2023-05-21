@@ -38,7 +38,7 @@ with st.sidebar:
 
     avatar = st.selectbox(
         "Choose Your Avatar",
-        ('', 'Nadia', 'Nicklas', 'Nikolaj'))
+        ('Select', 'Nadia', 'Nicklas', 'Nikolaj'))
     
     timeframe = st.slider('Select a Timeframe', value=(time(7, 30), time(16, 30)))
 
