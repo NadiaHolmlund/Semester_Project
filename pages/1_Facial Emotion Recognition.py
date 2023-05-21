@@ -66,9 +66,11 @@ def predict_class(image):
 # Setting up the page
 tab1, tab2 = st.tabs(['Images', 'Camera'])
 
+# Setting up the tab for Images
 with tab1:
     col1, col2 = st.columns(2)
 
+    # Visualzing the images on the page
     with col1:
         col1, col2, col3 = st.columns(3)
         col1.image(img_1, 'Image 1')
@@ -85,18 +87,13 @@ with tab1:
         col2.image(img_8, 'Image 8')
         col3.image(img_9, 'Image 9')
         
+        # Adding a selectbox option to select which image to apply the model to
         option = st.selectbox('', ('Select an Image', 'img_1', 'img_2', 'img_3'))
     
     with col2:
-        st.write('')
+        predicted_class, logits_values = predict_class(option)
+        st.metric(label='Emotion', value=predicted_class)
 
+# Setting up the tab for Camera
 with tab2:
     st.write('hello')
-
-
-
-
-
-predicted_class, logits_values = predict_class(img_1)
-st.write(predicted_class)
-#st.metric(label='Emotion', value=predicted_class)
