@@ -41,5 +41,7 @@ with st.sidebar:
     col3.image(img_nikolaj, caption='Nikolaj')
 
 
+st.title("MoodTrackr")
+
 with st.expander("Select a timeframe:"):
     timeframe = st.slider('', value=(time(11, 30), time(12, 45)))
