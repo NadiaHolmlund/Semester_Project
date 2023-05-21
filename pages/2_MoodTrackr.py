@@ -29,19 +29,13 @@ img_nadia, img_nicklas, img_nikolaj = read_objects()
 
 
 
-
-col1, col2, col3, col4 = st.columns(4)
-
-with col1:
+with st.sidebar:
     avatar = st.radio(
-        "Pick your avatar:",
+        "Choose Your Avatar:",
         ('Nadia', 'Nicklas', 'Nikolaj'))
 
-with col2:
     st.image(img_nadia, caption='Nadia')
-
-with col3:
     st.image(img_nicklas, caption='Nicklas')
-
-with col4:
     st.image(img_nikolaj, caption='Nikolaj')
+
+st.slider()
