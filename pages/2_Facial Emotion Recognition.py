@@ -24,12 +24,12 @@ def read_objects():
 
     # Importing images for PoC
     img_anger_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_anger.jpg'
-    img_disgust_url = 'https://github.com/NadiaHolmlund/Semester_Project/blob/main/Streamlit_content/img_disgust.jpg'
-    img_fear_url = 'https://github.com/NadiaHolmlund/Semester_Project/blob/main/Streamlit_content/img_fear.jpg'
+    img_disgust_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_disgust.jpg'
+    img_fear_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_fear.jpg'
     img_happiness_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_happiness.jpg'
     img_sadness_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_sadness.jpg'
-    img_surprise_url = 'https://github.com/NadiaHolmlund/Semester_Project/blob/main/Streamlit_content/img_surprise.jpg'
-    img_neutral_url = 'https://github.com/NadiaHolmlund/Semester_Project/blob/main/Streamlit_content/img_neutral.jpg'
+    img_surprise_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_surprise.jpg'
+    img_neutral_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_neutral.jpg'
 
     img_anger = Image.open(requests.get(img_anger_url, stream=True).raw)
     img_disgust = Image.open(requests.get(img_disgust_url, stream=True).raw)
