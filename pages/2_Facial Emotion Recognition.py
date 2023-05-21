@@ -11,10 +11,11 @@ st.set_page_config(
     page_icon="😐",
     layout="wide")
 
-# Loading the processor, model and images only once
+
+# Loading the processor, model and images
 @st.experimental_singleton
 def read_objects():
-    # Importing the processor and model
+    # Loading the processor and model
     processor = ViTImageProcessor.from_pretrained('google/vit-base-patch16-224')
     model = ViTForImageClassification.from_pretrained('NadiaHolmlund/Semester_Project', num_labels= 7, ignore_mismatched_sizes=True)
    
@@ -23,7 +24,7 @@ def read_objects():
     class_label = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
     id2label = {id: label for id, label in zip(class_id, class_label)}
 
-    # Importing images for PoC
+    # Loading images for PoC
     img_anger_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_anger.jpg'
     img_disgust_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_disgust.jpg'
     img_fear_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_fear.jpg'
@@ -56,3 +57,7 @@ def predict_class(image):
     predicted_class_label = id2label[predicted_class_id]
 
     return predicted_class_label, logits.tolist()[0]
+
+
+# Setting up the page
+st.write('Test the model on images or yourself')
