@@ -8,10 +8,6 @@ st.set_page_config(
     page_icon="💀",
     layout="wide")
 
-avatar = st.radio(
-    "Pick your avatar:",
-    ('Nadia', 'Nicklas', 'Nikolaj'))
-
 
 
 # Loading processor, model, labels and images only once
@@ -31,6 +27,21 @@ def read_objects():
 
 img_nadia, img_nicklas, img_nikolaj = read_objects()
 
-st.image(img_nadia, caption='Nadia')
-st.image(img_nicklas, caption='Nicklas')
-st.image(img_nikolaj, caption='Nikolaj')
+
+
+
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    avatar = st.radio(
+        "Pick your avatar:",
+        ('Nadia', 'Nicklas', 'Nikolaj'))
+
+with col2:
+    st.image(img_nadia, caption='Nadia')
+
+with col3:
+    st.image(img_nicklas, caption='Nicklas')
+
+with col4:
+    st.image(img_nikolaj, caption='Nikolaj')
