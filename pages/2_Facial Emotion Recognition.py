@@ -3,6 +3,7 @@ import streamlit as st
 from transformers import ViTImageProcessor, ViTForImageClassification
 from PIL import Image
 import requests
+import torch
 
 # Setting up page configurations
 st.set_page_config(
@@ -44,13 +45,13 @@ def read_objects():
 processor, model, class_id, class_label, id2label, img_anger, img_disgust, img_fear, img_happiness, img_sadness, img_surprise, img_neutral = read_objects()
 
 
-# Defining a function to classify the image
-def predict_class(img):
-    inputs = processor(images=img, return_tensors="pt")
+# Defining a function to predict the class of emotion
+def predict_class(image):
+    inputs = processor(images=image, return_tensors="pt")
     outputs = model(**inputs)
     logits = outputs.logits
 
-    # Model predicts one of the 7 emotion classes
+    # Model predicts one of the 7 classes of emotion
     predicted_class_id = logits.argmax(-1).item()
     predicted_class_label = id2label[predicted_class_id]
 
