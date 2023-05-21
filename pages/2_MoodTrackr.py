@@ -31,6 +31,8 @@ img_nadia, img_nicklas, img_nikolaj = read_objects()
 
 
 with st.sidebar:
+    st.write('To illustrate the user interface, select one on the avatars below and select a timeframe to see how the interface looks. bla. bla. bla bla.....')
+
     avatar = st.radio(
         "Choose Your Avatar:",
         ('Nadia', 'Nicklas', 'Nikolaj'))
