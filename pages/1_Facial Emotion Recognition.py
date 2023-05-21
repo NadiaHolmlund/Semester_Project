@@ -89,11 +89,10 @@ with col1:
         
     # Adding a selectbox option to select which image to apply the model to
     option = st.selectbox('', ('Select an Image', 'Image 1',))
-    
-with col2:
     if option == 'Image 1':
         selected_option = img_1
-
+        
+with col2:
     predicted_class, logits_values = predict_class(selected_option)
     st.metric(label='Emotion', value=predicted_class)
 
