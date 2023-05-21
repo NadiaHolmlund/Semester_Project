@@ -40,6 +40,6 @@ with st.sidebar:
         "Choose Your Avatar",
         ('Select from list', 'Nadia', 'Nicklas', 'Nikolaj'))
     
-    timeframe = st.slider('Select a Timeframe', value=(time(10, 30), time(16, 30)))
+    timeframe = st.slider('Select a Timeframe', value=(time(8, 30), time(16, 30)))
 
 st.title("MoodTrackr")
