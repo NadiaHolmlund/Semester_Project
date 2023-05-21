@@ -45,6 +45,6 @@ with st.sidebar:
 
 if avatar == 'Select':
 
-else:    
-    st.title("MoodTrackr")
-    st.write('Hi ' + avatar +'! So nice to have you back, let\' see how you are today, shall we?')
+    else:    
+        st.title("MoodTrackr")
+        st.write('Hi ' + avatar +'! So nice to have you back, let\' see how you are today, shall we?')
