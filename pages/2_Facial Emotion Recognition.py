@@ -67,16 +67,16 @@ with tab1:
 
     with col1:
         col1, col2, col3 = st.columns(3)
-        col1.image(img_anger)
-        col2.image(img_disgust)
-        col3.image(img_fear)
+        col1.image(img_anger, 'Image 1')
+        col2.image(img_disgust, 'Image 2')
+        col3.image(img_fear, 'Image 3')
 
         option = st.selectbox(
-        'Select an image',
-        ('Image 1', 'Image 2', 'Image 3'))
+        '',
+        ('Select an Image', 'Image 1', 'Image 2', 'Image 3'))
     
     with col2:
         st.write('hel')
 
-with tab2: 
+with tab2:
     st.write('hello')
