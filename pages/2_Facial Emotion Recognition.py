@@ -64,9 +64,9 @@ tab1, tab2 = st.tabs(['Images', 'Camera'])
 
 with tab1:
     col1, col2, col3 = st.columns(3)
-    col1.img_anger
-    col2.img_disgust
-    col3.img_fear
+    col1.image(img_anger)
+    col2.image(img_disgust)
+    col3.image(img_fear)
 
     option = st.selectbox(
     'Select an image',
