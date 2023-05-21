@@ -1,5 +1,7 @@
 # Imports
 import streamlit as st
+from transformers import ViTImageProcessor, ViTForImageClassification
+
 
 # Setting up page configurations
 st.set_page_config(
