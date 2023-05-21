@@ -60,12 +60,17 @@ def predict_class(image):
 
 
 # Setting up the page
-st.write('Test the model on images or yourself')
-
 tab1, tab2 = st.tabs(2)
 
 with tab1:
-    st.write('hello')
+    col1, col2, col3 = st.columns
+    col1.img_anger
+    col2.img_disgust
+    col3.img_fear
+
+    option = st.selectbox(
+    'Select an image',
+    ('Image 1', 'Image 2', 'Image 3'))
 
 with tab2: 
     st.write('hello')
