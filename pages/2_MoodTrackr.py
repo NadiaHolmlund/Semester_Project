@@ -32,7 +32,7 @@ img_nadia, img_nicklas, img_nikolaj = read_objects()
 
 with st.sidebar:
     avatar = st.selectbox(
-        "     Choose Your Avatar",
+        "   Choose Your Avatar",
         ('Select from list', 'Nadia', 'Nicklas', 'Nikolaj'))
 
     col1, col2, col3 = st. columns(3)
