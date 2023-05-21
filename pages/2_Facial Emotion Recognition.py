@@ -1,7 +1,8 @@
 # Imports
 import streamlit as st
 from transformers import ViTImageProcessor, ViTForImageClassification
-
+from PIL import Image
+import requests
 
 # Setting up page configurations
 st.set_page_config(
@@ -20,6 +21,15 @@ def read_objects():
     class_id = [0, 1, 2, 3, 4, 5, 6]
     class_label = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
     id2label = {id: label for id, label in zip(class_id, class_label)}
+
+    # Importing images for PoC
+    img_anger_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_anger.jpg'
+    img_disgust_url =
+    img_fear_url =
+    img_happiness_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_happiness.jpg'
+    img_sadness_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_sadness.jpg'
+    img_surprise_url =
+    img_neutral_url =
 
     return processor, model, class_id, class_label, id2label
 
