@@ -80,7 +80,7 @@ with col2:
 col1, col2, col3 = st.columns(3)
 
     # Visualzing the images on the page
-with col1:
+with col2:
     col1, col2, col3 = st.columns(3)
     col1.image(img_1, 'Image 1')
     col2.image(img_2, 'Image 2')
@@ -101,7 +101,7 @@ with col1:
     if option == 'Image 1':
         selected_option = img_1
 
-with col2:
+with col1:
     st.write('hello')
     #predicted_class, logits_values = predict_class(selected_option)
     #st.metric(label='Emotion', value=predicted_class)
