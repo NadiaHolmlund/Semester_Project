@@ -48,4 +48,4 @@ if avatar == 'Select':
 
 else:    
     st.title("MoodTrackr")
-    st.subheader('Hi ' + avatar +'! I\'m so glad to see you, let\' have a look you are feeling today, shall we?')
+    st.caption('Hi ' + avatar +'! I\'m so glad to see you, let\' have a look you are feeling today, shall we?')
