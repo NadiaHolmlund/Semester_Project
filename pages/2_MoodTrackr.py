@@ -31,16 +31,15 @@ img_nadia, img_nicklas, img_nikolaj = read_objects()
 
 
 with st.sidebar:
-    timeframe = st.slider('', value=(time(11, 30), time(12, 45)))
-
-    avatar = st.selectbox(
-        "Select a Timeframe and Choose Your Avatar",
-        ('Select from list', 'Nadia', 'Nicklas', 'Nikolaj'))
-
     col1, col2, col3 = st. columns(3)
     col1.image(img_nadia, caption='Nadia')
     col2.image(img_nicklas, caption='Nicklas')
     col3.image(img_nikolaj, caption='Nikolaj')
 
+    avatar = st.selectbox(
+        "Choose Your Avatar and Select a Timeframe",
+        ('Select from list', 'Nadia', 'Nicklas', 'Nikolaj'))
+    
+    timeframe = st.slider('', value=(time(11, 30), time(12, 45)))
 
 st.title("MoodTrackr")
