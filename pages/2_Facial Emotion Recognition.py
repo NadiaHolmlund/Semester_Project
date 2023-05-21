@@ -63,14 +63,20 @@ def predict_class(image):
 tab1, tab2 = st.tabs(['Images', 'Camera'])
 
 with tab1:
-    col1, col2, col3 = st.columns(3)
-    col1.image(img_anger)
-    col2.image(img_disgust)
-    col3.image(img_fear)
+    col1, col2 = st.columns(2)
 
-    option = st.selectbox(
-    'Select an image',
-    ('Image 1', 'Image 2', 'Image 3'))
+    with col1:
+        col1, col2, col3 = st.columns(3)
+        col1.image(img_anger)
+        col2.image(img_disgust)
+        col3.image(img_fear)
+
+        option = st.selectbox(
+        'Select an image',
+        ('Image 1', 'Image 2', 'Image 3'))
+    
+    with col2:
+        st.write('hel')
 
 with tab2: 
     st.write('hello')
