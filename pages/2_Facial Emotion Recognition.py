@@ -88,7 +88,7 @@ with tab1:
         option = st.selectbox('', ('Select an Image', 'Image 1', 'Image 2', 'Image 3'))
     
     with col2:
-        st.write('hel')
+        st.write('mkae a graph here')
 
 with tab2:
     st.write('hello')
