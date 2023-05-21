@@ -97,6 +97,6 @@ with tab2:
 
 
 
-predicted_class, logits_values = classify_image(img_1)
+predicted_class, logits_values = predict_class(img_1)
 st.write(predicted_class)
 #st.metric(label='Emotion', value=predicted_class)
