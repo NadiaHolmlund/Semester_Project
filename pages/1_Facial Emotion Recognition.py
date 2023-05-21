@@ -91,10 +91,11 @@ with col1:
     option = st.selectbox('', ('Select an Image', 'Image 1',))
     if option == 'Image 1':
         selected_option = img_1
-        
+
 with col2:
-    predicted_class, logits_values = predict_class(selected_option)
-    st.metric(label='Emotion', value=predicted_class)
+    st.write('hello')
+    #predicted_class, logits_values = predict_class(selected_option)
+    #st.metric(label='Emotion', value=predicted_class)
 
 # Setting up the tab for Camera
 #with tab2:
