@@ -61,3 +61,11 @@ def predict_class(image):
 
 # Setting up the page
 st.write('Test the model on images or yourself')
+
+tab1, tab2 = st.tabs(2)
+
+with tab1:
+    st.write('hello')
+
+with tab2: 
+    st.write('hello')
