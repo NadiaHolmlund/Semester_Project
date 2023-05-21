@@ -43,4 +43,4 @@ with st.sidebar:
 
 
 with st.expander("Select a timeframe:"):
-    timeframe = st.slider(value=(time(11, 30), time(12, 45)))
+    timeframe = st.slider('', value=(time(11, 30), time(12, 45)))
