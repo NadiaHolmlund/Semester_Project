@@ -48,4 +48,4 @@ if avatar == 'Select':
 
 else:    
     st.title("MoodTrackr")
-    st.markdown('Hi ' + avatar +'! I\'m so glad to see you, let\' have a look you are feeling today, shall we?')
+    st.markdown('Hi ' + avatar +'! I\'m so glad to see you, let\' have a look at how you\'re feeling today, shall we?')
