@@ -17,7 +17,7 @@ def read_objects():
     processor = ViTImageProcessor.from_pretrained('google/vit-base-patch16-224')
     model = ViTForImageClassification.from_pretrained('NadiaHolmlund/Semester_Project', num_labels= 7, ignore_mismatched_sizes=True)
    
-    # Defining the class idx and corresponding labels
+    # Defining the class id and corresponding labels
     class_id = [0, 1, 2, 3, 4, 5, 6]
     class_label = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
     id2label = {id: label for id, label in zip(class_id, class_label)}
@@ -43,3 +43,15 @@ def read_objects():
 
 processor, model, class_id, class_label, id2label, img_anger, img_disgust, img_fear, img_happiness, img_sadness, img_surprise, img_neutral = read_objects()
 
+
+# Defining a function to classify the image
+def predict_class(img):
+    inputs = processor(images=img, return_tensors="pt")
+    outputs = model(**inputs)
+    logits = outputs.logits
+
+    # Model predicts one of the 7 emotion classes
+    predicted_class_id = logits.argmax(-1).item()
+    predicted_class_label = id2label[predicted_class_id]
+
+    return predicted_class_label, logits.tolist()[0]
