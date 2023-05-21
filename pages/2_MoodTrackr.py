@@ -48,4 +48,4 @@ if avatar == 'Select':
 
 else:    
     st.title("MoodTrackr")
-    st.write('Hi ' + avatar +'! So nice to have you back, let\' see how you are feeling today, shall we?')
+    st.write('Hi ' + avatar +'! I\'m so glad to see you today, let\' have a look you are feeling today, shall we?')
