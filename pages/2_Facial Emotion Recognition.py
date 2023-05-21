@@ -72,8 +72,18 @@ with tab1:
     with col1:
         col1, col2, col3 = st.columns(3)
         col1.image(img_1, 'Image 1')
-        col2.image(img_1, 'Image 2')
-        col3.image(img_1, 'Image 3')
+        col2.image(img_2, 'Image 2')
+        col3.image(img_3, 'Image 3')
+
+        col1, col2, col3 = st.columns(3)
+        col1.image(img_4, 'Image 4')
+        col2.image(img_5, 'Image 5')
+        col3.image(img_6, 'Image 6')
+
+        col1, col2, col3 = st.columns(3)
+        col1.image(img_7, 'Image 7')
+        col2.image(img_8, 'Image 8')
+        col3.image(img_9, 'Image 9')
         
         option = st.selectbox('', ('Select an Image', 'Image 1', 'Image 2', 'Image 3'))
     
