@@ -197,9 +197,17 @@ with tab2:
 
         for i, bar in enumerate(bars):
             ax.text(text_position, bar.get_y() + bar.get_height() / 2,
-                    f'{probabilities[i]*100:.2f}%', va='center', ha='right')
+                    f'{probabilities[i]*100:.2f}%', va='center', ha='right', color='#FAFAFA')
 
         plt.xticks([])
+
+        # Change background and text color
+        fig.set_facecolor('#0E1117')
+        ax.set_facecolor('#0E1117')
+        ax.xaxis.label.set_color('#FAFAFA')
+        ax.yaxis.label.set_color('#FAFAFA')
+        ax.tick_params(axis='x', colors='#FAFAFA')
+        ax.tick_params(axis='y', colors='#FAFAFA')
 
         st.pyplot(fig)
 
