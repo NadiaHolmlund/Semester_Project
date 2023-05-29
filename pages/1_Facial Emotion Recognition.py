@@ -207,7 +207,7 @@ with tab2:
         ax.tick_params(axis='x', colors='white')
         ax.tick_params(axis='y', colors='white')
 
-        plt.show()
+        st.pyplot(fig)
 
 
 
