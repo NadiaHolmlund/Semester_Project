@@ -101,7 +101,7 @@ with tab1:
 
     with col2:
         fig, ax = plt.subplots(figsize=(8, 6))
-        bars = ax.barh(emotion_label, logits_values, height=0.1)
+        bars = ax.barh(class_label, logits_values, height=0.1)
 
         ax.spines['right'].set_visible(False)
         ax.spines['top'].set_visible(False)
