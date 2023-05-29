@@ -60,6 +60,12 @@ else:
         avatar_df = nicklas_df
     if avatar == 'Nikolaj':
         avatar_df = nikolaj_df
+
+    # Convert start_time string to datetime.time object
+    start_time = datetime.datetime.strptime(start_time, "%H:%M:%S").time()
+
+    # Convert end_time string to datetime.time object
+    end_time = datetime.datetime.strptime(end_time, "%H:%M:%S").time()
     
     selected_df = (avatar_df['time_of_day'] >= start_time) & (avatar_df['time_of_day'] <= end_time)
 
