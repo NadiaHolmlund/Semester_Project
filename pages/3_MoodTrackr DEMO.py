@@ -48,11 +48,13 @@ else:
     st.markdown('Hi ' + avatar +'! I\'m so glad to see you, let\'s have a look at how you\'re feeling today, shall we?')
 
     if avatar == 'Nadia':
-        selected_df = nadia_df
+        avatar_df = nadia_df
     if avatar == 'Nicklas':
-        selected_df = nicklas_df
+        avatar_df = nicklas_df
     if avatar == 'Nikolaj':
-        selected_df = nikolaj_df
+        avatar_df = nikolaj_df
+    
+    time_df = avatar_df[(avatar_df['time_of_day'] >= timeframe) & (avatar_df['time_of_day'] <= timeframe)]
 
     col1, col2 = st.columns(2)
 
@@ -64,4 +66,5 @@ else:
                     hover_data={'class_label':False})
         st.plotly_chart(fig)
 
-        
+    with col2:
+        st.metric(label="Application", value=selected_df[], delta="1.2 °F")
