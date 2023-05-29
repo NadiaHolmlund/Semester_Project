@@ -47,5 +47,5 @@ else:
     st.title("MoodTrackr")
     st.markdown('Hi ' + avatar +'! I\'m so glad to see you, let\'s have a look at how you\'re feeling today, shall we?')
 
-    fig = px.sunburst(data_frame=nadia_df, path=['application_type', 'application', 'application_duration_min'])
+    fig = px.sunburst(data_frame=nadia_df, path=['application_type', 'application', 'class_label'])
     st.plotly_chart(fig)
