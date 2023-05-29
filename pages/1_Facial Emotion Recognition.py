@@ -140,6 +140,8 @@ with tab1:
 
         st.pyplot(fig)
 
+        st.metric(label="Emotion", value=img_classification, delta="Class predicted")
+
 
 
 
