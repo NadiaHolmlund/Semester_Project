@@ -3,6 +3,7 @@ import streamlit as st
 from PIL import Image
 import requests
 from datetime import time
+import plotly
 import plotly.graph_objects as go
 
 # Setting up page configurations
