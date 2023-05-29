@@ -23,7 +23,6 @@ def read_objects():
 img_nadia, img_nicklas, img_nikolaj = read_objects()
 
 
-
 with st.sidebar:
     col1, col2, col3 = st. columns(3)
     col1.image(img_nadia, caption='Nadia')
