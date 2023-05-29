@@ -192,10 +192,8 @@ with tab2:
 
         text_position = max(logits_values) + 0.05  # Define the fixed position for the text
 
-        reshaped_probs = np.reshape(probs, -1)  # Reshape the probs tensor to (num_classes,)
-
         for i, bar in enumerate(bars):
-            probability = f'{float(reshaped_probs[i])*100:.2f}%'
+            probability = f'{float(probs[i])*100:.2f}%'
             ax.text(text_position, bar.get_y() + bar.get_height() / 2,
                     probability, va='center', ha='right')
 
