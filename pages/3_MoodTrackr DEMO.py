@@ -3,7 +3,7 @@ import streamlit as st
 from PIL import Image
 import requests
 from datetime import time
-import plotly.graph_objects as go
+import plotly.express as px
 import pandas as pd
 
 # Setting up page configurations
@@ -47,15 +47,17 @@ else:
     st.title("MoodTrackr")
     st.markdown('Hi ' + avatar +'! I\'m so glad to see you, let\'s have a look at how you\'re feeling today, shall we?')
 
-    fig =go.Figure(go.Sunburst(
-        labels=["Eve", "Cain", "Seth", "Enos", "Noam", "Abel", "Awan", "Enoch", "Azura"],
-        parents=["", "Eve", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve" ],
-        values=nadia_df['application_duration_min'],
-    ))
-    fig.update_layout(margin = dict(t=0, l=0, r=0, b=0))
+    data = dict(
+        character=["Eve", "Cain", "Seth", "Enos", "Noam", "Abel", "Awan", "Enoch", "Azura"],
+        parent=["", "Eve", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve" ],
+        value=[10, 14, 12, 10, 2, 6, 6, 4, 4])
 
-    fig.show()
-
+    fig = px.sunburst(
+        data,
+        names='character',
+        parents='parent',
+        values='value',
+    )
     st.plotly_chart(fig)
 
 
