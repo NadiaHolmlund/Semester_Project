@@ -59,13 +59,16 @@ def predict_class(image):
     inputs = processor(images=image, return_tensors="pt")
     outputs = model(**inputs)
     logits = outputs.logits
-    probs = F.softmax(logits, dim=1)
+
+    # Apply softmax to obtain probabilities
+    probabilities = F.softmax(logits, dim=-1)
 
     # Model predicts one of the 7 classes of emotion
     predicted_class_id = logits.argmax(-1).item()
     predicted_class_label = id2label[predicted_class_id]
 
-    return predicted_class_label, logits.tolist()[0], probs
+    return predicted_class_label, probabilities.tolist()[0]
+
 
 
 # Setting up the page
@@ -93,48 +96,48 @@ with tab1:
     # Predicting the class of the selected image and displaying it in a larger format
     with col1:
         if option == 'Image 1':
-            img_classification, logits_values, probs = predict_class(img_1_sq)
+            img_classification, probabilities = predict_class(img_1_sq)
             st.image(img_1_rd)
         if option == 'Image 2':
-            img_classification, logits_values, probs = predict_class(img_2_sq)
+            img_classification, probabilities = predict_class(img_2_sq)
             st.image(img_2_rd)
         if option == 'Image 3':
-            img_classification, logits_values, probs = predict_class(img_3_sq)
+            img_classification, probabilities = predict_class(img_3_sq)
             st.image(img_3_rd)
         if option == 'Image 4':
-            img_classification, logits_values, probs = predict_class(img_4_sq)
+            img_classification, probabilities = predict_class(img_4_sq)
             st.image(img_4_rd)
         if option == 'Image 5':
-            img_classification, logits_values, probs = predict_class(img_5_sq)
+            img_classification, probabilities = predict_class(img_5_sq)
             st.image(img_5_rd)
         if option == 'Image 6':
-            img_classification, logits_values, probs = predict_class(img_6_sq)
+            img_classification, probabilities = predict_class(img_6_sq)
             st.image(img_6_rd)
         if option == 'Image 7':
-            img_classification, logits_values, probs = predict_class(img_7_sq)
+            img_classification, probabilities = predict_class(img_7_sq)
             st.image(img_7_rd)
         if option == 'Image 8':
-            img_classification, logits_values, probs = predict_class(img_8_sq)
+            img_classification, probabilities = predict_class(img_8_sq)
             st.image(img_8_rd)
         if option == 'Image 9':
-            img_classification, logits_values, probs = predict_class(img_9_sq)
+            img_classification, probabilities = predict_class(img_9_sq)
             st.image(img_9_rd)
 
     # Plotting the probability of each class
     with col2:
         fig, ax = plt.subplots(figsize=(8, 10))
-        bars = ax.barh(class_label, logits_values, height=0.1)
+        bars = ax.barh(class_label, probabilities, height=0.1)
 
         ax.spines['right'].set_visible(False)
         ax.spines['top'].set_visible(False)
         ax.spines['left'].set_visible(False)
         ax.spines['bottom'].set_visible(False)
 
-        text_position = max(logits_values) + 0.05
+        text_position = max(probabilities) + 0.05
 
         for i, bar in enumerate(bars):
             ax.text(text_position, bar.get_y() + bar.get_height() / 2,
-                    f'{logits_values[i]*100:.2f}%', va='center', ha='right')
+                    f'{probabilities[i]*100:.2f}%', va='center', ha='right')
 
         plt.xticks([])
 
@@ -160,7 +163,7 @@ with tab2:
         if img_file_buffer is not None:
             img_camera = Image.open(img_file_buffer)
         if img_file_buffer is not None:
-            cam_classification, logits_values, probs = predict_class(img_camera)
+            cam_classification, probabilities = predict_class(img_camera)
 
     # Predicting the class of the camera image
     with col2:
@@ -183,18 +186,18 @@ with tab2:
         st.write('')
     if img_file_buffer is not None:
         fig, ax = plt.subplots(figsize=(8, 4))
-        bars = ax.barh(class_label, logits_values, height=0.8, color=plt.cm.plasma(logits_values))
+        bars = ax.barh(class_label, probabilities, height=0.8, color=plt.cm.plasma(logits_values))
 
         ax.spines['right'].set_visible(False)
         ax.spines['top'].set_visible(False)
         ax.spines['left'].set_visible(False)
         ax.spines['bottom'].set_visible(False)
 
-        text_position = max(logits_values) + 1  # Define the fixed position for the text
+        text_position = max(probabilities) + 1  # Define the fixed position for the text
 
         for i, bar in enumerate(bars):
             ax.text(text_position, bar.get_y() + bar.get_height() / 2,
-                    f'{logits_values[i]*100:.2f}%', va='center', ha='right', color='#FAFAFA')
+                    f'{probabilities[i]*100:.2f}%', va='center', ha='right', color='#FAFAFA')
 
         plt.xticks([])  # Hide the x-axis tick labels
 
