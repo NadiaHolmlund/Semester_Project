@@ -37,7 +37,7 @@ with st.sidebar:
         "Choose Your Avatar",
         ('Select', 'Nadia', 'Nicklas', 'Nikolaj'))
     
-    timeframe = st.slider('Select a Timeframe', value=(time(7, 30), time(16, 30)))
+    timeframe = st.slider('Select a Timeframe', value=(start_time(7, 30), end_time(16, 30)))
 
 
 if avatar == 'Select':
@@ -54,7 +54,7 @@ else:
     if avatar == 'Nikolaj':
         avatar_df = nikolaj_df
     
-    time_df = avatar_df[(avatar_df['time_of_day'] >= timeframe(min_value)) & (avatar_df['time_of_day'] <= timeframe(max_value))]
+    time_df = avatar_df[(avatar_df['time_of_day'] >= start_time) & (avatar_df['time_of_day'] <= end_time)]
 
     col1, col2 = st.columns(2)
 
