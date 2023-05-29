@@ -59,14 +59,13 @@ def predict_class(image):
     inputs = processor(images=image, return_tensors="pt")
     outputs = model(**inputs)
     logits = outputs.logits
-    # Apply softmax to convert logits to probabilities
     probs = F.softmax(logits, dim=1)
 
     # Model predicts one of the 7 classes of emotion
     predicted_class_id = logits.argmax(-1).item()
     predicted_class_label = id2label[predicted_class_id]
 
-    return predicted_class_label, probs
+    return predicted_class_label, logits.tolist()[0], probs
 
 
 # Setting up the page
@@ -77,7 +76,6 @@ with tab1:
 
     # Displaying the images
     col1, col2, col3, col4, col5, col6, col7, col8, col9 = st.columns(9)
-    
     col1.image(img_1_rd, 'Image 1')
     col2.image(img_2_rd, 'Image 2')
     col3.image(img_3_rd, 'Image 3')
@@ -92,10 +90,8 @@ with tab1:
     option = st.selectbox('',('Image 1', 'Image 2', 'Image 3', 'Image 4', 'Image 5', 'Image 6', 'Image 7', 'Image 8', 'Image 9'))
 
     col1, col2 = st.columns(2)
-
-    # Displaying the selected image in a larger format
+    # Predicting the class of the selected image and displaying it in a larger format
     with col1:
-    # Connecting the selected image to the same image in square format
         if option == 'Image 1':
             img_classification, logits_values = predict_class(img_1_sq)
             st.image(img_1_rd)
@@ -124,7 +120,7 @@ with tab1:
             img_classification, logits_values = predict_class(img_9_sq)
             st.image(img_9_rd)
 
-    # Displaying the logits_values of the different classes
+    # Plotting the probability of each class
     with col2:
         fig, ax = plt.subplots(figsize=(8, 10))
         bars = ax.barh(class_label, logits_values, height=0.1)
@@ -153,10 +149,7 @@ with tab1:
 
 
 
-
-
-
-
+# Setting up the tab for Camera
 with tab2:
     col1, col2 = st.columns(2)
 
@@ -186,34 +179,34 @@ with tab2:
             col3.write('')
             
 
-if img_file_buffer is None:
-    st.write('')
-if img_file_buffer is not None:
-    fig, ax = plt.subplots(figsize=(8, 4))
-    bars = ax.barh(class_label, probs, height=0.5, color=plt.cm.plasma(probs))
+    if img_file_buffer is None:
+        st.write('')
+    if img_file_buffer is not None:
+        fig, ax = plt.subplots(figsize=(8, 4))
+        bars = ax.barh(class_label, probs, height=0.5, color=plt.cm.plasma(probs))
 
-    ax.spines['right'].set_visible(False)
-    ax.spines['top'].set_visible(False)
-    ax.spines['left'].set_visible(False)
-    ax.spines['bottom'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        ax.spines['top'].set_visible(False)
+        ax.spines['left'].set_visible(False)
+        ax.spines['bottom'].set_visible(False)
 
-    text_position = max(probs) + 1  # Define the fixed position for the text
+        text_position = max(probs) + 1  # Define the fixed position for the text
 
-    for i, bar in enumerate(bars):
-        probability = f'{probs[i]*100:.2f}%'
-        ax.text(text_position, bar.get_y() + bar.get_height() / 2,
-                probability, va='center', ha='right')
+        for i, bar in enumerate(bars):
+            probability = f'{probs[i]*100:.2f}%'
+            ax.text(text_position, bar.get_y() + bar.get_height() / 2,
+                    probability, va='center', ha='right')
 
-    plt.xticks([])  # Hide the x-axis tick labels
+        plt.xticks([])  # Hide the x-axis tick labels
 
-    # Change background and text color
-    fig.set_facecolor('#0E1117')
-    ax.set_facecolor('#0E1117')
-    ax.xaxis.label.set_color('white')
-    ax.yaxis.label.set_color('white')
-    ax.tick_params(axis='x', colors='white')
-    ax.tick_params(axis='y', colors='white')
+        # Change background and text color
+        fig.set_facecolor('#0E1117')
+        ax.set_facecolor('#0E1117')
+        ax.xaxis.label.set_color('white')
+        ax.yaxis.label.set_color('white')
+        ax.tick_params(axis='x', colors='white')
+        ax.tick_params(axis='y', colors='white')
 
-    st.pyplot(fig)
+        st.pyplot(fig)
 
 
