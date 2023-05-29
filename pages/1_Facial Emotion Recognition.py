@@ -153,16 +153,16 @@ with tab1:
 with tab2:
     col1, col2 = st.columns(2)
 
+    # Adding the camera feature
     with col1:
         img_file_buffer = st.camera_input("")
 
         if img_file_buffer is not None:
-            # Read image file buffer as a PIL Image:
             img_camera = Image.open(img_file_buffer)
-    
         if img_file_buffer is not None:
-            cam_classification, logits_values = predict_class(img_camera)
+            cam_classification, logits_values, probs = predict_class(img_camera)
 
+    # Predicting the class of the camera image
     with col2:
         if img_file_buffer is None:
             st.write('')
@@ -178,7 +178,7 @@ with tab2:
             col2.metric(label='', value=cam_classification, delta="Emotion", delta_color="off")
             col3.write('')
             
-
+    # Plotting the probability of each class
     if img_file_buffer is None:
         st.write('')
     if img_file_buffer is not None:
