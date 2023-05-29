@@ -93,31 +93,31 @@ with tab1:
     # Predicting the class of the selected image and displaying it in a larger format
     with col1:
         if option == 'Image 1':
-            img_classification, logits_values = predict_class(img_1_sq)
+            img_classification, logits_values, probs = predict_class(img_1_sq)
             st.image(img_1_rd)
         if option == 'Image 2':
-            img_classification, logits_values = predict_class(img_2_sq)
+            img_classification, logits_values, probs = predict_class(img_2_sq)
             st.image(img_2_rd)
         if option == 'Image 3':
-            img_classification, logits_values = predict_class(img_3_sq)
+            img_classification, logits_values, probs = predict_class(img_3_sq)
             st.image(img_3_rd)
         if option == 'Image 4':
-            img_classification, logits_values = predict_class(img_4_sq)
+            img_classification, logits_values, probs = predict_class(img_4_sq)
             st.image(img_4_rd)
         if option == 'Image 5':
-            img_classification, logits_values = predict_class(img_5_sq)
+            img_classification, logits_values, probs = predict_class(img_5_sq)
             st.image(img_5_rd)
         if option == 'Image 6':
-            img_classification, logits_values = predict_class(img_6_sq)
+            img_classification, logits_values, probs = predict_class(img_6_sq)
             st.image(img_6_rd)
         if option == 'Image 7':
-            img_classification, logits_values = predict_class(img_7_sq)
+            img_classification, logits_values, probs = predict_class(img_7_sq)
             st.image(img_7_rd)
         if option == 'Image 8':
-            img_classification, logits_values = predict_class(img_8_sq)
+            img_classification, logits_values, probs = predict_class(img_8_sq)
             st.image(img_8_rd)
         if option == 'Image 9':
-            img_classification, logits_values = predict_class(img_9_sq)
+            img_classification, logits_values, probs = predict_class(img_9_sq)
             st.image(img_9_rd)
 
     # Plotting the probability of each class
