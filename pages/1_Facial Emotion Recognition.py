@@ -140,7 +140,7 @@ with tab1:
 
         st.pyplot(fig)
 
-        col1, col2, col3 = st.columns(3)
+        col1, col2, col3 = st.columns([0.5, 2, 0.5])
         col1.write('')
         col2.metric(label='', value=img_classification, delta="Emotion", delta_color="off")
         col3.write('')
