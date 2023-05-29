@@ -158,9 +158,6 @@ with tab1:
         col3.write('')
 
 
-
-
-
 # Setting up the tab for Camera
 with tab2:
     col1, col2 = st.columns(2)
@@ -219,6 +216,3 @@ with tab2:
         ax.tick_params(axis='y', colors='#FAFAFA')
 
         st.pyplot(fig)
-
-
-

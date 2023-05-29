@@ -1,3 +1,4 @@
+# Imports
 import streamlit as st
 from PIL import Image
 import requests
@@ -6,23 +7,16 @@ from datetime import time
 # Setting up page configurations
 st.set_page_config(
     page_title="MoodTrackr",
-    page_icon="💀",
+    page_icon="😐",
     layout="wide")
 
-
-
-# Loading processor, model, labels and images only once
+# Loading the datasets and images only once
 @st.experimental_singleton
 def read_objects():
     # Importing images
-    nadia_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_anger.jpg'
-    img_nadia = Image.open(requests.get(nadia_url, stream=True).raw)
-
-    nicklas_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_happiness.jpg'
-    img_nicklas = Image.open(requests.get(nicklas_url, stream=True).raw)
-
-    nikolaj_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_sadness.jpg'
-    img_nikolaj = Image.open(requests.get(nikolaj_url, stream=True).raw)
+    img_nadia = Image.open(requests.get('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/rounded_images/img_1.png', stream=True).raw)
+    img_nicklas = Image.open(requests.get('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/rounded_images/img_2.png', stream=True).raw)
+    img_nikolaj = Image.open(requests.get('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/rounded_images/img_3.png', stream=True).raw)
 
     return img_nadia, img_nicklas, img_nikolaj
 
