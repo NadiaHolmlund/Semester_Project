@@ -186,7 +186,7 @@ if img_file_buffer is None:
     st.write('')
 if img_file_buffer is not None:
     fig, ax = plt.subplots(figsize=(8, 4))
-    bars = ax.barh(class_label, logits_values, height=0.8, color=cmap(logits_values))
+    bars = ax.barh(range(len(class_label)), logits_values, height=0.8, color=cmap(logits_values))
 
     ax.spines['right'].set_visible(False)
     ax.spines['top'].set_visible(False)
