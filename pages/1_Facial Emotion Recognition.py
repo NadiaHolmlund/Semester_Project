@@ -90,7 +90,7 @@ with tab1:
     # Connecting the selected image to one in square format
     if option == 'Image 1':
         img_classification, logits_values = predict_class(img_1_sq)
-        if option == 'Image 2':
+    if option == 'Image 2':
         img_classification, logits_values = predict_class(img_2_sq)
 
     col1, col2 = st.columns(2)
