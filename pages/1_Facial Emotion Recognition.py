@@ -35,7 +35,7 @@ def read_objects():
 #    img_8_sqr_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_8.jpg'
 #    img_9_sqr_url = 'https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/img_9.jpg'
 
-    img_1_sqr = Image.open(requests.get('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/square_images/img_1.jpg', stream=True).raw)
+    img_1_sq = Image.open(requests.get('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/square_images/img_1.jpg', stream=True).raw)
 #    img_2_sqr = Image.open(requests.get(img_2, stream=True).raw)
 #    img_3_sqr = Image.open(requests.get(img_3, stream=True).raw)
 #    img_4_sqr = Image.open(requests.get(img_4, stream=True).raw)
@@ -45,9 +45,9 @@ def read_objects():
 #    img_8_sqr = Image.open(requests.get(img_8, stream=True).raw)
 #    img_9_sqr = Image.open(requests.get(img_9, stream=True).raw)
 
-    return processor, model, class_id, class_label, id2label, img_1 #, img_2, img_3, img_4, img_5, img_6, img_7, img_8, img_9
+    return processor, model, class_id, class_label, id2label, img_1_sq #, img_2, img_3, img_4, img_5, img_6, img_7, img_8, img_9
 
-processor, model, class_id, class_label, id2label, img_1 = read_objects()
+processor, model, class_id, class_label, id2label, img_1_sq = read_objects()
 
 
 # Defining a function to predict the class of emotion
