@@ -54,7 +54,7 @@ else:
     if avatar == 'Nikolaj':
         avatar_df = nikolaj_df
     
-    time_df = avatar_df[(avatar_df['time_of_day'] >= timeframe) & (avatar_df['time_of_day'] <= timeframe)]
+    time_df = avatar_df[(avatar_df['time_of_day'] >= timeframe(min_value)) & (avatar_df['time_of_day'] <= timeframe(max_value))]
 
     col1, col2 = st.columns(2)
 
