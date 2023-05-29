@@ -2,7 +2,7 @@
 import streamlit as st
 from PIL import Image
 import requests
-from datetime import time
+import datetime
 import plotly.express as px
 import pandas as pd
 
@@ -39,8 +39,8 @@ with st.sidebar:
     
     #timeframe = st.slider('Select a Timeframe', value=((7, 30), (16, 30)))
 
-    start_time = st.time_input('Select Start Time', time(7, 30))
-    end_time = st.time_input('Select End Time', time(16, 30))
+    start_time = st.time_input('Select Start Time', datetime.time(7, 30))
+    end_time = st.time_input('Select End Time', datetime.time(16, 30))
 
     if start_time < end_time:
         pass
