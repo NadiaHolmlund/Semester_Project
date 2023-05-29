@@ -152,7 +152,7 @@ with tab1:
         st.pyplot(fig)
 
         # Displaying the class of the selected image
-        col1, col2, col3 = st.columns([1, 1.5, 0.5])
+        col1, col2, col3 = st.columns([8, 1.4, 0.8])
         col1.write('')
         col2.metric(label='', value=img_classification, delta="Emotion", delta_color="off")
         col3.write('')
