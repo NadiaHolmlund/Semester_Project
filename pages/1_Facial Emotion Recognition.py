@@ -6,6 +6,7 @@ import requests
 import torch
 import matplotlib.pyplot as plt
 import torch.nn.functional as F
+import numpy as np
 
 # Setting up page configurations
 st.set_page_config(
