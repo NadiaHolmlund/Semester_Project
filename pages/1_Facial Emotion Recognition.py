@@ -193,9 +193,8 @@ with tab2:
         text_position = max(logits_values) + 0.05  # Define the fixed position for the text
 
         for i, bar in enumerate(bars):
-            probability = f'{float(probs[i])*100:.2f}%'
             ax.text(text_position, bar.get_y() + bar.get_height() / 2,
-                    probability, va='center', ha='right')
+                    f'{logits_values[i]*100:.2f}%', va='center', ha='right')
 
         plt.xticks([])  # Hide the x-axis tick labels
 
