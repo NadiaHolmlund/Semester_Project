@@ -193,7 +193,7 @@ with tab2:
         text_position = max(logits_values) + 0.05  # Define the fixed position for the text
 
         for i, bar in enumerate(bars):
-            probability = f'{probs[i]*100:.2f}%'
+            probability = f'{float(probs[i])*100:.2f}%'
             ax.text(text_position, bar.get_y() + bar.get_height() / 2,
                     probability, va='center', ha='right')
 
@@ -206,7 +206,7 @@ with tab2:
         ax.yaxis.label.set_color('white')
         ax.tick_params(axis='x', colors='white')
         ax.tick_params(axis='y', colors='white')
-
+        plot
         st.pyplot(fig)
 
 
