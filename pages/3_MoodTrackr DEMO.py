@@ -59,7 +59,7 @@ else:
     col1, col2 = st.columns(2)
 
     with col1:
-        fig = px.sunburst(data_frame=selected_df,
+        fig = px.sunburst(data_frame=time_df,
                     path=['application_type', 'application', 'class_label'],
                     values='application_duration_min',
                     color='class_label',
