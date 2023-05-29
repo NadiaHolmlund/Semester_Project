@@ -194,17 +194,17 @@ with tab2:
 
         for i, bar in enumerate(bars):
             ax.text(text_position, bar.get_y() + bar.get_height() / 2,
-                    f'{logits_values[i]*100:.2f}%', va='center', ha='right', color='white')
+                    f'{logits_values[i]*100:.2f}%', va='center', ha='right', color='#FAFAFA')
 
         plt.xticks([])  # Hide the x-axis tick labels
 
         # Change background and text color
         fig.set_facecolor('#0E1117')
         ax.set_facecolor('#0E1117')
-        ax.xaxis.label.set_color('white')
-        ax.yaxis.label.set_color('white')
-        ax.tick_params(axis='x', colors='white')
-        ax.tick_params(axis='y', colors='white')
+        ax.xaxis.label.set_color('#FAFAFA')
+        ax.yaxis.label.set_color('#FAFAFA')
+        ax.tick_params(axis='x', colors='#FAFAFA')
+        ax.tick_params(axis='y', colors='#FAFAFA')
 
         st.pyplot(fig)
 
