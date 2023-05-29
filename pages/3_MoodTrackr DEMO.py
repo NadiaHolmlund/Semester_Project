@@ -60,7 +60,7 @@ else:
 
     data = dict(
         character=['GitHub', 'Google Colab', 'ChatGPT', 'Google Colab', 'Stack Overflow', 'Facebook', 'TikTok'],
-        parent=['Coding Notebook', 'AI Chatbot', 'Coding Notebook', 'Programming Q&A', 'Social Media', 'Social Media'],
+        parent=['', 'AI Chatbot', 'Coding Notebook', 'Programming Q&A', 'Social Media', 'Social Media'],
         value=[30, 45, 15, 15, 15, 90, 150])
 
     fig_2 = px.sunburst(
