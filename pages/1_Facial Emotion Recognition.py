@@ -85,43 +85,51 @@ with tab1:
     col9.image(img_9_rd, 'Image 9')
 
     # Inserting a selectbox to select an image for classification
-    option = st.selectbox('',('Select an image', 'Image 1', 'Image 2', 'Image 3'))
+    option = st.selectbox('',('Image 1', 'Image 2', 'Image 3', 'Image 4', 'Image 5', 'Image 6', 'Image 7', 'Image 8', 'Image 9'))
 
     col1, col2 = st.columns(2)
 
     # Displaying the selected image in a larger format
     with col1:
     # Connecting the selected image to the same image in square format
-        if option == 'Select an image':
-            st.image(img_1_sq)
         if option == 'Image 1':
             img_classification, logits_values = predict_class(img_1_sq)
         if option == 'Image 2':
             img_classification, logits_values = predict_class(img_2_sq)
+        if option == 'Image 3':
+            img_classification, logits_values = predict_class(img_3_sq)
+        if option == 'Image 4':
+            img_classification, logits_values = predict_class(img_4_sq)
+        if option == 'Image 5':
+            img_classification, logits_values = predict_class(img_5_sq)
+        if option == 'Image 6':
+            img_classification, logits_values = predict_class(img_6_sq)
+        if option == 'Image 7':
+            img_classification, logits_values = predict_class(img_7_sq)
+        if option == 'Image 8':
+            img_classification, logits_values = predict_class(img_8_sq)
+        if option == 'Image 9':
+            img_classification, logits_values = predict_class(img_9_sq)
 
     # Displaying the logits_values of the different classes
     with col2:
-        if option == 'Select an image':
-            st.write('')
+        fig, ax = plt.subplots(figsize=(8, 10))
+        bars = ax.barh(class_label, logits_values, height=0.1)
 
-        else:
-            fig, ax = plt.subplots(figsize=(8, 10))
-            bars = ax.barh(class_label, logits_values, height=0.1)
+        ax.spines['right'].set_visible(False)
+        ax.spines['top'].set_visible(False)
+        ax.spines['left'].set_visible(False)
+        ax.spines['bottom'].set_visible(False)
 
-            ax.spines['right'].set_visible(False)
-            ax.spines['top'].set_visible(False)
-            ax.spines['left'].set_visible(False)
-            ax.spines['bottom'].set_visible(False)
+        text_position = max(logits_values) + 0.05
 
-            text_position = max(logits_values) + 0.05
+        for i, bar in enumerate(bars):
+            ax.text(text_position, bar.get_y() + bar.get_height() / 2,
+                    f'{logits_values[i]*100:.2f}%', va='center', ha='right')
 
-            for i, bar in enumerate(bars):
-                ax.text(text_position, bar.get_y() + bar.get_height() / 2,
-                        f'{logits_values[i]*100:.2f}%', va='center', ha='right')
+        plt.xticks([])
 
-            plt.xticks([])
-
-            st.pyplot(fig)
+        st.pyplot(fig)
 
 
 
