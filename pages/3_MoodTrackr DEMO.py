@@ -63,7 +63,7 @@ else:
 
     fig = go.Figure(go.Sunburst(
         labels=['GitHub', 'Google Colab', 'ChatGPT', 'Google Colab', 'Stack Overflow', 'Facebook', 'TikTok'],
-        parents=['Code Collaboration', 'Coding Notebook', 'AI Chatbot', 'Coding Notebook', 'Programming Q&A', 'Social Media', 'Social Media'],
+        parents=['', 'Code Collaboration', 'Coding Notebook', 'AI Chatbot', 'Coding Notebook', 'Programming Q&A', 'Social Media', 'Social Media'],
         values=[30, 45, 15, 15, 15, 90, 150],
     ))
     fig.update_layout(margin=dict(t=0, l=0, r=0, b=0))
