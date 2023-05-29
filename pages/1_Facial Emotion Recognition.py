@@ -4,6 +4,7 @@ from transformers import DeiTImageProcessor, DeiTForImageClassification
 from PIL import Image
 import requests
 import torch
+import matplotlib.pyplot as plt
 
 # Setting up page configurations
 st.set_page_config(
