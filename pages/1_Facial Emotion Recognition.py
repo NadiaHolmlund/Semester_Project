@@ -203,3 +203,56 @@ if img_file_buffer is not None:
 
     # Display the plot using st.pyplot()
     st.pyplot(fig)
+
+
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+class_label = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
+
+# Dummy login values for demonstration
+logits = [0.2, 0.4, 0.1, 0.8, 0.6, 0.9, 0.5]
+
+# Defining a function to predict the class of emotion
+def predict_class(image):
+    # Replace with your actual implementation
+    # ...
+
+    return predicted_class_label, logits
+
+# Get predicted class label and logits
+predicted_class_label, logits = predict_class(image)
+
+# Convert logits to percentage
+logits_percentage = [val * 100 for val in logits]
+
+# Set up the figure and axis
+fig, ax = plt.subplots(figsize=(8, 6))
+
+# Use the Plasma color map
+colors = plt.cm.plasma(np.linspace(0, 1, len(class_label)))
+
+# Plot the horizontal bar chart
+bar = ax.barh(class_label, logits_percentage, color=colors)
+
+# Add the login values as text annotations
+for rect in bar:
+    width = rect.get_width()
+    ax.annotate(f'{width:.1f}%', xy=(width, rect.get_y() + rect.get_height() / 2),
+                xytext=(3, 0),  # 3 points horizontal offset
+                textcoords="offset points",
+                ha='left', va='center')
+
+# Set x-axis label
+ax.set_xlabel('Login Value (%)')
+
+# Set title and remove spines
+ax.set_title('Emotion Login Values')
+ax.spines['right'].set_visible(False)
+ax.spines['top'].set_visible(False)
+ax.spines['left'].set_visible(False)
+
+# Show the plot
+plt.show()
