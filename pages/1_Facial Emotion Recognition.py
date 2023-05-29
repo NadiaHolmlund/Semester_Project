@@ -170,6 +170,9 @@ with tab2:
         if img_file_buffer is None:
             st.write('')
         if img_file_buffer is not None:
+            st.write('')
+            st.write('')
+            st.write('')
             col2.metric(label='', value=cam_classification, delta="Emotion", delta_color="off")
 
 
