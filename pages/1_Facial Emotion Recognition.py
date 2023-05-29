@@ -142,7 +142,7 @@ with tab1:
 
         col1, col2, col3 = st.columns(3)
         col1.write('')
-        col2.metric(label='', value=img_classification, delta="Class Predicted", delta_color="off")
+        col2.metric(label='', value=img_classification, delta="Emotion", delta_color="off")
         col3.write('')
 
 
