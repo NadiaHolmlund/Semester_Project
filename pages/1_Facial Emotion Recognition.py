@@ -99,22 +99,22 @@ with tab1:
     with col1:
         col1.image(img_1_rd)
 
-with tab2:
-    fig, ax = plt.subplots(figsize=(8, 6))
-    bars = ax.barh(emotion_label, logits_values, height=0.1)
+    with col2:
+        fig, ax = plt.subplots(figsize=(8, 6))
+        bars = ax.barh(emotion_label, logits_values, height=0.1)
 
-    ax.spines['right'].set_visible(False)
-    ax.spines['top'].set_visible(False)
-    ax.spines['left'].set_visible(False)
-    ax.spines['bottom'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        ax.spines['top'].set_visible(False)
+        ax.spines['left'].set_visible(False)
+        ax.spines['bottom'].set_visible(False)
 
-    text_position = max(logits_values) + 0.05  # Define the fixed position for the text
+        text_position = max(logits_values) + 0.05  # Define the fixed position for the text
 
-    for i, bar in enumerate(bars):
-        ax.text(text_position, bar.get_y() + bar.get_height() / 2,
-                f'{logits_values[i]*100:.2f}%', va='center', ha='right')
+        for i, bar in enumerate(bars):
+            ax.text(text_position, bar.get_y() + bar.get_height() / 2,
+                    f'{logits_values[i]*100:.2f}%', va='center', ha='right')
 
-    plt.xticks([])  # Hide the x-axis tick labels
+        plt.xticks([])  # Hide the x-axis tick labels
 
-    # Display the plot using st.pyplot()
-    st.pyplot(fig)
+        # Display the plot using st.pyplot()
+        st.pyplot(fig)
