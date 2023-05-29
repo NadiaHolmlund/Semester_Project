@@ -88,6 +88,8 @@ with tab1:
     option = st.selectbox('',('Select an image', 'Image 1', 'Image 2', 'Image 3'))
 
     # Connecting the selected image to the same image in square format
+    if option == 'Select an image':
+        st.image(img_1_sq)
     if option == 'Image 1':
         img_classification, logits_values = predict_class(img_1_sq)
     if option == 'Image 2':
