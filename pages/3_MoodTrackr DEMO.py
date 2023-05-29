@@ -39,11 +39,11 @@ with st.sidebar:
     
     #timeframe = st.slider('Select a Timeframe', value=((7, 30), (16, 30)))
 
-    start_date, end_date = st.date_input('start time  - end time :', [])
-    if start_date < end_date:
+    start_time, end_time = st.time_input('start time  - end time :', [])
+    if start_time < end_time:
         pass
     else:
-        st.error('Error: End date must fall after start date.')
+        st.error('Error: End time must fall after start time.')
 
 
 if avatar == 'Select':
