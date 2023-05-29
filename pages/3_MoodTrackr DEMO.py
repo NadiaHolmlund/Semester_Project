@@ -41,10 +41,11 @@ with st.sidebar:
 
     start_time = st.time_input('Select start time', datetime.time(7, 30))
     end_time = st.time_input('Select end time', datetime.time(16, 30))
-        if start_time < end_time:
-            pass
-        else:
-            st.error('Error: End time must fall after start time.')
+    
+    if start_time < end_time:
+        pass
+    else:
+        st.error('Error: End time must fall after start time.')
 
 
 
