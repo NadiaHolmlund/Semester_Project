@@ -194,7 +194,7 @@ with tab2:
 
         for i, bar in enumerate(bars):
             ax.text(text_position, bar.get_y() + bar.get_height() / 2,
-                    f'{logits_values[i]*100:.2f}%', va='center', ha='right')
+                    f'{logits_values[i]*100:.2f}%', va='center', ha='right', color='white')
 
         plt.xticks([])  # Hide the x-axis tick labels
 
