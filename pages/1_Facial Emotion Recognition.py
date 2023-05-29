@@ -183,14 +183,14 @@ with tab2:
         st.write('')
     if img_file_buffer is not None:
         fig, ax = plt.subplots(figsize=(8, 4))
-        bars = ax.barh(class_label, probs, height=0.5, color=plt.cm.plasma(probs))
+        bars = ax.barh(class_label, logits_values, height=0.8, color=plt.cm.plasma(logits_values))
 
         ax.spines['right'].set_visible(False)
         ax.spines['top'].set_visible(False)
         ax.spines['left'].set_visible(False)
         ax.spines['bottom'].set_visible(False)
 
-        text_position = max(probs) + 1  # Define the fixed position for the text
+        text_position = max(logits_values) + 0.05  # Define the fixed position for the text
 
         for i, bar in enumerate(bars):
             probability = f'{probs[i]*100:.2f}%'
@@ -200,13 +200,14 @@ with tab2:
         plt.xticks([])  # Hide the x-axis tick labels
 
         # Change background and text color
-        fig.set_facecolor('#0E1117')
-        ax.set_facecolor('#0E1117')
+        fig.set_facecolor('black')
+        ax.set_facecolor('black')
         ax.xaxis.label.set_color('white')
         ax.yaxis.label.set_color('white')
         ax.tick_params(axis='x', colors='white')
         ax.tick_params(axis='y', colors='white')
 
-        st.pyplot(fig)
+        plt.show()
+
 
 
