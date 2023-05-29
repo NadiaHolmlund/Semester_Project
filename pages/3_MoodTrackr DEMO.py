@@ -55,7 +55,7 @@ else:
         selected_df = nikolaj_df
 
     fig = px.sunburst(data_frame=selected_df,
-                path=['application_type', 'application', 'class_label'],
+                path=['user_name', 'application_type', 'application', 'class_label'],
                 values='application_duration_min',
                 color='class_label',
                 hover_data={'class_label':False})
