@@ -217,7 +217,7 @@ ax.spines['top'].set_visible(False)
 ax.spines['left'].set_visible(False)
 ax.spines['bottom'].set_visible(False)
 
-text_position = max(logits_values) + 0.5  # Define the fixed position for the text
+text_position = max(logits_values) + 1  # Define the fixed position for the text
 
 for i, bar in enumerate(bars):
     ax.text(text_position, bar.get_y() + bar.get_height() / 2,
