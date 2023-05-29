@@ -190,7 +190,7 @@ with tab2:
         ax.spines['left'].set_visible(False)
         ax.spines['bottom'].set_visible(False)
 
-        text_position = max(logits_values) + 0.05  # Define the fixed position for the text
+        text_position = max(logits_values) + 1  # Define the fixed position for the text
 
         for i, bar in enumerate(bars):
             ax.text(text_position, bar.get_y() + bar.get_height() / 2,
@@ -199,8 +199,8 @@ with tab2:
         plt.xticks([])  # Hide the x-axis tick labels
 
         # Change background and text color
-        fig.set_facecolor('black')
-        ax.set_facecolor('black')
+        fig.set_facecolor('#0E1117')
+        ax.set_facecolor('#0E1117')
         ax.xaxis.label.set_color('white')
         ax.yaxis.label.set_color('white')
         ax.tick_params(axis='x', colors='white')
