@@ -167,23 +167,25 @@ with tab2:
             cam_classification, logits_values = predict_class(img_camera)
 
     with col2:
-        st.write('')
-        st.write('')
-        fig, ax = plt.subplots(figsize=(8, 6))
-        bars = ax.barh(class_label, logits_values, height=0.1)
+        col2.metric(label='', value=cam_classification, delta="Emotion", delta_color="off")
 
-        ax.spines['right'].set_visible(False)
-        ax.spines['top'].set_visible(False)
-        ax.spines['left'].set_visible(False)
-        ax.spines['bottom'].set_visible(False)
 
-        text_position = max(logits_values) + 0.05  # Define the fixed position for the text
 
-        for i, bar in enumerate(bars):
-            ax.text(text_position, bar.get_y() + bar.get_height() / 2,
-                    f'{logits_values[i]*100:.2f}%', va='center', ha='right')
+fig, ax = plt.subplots(figsize=(8, 6))
+bars = ax.barh(class_label, logits_values, height=0.1)
 
-        plt.xticks([])  # Hide the x-axis tick labels
+ax.spines['right'].set_visible(False)
+ax.spines['top'].set_visible(False)
+ax.spines['left'].set_visible(False)
+ax.spines['bottom'].set_visible(False)
 
-        # Display the plot using st.pyplot()
-        st.pyplot(fig)
+text_position = max(logits_values) + 0.05  # Define the fixed position for the text
+
+for i, bar in enumerate(bars):
+    ax.text(text_position, bar.get_y() + bar.get_height() / 2,
+            f'{logits_values[i]*100:.2f}%', va='center', ha='right')
+
+plt.xticks([])  # Hide the x-axis tick labels
+
+# Display the plot using st.pyplot()
+st.pyplot(fig)
