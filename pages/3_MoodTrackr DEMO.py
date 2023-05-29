@@ -39,15 +39,13 @@ with st.sidebar:
     
     #timeframe = st.slider('Select a Timeframe', value=((7, 30), (16, 30)))
 
-    start_time = st.time_input('Select start time', time(7, 30))
-    end_time = st.time_input('Select end time', time(16, 30))
+    start_time = st.time_input('Select Start Time', time(7, 30))
+    end_time = st.time_input('Select End Time', time(16, 30))
 
     if start_time < end_time:
         pass
     else:
-        st.error('Error: End time must fall after start time.')
-
-
+        st.error('Error: End time must be later than start time.')
 
 if avatar == 'Select':
     st.header('Choose Your Avatar to interact with MoodTrackr DEMO')
@@ -63,13 +61,12 @@ else:
     if avatar == 'Nikolaj':
         avatar_df = nikolaj_df
     
-    #time_df = avatar_df[(avatar_df['time_of_day'] >= start_time) & (avatar_df['time_of_day'] <= end_time)]
-    time_df = (selected_df['CREATEDDATE'] > start_date) & (selected_df['CREATEDDATE'] <= end_date)
+    selected_df = (avatar_df['time_of_day'] >= start_time) & (avatar_df['time_of_day'] <= end_time)
 
     col1, col2 = st.columns(2)
 
     with col1:
-        fig = px.sunburst(data_frame=time_df,
+        fig = px.sunburst(data_frame=selected_df,
                     path=['application_type', 'application', 'class_label'],
                     values='application_duration_min',
                     color='class_label',
