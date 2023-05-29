@@ -68,4 +68,4 @@ def predict_class(image):
 
 # Setting up the tab for Images
 
-st.image(img_1, 'Image 1')
+st.image(img_1_sq, 'Image 1')
