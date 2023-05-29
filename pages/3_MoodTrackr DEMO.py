@@ -47,26 +47,5 @@ else:
     st.title("MoodTrackr")
     st.markdown('Hi ' + avatar +'! I\'m so glad to see you, let\'s have a look at how you\'re feeling today, shall we?')
 
-
-
-
-
-
-
-
-
-
-
-
-    data = dict(
-        character=['GitHub', 'Google Colab', 'ChatGPT', 'Google Colab', 'Stack Overflow', 'Facebook', 'TikTok'],
-        parent=['', 'AI Chatbot', 'Coding Notebook', 'Programming Q&A', 'Social Media', 'Social Media'],
-        value=[30, 45, 15, 15, 15, 90, 150])
-
-    fig_2 = px.sunburst(
-        data,
-        names='character',
-        parents='parent',
-        values='value',
-    )
-    st.plotly_chart(fig_2)
+    fig = px.sunburst(data_frame=nadia_df, path=['application_type', 'application', 'application_duration_min'])
+    st.plotly_chart(fig)
