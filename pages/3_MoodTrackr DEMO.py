@@ -62,13 +62,13 @@ else:
         avatar_df = nikolaj_df
 
 
-    selected_df = (avatar_df['time_of_day'] >= start_time) & (avatar_df['time_of_day'] <= end_time)
+    #selected_df = (avatar_df['time_of_day'] >= start_time) & (avatar_df['time_of_day'] <= end_time)
 
 
     col1, col2 = st.columns(2)
 
     with col1:
-        fig = px.sunburst(data_frame=selected_df,
+        fig = px.sunburst(data_frame=avatar_df,
                     path=['application_type', 'application', 'class_label'],
                     values='application_duration_min',
                     color='class_label',
