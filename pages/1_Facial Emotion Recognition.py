@@ -210,14 +210,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 fig, ax = plt.subplots(figsize=(8, 4))
-bars = ax.barh(class_label, logits_values, height=0.8, color=plt.cm.plasma(logits_values))
+bars = ax.barh(class_label, logits_values, height=0.5, color=plt.cm.plasma(logits_values))
 
 ax.spines['right'].set_visible(False)
 ax.spines['top'].set_visible(False)
 ax.spines['left'].set_visible(False)
 ax.spines['bottom'].set_visible(False)
 
-text_position = max(logits_values) + 0.05  # Define the fixed position for the text
+text_position = max(logits_values) + 0.5  # Define the fixed position for the text
 
 for i, bar in enumerate(bars):
     ax.text(text_position, bar.get_y() + bar.get_height() / 2,
