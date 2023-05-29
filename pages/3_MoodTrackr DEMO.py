@@ -37,7 +37,13 @@ with st.sidebar:
         "Choose Your Avatar",
         ('Select', 'Nadia', 'Nicklas', 'Nikolaj'))
     
-    timeframe = st.slider('Select a Timeframe', value=(start_time(7, 30), end_time(16, 30)))
+    #timeframe = st.slider('Select a Timeframe', value=((7, 30), (16, 30)))
+
+    start_date, end_date = st.date_input('start date  - end date :', [])
+        if start_date < end_date:
+            pass
+        else:
+            st.error('Error: End date must fall after start date.')
 
 
 if avatar == 'Select':
@@ -54,7 +60,8 @@ else:
     if avatar == 'Nikolaj':
         avatar_df = nikolaj_df
     
-    time_df = avatar_df[(avatar_df['time_of_day'] >= start_time) & (avatar_df['time_of_day'] <= end_time)]
+    #time_df = avatar_df[(avatar_df['time_of_day'] >= start_time) & (avatar_df['time_of_day'] <= end_time)]
+    time_df = (selected_df['CREATEDDATE'] > start_date) & (selected_df['CREATEDDATE'] <= end_date)
 
     col1, col2 = st.columns(2)
 
