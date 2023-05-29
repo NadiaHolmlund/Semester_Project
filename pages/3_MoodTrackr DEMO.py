@@ -39,7 +39,7 @@ with st.sidebar:
     
     #timeframe = st.slider('Select a Timeframe', value=((7, 30), (16, 30)))
 
-    start_date, end_date = st.date_input('start date  - end date :', [])
+    start_date, end_date = st.date_input('start time  - end time :', [])
     if start_date < end_date:
         pass
     else:
