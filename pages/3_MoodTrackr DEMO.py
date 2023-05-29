@@ -76,5 +76,5 @@ else:
         st.plotly_chart(fig)
 
     with col2:
-        st.write('')
+        st.write('hello')
         #st.metric(label="Application", value=selected_df[], delta="1.2 °F")
