@@ -141,7 +141,7 @@ with tab2:
             cam_classification, logits_values = predict_class(img_camera)
 
     with col2:
-        fig, ax = plt.subplots(figsize=(8, 8))
+        fig, ax = plt.subplots(figsize=(8, 6))
         bars = ax.barh(class_label, logits_values, height=0.1)
 
         ax.spines['right'].set_visible(False)
