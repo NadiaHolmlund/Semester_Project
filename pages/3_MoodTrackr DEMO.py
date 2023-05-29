@@ -4,6 +4,7 @@ from PIL import Image
 import requests
 from datetime import time
 import plotly.graph_objects as go
+import pandas as pd
 
 # Setting up page configurations
 st.set_page_config(
@@ -18,6 +19,8 @@ def read_objects():
     img_nadia = Image.open(requests.get('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/rounded_images/img_1.png', stream=True).raw)
     img_nicklas = Image.open(requests.get('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/rounded_images/img_2.png', stream=True).raw)
     img_nikolaj = Image.open(requests.get('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/rounded_images/img_3.png', stream=True).raw)
+
+    nadia_df = pd.read_csv('https://raw.githubusercontent.com/NadiaHolmlund/Semester_Project/main/Streamlit_content/avatars/nadia_df.csv')
 
     return img_nadia, img_nicklas, img_nikolaj
 
