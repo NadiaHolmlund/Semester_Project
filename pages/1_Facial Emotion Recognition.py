@@ -59,13 +59,13 @@ def predict_class(image):
     outputs = model(**inputs)
     logits = outputs.logits
     # Apply softmax to convert logits to probabilities
-    probability = F.softmax(logits, dim=1)
+    probs = F.softmax(logits, dim=1)
 
     # Model predicts one of the 7 classes of emotion
     predicted_class_id = logits.argmax(-1).item()
     predicted_class_label = id2label[predicted_class_id]
 
-    return predicted_class_label, probability
+    return predicted_class_label, probs
 
 
 # Setting up the page
