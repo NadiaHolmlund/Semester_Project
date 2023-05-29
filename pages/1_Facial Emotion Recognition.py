@@ -131,7 +131,7 @@ with tab2:
     col1, col2 = st.columns(2)
 
     with col1:
-        img_file_buffer = st.camera_input("Take a picture")
+        img_file_buffer = st.camera_input("")
 
         if img_file_buffer is not None:
             # Read image file buffer as a PIL Image:
@@ -141,6 +141,7 @@ with tab2:
             cam_classification, logits_values = predict_class(img_camera)
 
     with col2:
+        st.write('')
         fig, ax = plt.subplots(figsize=(8, 6))
         bars = ax.barh(class_label, logits_values, height=0.1)
 
