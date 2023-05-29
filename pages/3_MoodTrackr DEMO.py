@@ -22,9 +22,9 @@ def read_objects():
 
     nadia_df = pd.read_csv('https://raw.githubusercontent.com/NadiaHolmlund/Semester_Project/main/Streamlit_content/avatars/nadia_df.csv')
 
-    return img_nadia, img_nicklas, img_nikolaj
+    return img_nadia, img_nicklas, img_nikolaj, nadia_df
 
-img_nadia, img_nicklas, img_nikolaj = read_objects()
+img_nadia, img_nicklas, img_nikolaj, nadia_df = read_objects()
 
 
 with st.sidebar:
