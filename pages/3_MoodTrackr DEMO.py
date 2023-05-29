@@ -47,7 +47,14 @@ else:
     st.title("MoodTrackr")
     st.markdown('Hi ' + avatar +'! I\'m so glad to see you, let\'s have a look at how you\'re feeling today, shall we?')
 
-    fig = px.sunburst(data_frame=nadia_df,
+    if avatar == 'Nadia':
+        selected_df = nadia_df
+    if avatar == 'Nicklas':
+        selected_df = nicklas_df
+    if avatar == 'Nikolaj':
+        selected_df = nikolaj_df
+
+    fig = px.sunburst(data_frame=selected_df,
                 path=['application_type', 'application', 'class_label'],
                 values='application_duration_min',
                 color='class_label',
