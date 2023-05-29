@@ -50,7 +50,7 @@ else:
     fig =go.Figure(go.Sunburst(
     labels=["Eve", "Cain", "Seth", "Enos", "Noam", "Abel", "Awan", "Enoch", "Azura"],
     parents=["", "Eve", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve" ],
-    values=nadia_df[application_duration_min],
+    values=nadia_df['application_duration_min'],
     ))
     fig.update_layout(margin = dict(t=0, l=0, r=0, b=0))
 
