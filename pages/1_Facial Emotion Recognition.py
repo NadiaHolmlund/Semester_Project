@@ -70,6 +70,7 @@ tab1, tab2 = st.tabs(['Images', 'Camera'])
 # Setting up the tab for Images
 with tab1:
 
+    # Displaying the images
     col1, col2, col3, col4, col5, col6, col7, col8, col9 = st.columns(9)
     
     col1.image(img_1_rd, 'Image 1')
@@ -82,7 +83,15 @@ with tab1:
     col8.image(img_8_rd, 'Image 8')
     col9.image(img_9_rd, 'Image 9')
 
+    # Inserting a selectbox to select an image for classification
     option = st.selectbox('',('Select an image', 'Image 1', 'Image 2', 'Image 3'))
+    st.write('')
+
+    # Connecting the selected image to one in square format
+    if option == 'Image 1':
+        img_classification, logits_values = predict_class(img_1_sq)
+        if option == 'Image 2':
+        img_classification, logits_values = predict_class(img_2_sq)
 
     col1, col2 = st.columns(2)
 
