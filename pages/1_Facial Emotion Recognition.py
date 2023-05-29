@@ -133,22 +133,12 @@ with tab1:
         text_position = max(logits_values) + 0.05
 
         for i, bar in enumerate(bars):
-            ax.text(text_position, bar.get_y() + bar.get_height() / 2, f'{logits_values[i]*100:.2f}%', va='center', ha='right')
+            ax.text(text_position, bar.get_y() + bar.get_height() / 2,
+                    f'{logits_values[i]*100:.2f}%', va='center', ha='right')
 
         plt.xticks([])
 
-        # Change background color
-        #fig.patch.set_facecolor('#262730')
-
-        # Change text color
-        plt.rcParams['text.color'] = '#FAFAFA'
-
-        # Change bar color
-        for bar in bars:
-            bar.set_color('#FAFAFA')
-
-        plt.show()
-
+        st.pyplot(fig)
 
 
 
