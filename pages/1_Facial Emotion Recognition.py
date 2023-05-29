@@ -86,8 +86,6 @@ with tab1:
 
     # Inserting a selectbox to select an image for classification
     option = st.selectbox('',('Select an image', 'Image 1', 'Image 2', 'Image 3'))
-    st.write('')
-    st.write('')
 
     # Connecting the selected image to the same image in square format
     if option == 'Image 1':
