@@ -100,7 +100,7 @@ with tab1:
         col1.image(img_1_rd)
 
     with col2:
-        fig, ax = plt.subplots(figsize=(16, 6))
+        fig, ax = plt.subplots(figsize=(8, 10))
         bars = ax.barh(class_label, logits_values, height=0.1)
 
         ax.spines['right'].set_visible(False)
