@@ -138,7 +138,7 @@ with tab1:
         plt.xticks([])
 
         # Change background color
-        fig.patch.set_facecolor('#262730')
+        #fig.patch.set_facecolor('#262730')
 
         # Change text color
         plt.rcParams['text.color'] = '#FAFAFA'
