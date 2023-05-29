@@ -185,7 +185,7 @@ with tab2:
     if img_file_buffer is None:
         st.write('')
     if img_file_buffer is not None:
-        fig, ax = plt.subplots(figsize=(8, 6))
+        fig, ax = plt.subplots(figsize=(8, 4))
         bars = ax.barh(class_label, probabilities, height=0.8, color=plt.cm.plasma(probabilities))
 
         ax.spines['right'].set_visible(False)
@@ -193,7 +193,7 @@ with tab2:
         ax.spines['left'].set_visible(False)
         ax.spines['bottom'].set_visible(False)
 
-        text_position = max(probabilities) + 0.08
+        text_position = max(probabilities) + 0.2
 
         for i, bar in enumerate(bars):
             ax.text(text_position, bar.get_y() + bar.get_height() / 2,
