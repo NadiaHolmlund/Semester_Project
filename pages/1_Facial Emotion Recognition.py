@@ -81,3 +81,10 @@ with tab1:
     col7.image(img_7_rd, 'Image 7')
     col8.image(img_8_rd, 'Image 8')
     col9.image(img_9_rd, 'Image 9')
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        option = st.selectbox('',('Select an image', 'Image 1', 'Image 2', 'Image 3'))
+        col1.image(option)
+
