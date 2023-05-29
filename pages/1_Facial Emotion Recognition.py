@@ -193,7 +193,7 @@ with tab2:
         ax.spines['left'].set_visible(False)
         ax.spines['bottom'].set_visible(False)
 
-        text_position = max(probabilities) + 0.05
+        text_position = max(probabilities) + 0.5
 
         for i, bar in enumerate(bars):
             ax.text(text_position, bar.get_y() + bar.get_height() / 2,
