@@ -5,6 +5,7 @@ from PIL import Image
 import requests
 import torch
 import matplotlib.pyplot as plt
+import torch.nn.functional as F
 
 # Setting up page configurations
 st.set_page_config(
@@ -57,12 +58,14 @@ def predict_class(image):
     inputs = processor(images=image, return_tensors="pt")
     outputs = model(**inputs)
     logits = outputs.logits
+    # Apply softmax to convert logits to probabilities
+    probability = F.softmax(logits, dim=1)
 
     # Model predicts one of the 7 classes of emotion
     predicted_class_id = logits.argmax(-1).item()
     predicted_class_label = id2label[predicted_class_id]
 
-    return predicted_class_label, logits.tolist()[0]
+    return predicted_class_label, probability
 
 
 # Setting up the page
@@ -196,8 +199,9 @@ if img_file_buffer is not None:
     text_position = max(logits_values) + 1  # Define the fixed position for the text
 
     for i, bar in enumerate(bars):
+        probability = f'{probs[i]*100:.2f}%'
         ax.text(text_position, bar.get_y() + bar.get_height() / 2,
-                f'{logits_values[i]*100:.2f}%', va='center', ha='right')
+                probability, va='center', ha='right')
 
     plt.xticks([])  # Hide the x-axis tick labels
 
