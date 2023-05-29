@@ -1,6 +1,6 @@
 # Imports
 import streamlit as st
-from transformers import DeiTImageProcessor, DeiTModel
+from transformers import DeiTImageProcessor, DeiTForImageClassification
 from PIL import Image
 import requests
 import torch
