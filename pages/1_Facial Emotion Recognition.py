@@ -64,8 +64,10 @@ def predict_class(image):
 
 
 # Setting up the page
-#tab1, tab2 = st.tabs(['Images', 'Camera'])
+tab1, tab2 = st.tabs(['Images', 'Camera'])
 
 # Setting up the tab for Images
+with tab1:
 
-st.image(img_1_sq, 'Image 1')
+    col1, col2, col3, col4, col5, col6, col7, col8, col9 = st.columns(9)
+        col1.image(img_1_sq, 'Image 1')
