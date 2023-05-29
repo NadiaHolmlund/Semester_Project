@@ -186,7 +186,7 @@ if img_file_buffer is None:
     st.write('')
 if img_file_buffer is not None:
     fig, ax = plt.subplots(figsize=(8, 4))
-    bars = ax.barh(class_label, logits_values, height=0.1)
+    bars = ax.barh(class_label, logits_values, height=0.5)
 
     ax.spines['right'].set_visible(False)
     ax.spines['top'].set_visible(False)
@@ -206,40 +206,3 @@ if img_file_buffer is not None:
 
 
 
-
-import matplotlib.pyplot as plt
-import numpy as np
-
-class_label = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
-
-# Convert logits to percentage
-logits_percentage = [val * 100 for val in logits_values]
-
-# Set up the figure and axis
-fig, ax = plt.subplots(figsize=(8, 6))
-
-# Use the Plasma color map
-colors = plt.cm.plasma(np.linspace(0, 1, len(class_label)))
-
-# Plot the horizontal bar chart
-bar = ax.barh(class_label, logits_percentage, color=colors)
-
-# Add the login values as text annotations
-for rect in bar:
-    width = rect.get_width()
-    ax.annotate(f'{width:.1f}%', xy=(width, rect.get_y() + rect.get_height() / 2),
-                xytext=(3, 0),  # 3 points horizontal offset
-                textcoords="offset points",
-                ha='left', va='center')
-
-# Set x-axis label
-ax.set_xlabel('Login Value (%)')
-
-# Set title and remove spines
-ax.set_title('Emotion Login Values')
-ax.spines['right'].set_visible(False)
-ax.spines['top'].set_visible(False)
-ax.spines['left'].set_visible(False)
-
-# Show the plot
-plt.show()
