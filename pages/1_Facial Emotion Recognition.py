@@ -126,23 +126,32 @@ with tab1:
     # Plotting the probability of each class
     with col2:
         fig, ax = plt.subplots(figsize=(8, 10))
-        bars = ax.barh(class_label, probabilities, height=0.1)
+        bars = ax.barh(class_label, probabilities, height=0.8, color=plt.cm.plasma(probabilities))
 
         ax.spines['right'].set_visible(False)
         ax.spines['top'].set_visible(False)
         ax.spines['left'].set_visible(False)
         ax.spines['bottom'].set_visible(False)
 
-        text_position = max(probabilities) + 0.05
+        text_position = max(probabilities) + 0.1
 
         for i, bar in enumerate(bars):
             ax.text(text_position, bar.get_y() + bar.get_height() / 2,
-                    f'{probabilities[i]*100:.2f}%', va='center', ha='right')
+                    f'{probabilities[i]*100:.2f}%', va='center', ha='right', color='#FAFAFA')
 
         plt.xticks([])
 
+        # Change background and text color
+        fig.set_facecolor('#0E1117')
+        ax.set_facecolor('#0E1117')
+        ax.xaxis.label.set_color('#FAFAFA')
+        ax.yaxis.label.set_color('#FAFAFA')
+        ax.tick_params(axis='x', colors='#FAFAFA')
+        ax.tick_params(axis='y', colors='#FAFAFA')
+
         st.pyplot(fig)
 
+        # Displaying the class of the selected image
         col1, col2, col3 = st.columns([1, 1.5, 0.5])
         col1.write('')
         col2.metric(label='', value=img_classification, delta="Emotion", delta_color="off")
@@ -165,7 +174,7 @@ with tab2:
         if img_file_buffer is not None:
             cam_classification, probabilities = predict_class(img_camera)
 
-    # Predicting the class of the camera image
+    # Predicting and displaying the class of the camera image
     with col2:
         if img_file_buffer is None:
             st.write('')
