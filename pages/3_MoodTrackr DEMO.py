@@ -48,8 +48,8 @@ else:
     st.markdown('Hi ' + avatar +'! I\'m so glad to see you, let\'s have a look at how you\'re feeling today, shall we?')
 
     fig =go.Figure(go.Sunburst(
-    labels=["Eve", "Cain", "Seth", "Enos", "Noam", "Abel", "Awan", "Enoch", "Azura"],
-    parents=["", "Eve", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve" ],
+    labels=nadia_df['application'],
+    parents=nadia_df['application_type'],
     values=nadia_df['application_duration_min'],
     ))
     fig.update_layout(margin = dict(t=0, l=0, r=0, b=0))
