@@ -99,7 +99,7 @@ with tab1:
 
     # Displaying the selected image in a larger format
     with col1:
-        col1.image(img_1_rd)
+        col1.image(img_1_sq)
 
     # Displaying the logits_values of the different classes
     with col2:
