@@ -194,7 +194,7 @@ with tab2:
     if img_file_buffer is None:
         st.write('')
     if img_file_buffer is not None:
-        fig, ax = plt.subplots(figsize=(8, 5))
+        fig, ax = plt.subplots(figsize=(8, 4))
         bars = ax.barh(class_label, probabilities, height=0.8, color=plt.cm.plasma(probabilities))
 
         ax.spines['right'].set_visible(False)
