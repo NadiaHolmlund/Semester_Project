@@ -72,7 +72,6 @@ else:
                     path=['application_type', 'application', 'class_label'],
                     values='application_duration_min',
                     color='class_label',
-                    width=5,
                     hover_data={'class_label':False},)
         st.plotly_chart(fig)
 
@@ -81,6 +80,5 @@ else:
                     path=['application_type', 'application', 'class_label'],
                     values='application_duration_min',
                     color='class_label',
-                    width=5,
                     hover_data={'class_label':False},)
         st.plotly_chart(fig)
