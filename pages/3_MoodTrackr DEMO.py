@@ -62,9 +62,9 @@ else:
     # Assuming you have the 'nadia_df' DataFrame with columns: 'application', 'application_type', 'application_duration_min'
 
     fig = go.Figure(go.Sunburst(
-        labels=nadia_df['application'],
-        parents=nadia_df['application_type'],
-        values=nadia_df['application_duration_min'],
+        labels=['GitHub', 'Google Colab', 'ChatGPT', 'Google Colab', 'Stack Overflow', 'Facebook', 'TikTok'],
+        parents=['Code Collaboration', 'Coding Notebook', 'AI Chatbot', 'Coding Notebook', 'Programming Q&A', 'Social Media', 'Social Media'],
+        values=[30, 45, 15, 15, 15, 90, 150],
     ))
     fig.update_layout(margin=dict(t=0, l=0, r=0, b=0))
 
