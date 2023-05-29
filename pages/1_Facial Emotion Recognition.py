@@ -212,21 +212,8 @@ import numpy as np
 
 class_label = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
 
-# Dummy login values for demonstration
-logits = [0.2, 0.4, 0.1, 0.8, 0.6, 0.9, 0.5]
-
-# Defining a function to predict the class of emotion
-def predict_class(image):
-    # Replace with your actual implementation
-    # ...
-
-    return predicted_class_label, logits
-
-# Get predicted class label and logits
-predicted_class_label, logits = predict_class(image)
-
 # Convert logits to percentage
-logits_percentage = [val * 100 for val in logits]
+logits_percentage = [val * 100 for val in logits_values]
 
 # Set up the figure and axis
 fig, ax = plt.subplots(figsize=(8, 6))
