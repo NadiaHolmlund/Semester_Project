@@ -16,7 +16,7 @@ st.set_page_config(
 
 
 # Loading the processor, model and images
-@st.experimental_singleton
+@st.cache_resource
 def read_objects():
     # Loading the processor and model
     processor = DeiTImageProcessor.from_pretrained('facebook/deit-base-distilled-patch16-224')

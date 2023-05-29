@@ -13,7 +13,7 @@ st.set_page_config(
     layout="wide")
 
 # Loading the datasets and images only once
-@st.experimental_singleton
+@st.cache_resource
 def read_objects():
     # Importing images
     img_nadia = Image.open(requests.get('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/rounded_images/img_1.png', stream=True).raw)
