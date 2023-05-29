@@ -68,10 +68,4 @@ def predict_class(image):
 
 # Setting up the tab for Images
 
-#with tab1:
-col1, col2, col3 = st.columns(3)
-
-    # Visualzing the images on the page
-with col2:
-    col1, col2, col3 = st.columns(3)
-    col1.image(img_1, 'Image 1')
+image(img_1, 'Image 1')
