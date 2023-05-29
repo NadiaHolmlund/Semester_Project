@@ -87,8 +87,9 @@ with tab1:
     # Inserting a selectbox to select an image for classification
     option = st.selectbox('',('Select an image', 'Image 1', 'Image 2', 'Image 3'))
     st.write('')
+    st.write('')
 
-    # Connecting the selected image to one in square format
+    # Connecting the selected image to the same image in square format
     if option == 'Image 1':
         img_classification, logits_values = predict_class(img_1_sq)
     if option == 'Image 2':
@@ -96,9 +97,11 @@ with tab1:
 
     col1, col2 = st.columns(2)
 
+    # Displaying the selected image in a larger format
     with col1:
         col1.image(img_1_rd)
 
+    # Displaying the logits_values of the different classes
     with col2:
         fig, ax = plt.subplots(figsize=(8, 10))
         bars = ax.barh(class_label, logits_values, height=0.1)
@@ -114,9 +117,8 @@ with tab1:
             ax.text(text_position, bar.get_y() + bar.get_height() / 2,
                     f'{logits_values[i]*100:.2f}%', va='center', ha='right')
 
-        plt.xticks([])  # Hide the x-axis tick labels
+        plt.xticks([])
 
-        # Display the plot using st.pyplot()
         st.pyplot(fig)
 
 
