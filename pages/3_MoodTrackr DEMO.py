@@ -76,5 +76,9 @@ else:
         st.plotly_chart(fig)
 
     with col2:
-        st.write('hello')
-        #st.metric(label="Application", value=selected_df[], delta="1.2 °F")
+        fig = px.sunburst(data_frame=avatar_df,
+                    path=['application_type', 'application', 'class_label'],
+                    values='application_duration_min',
+                    color='class_label',
+                    hover_data={'class_label':False})
+        st.plotly_chart(fig)
