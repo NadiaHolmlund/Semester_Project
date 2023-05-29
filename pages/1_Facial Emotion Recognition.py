@@ -26,7 +26,7 @@ def read_objects():
     id2label = {id: label for id, label in zip(class_id, class_label)}
 
     # Loading images with rounded edges
-    img_1_rd = Image.open(requests.get('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/rounded_images/test.jpg', stream=True).raw)
+    img_1_rd = Image.open(requests.get('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/rounded_images/test.png', stream=True).raw)
     img_2_rd = Image.open(requests.get('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/rounded_images/img_2.jpg', stream=True).raw)
     img_3_rd = Image.open(requests.get('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/rounded_images/img_3.jpg', stream=True).raw)
     img_4_rd = Image.open(requests.get('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/rounded_images/img_4.jpg', stream=True).raw)
