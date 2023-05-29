@@ -14,13 +14,6 @@ st.set_page_config(
     page_icon="😐",
     layout="wide")
 
-st.markdown(f'''
-    <style>
-        section[data-testid="stSidebar"] .css-ng1t4o {{width: 5rem;}}
-        section[data-testid="stSidebar"] .css-1d391kg {{width: 5rem;}}
-    </style>
-''',unsafe_allow_html=True)
-
 
 # Loading the processor, model and images
 @st.experimental_singleton
