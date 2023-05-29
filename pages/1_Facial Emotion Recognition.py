@@ -45,7 +45,7 @@ def read_objects():
 #    img_8_sqr = Image.open(requests.get(img_8, stream=True).raw)
 #    img_9_sqr = Image.open(requests.get(img_9, stream=True).raw)
 
-    return processor, model, class_id, class_label, id2label, img_1_sq #, img_2, img_3, img_4, img_5, img_6, img_7, img_8, img_9
+    return processor, model, class_id, class_label, id2label, img_1_sq
 
 processor, model, class_id, class_label, id2label, img_1_sq = read_objects()
 
