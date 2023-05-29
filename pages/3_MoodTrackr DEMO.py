@@ -48,8 +48,8 @@ else:
     st.markdown('Hi ' + avatar +'! I\'m so glad to see you, let\'s have a look at how you\'re feeling today, shall we?')
 
     data = dict(
-        character=["GitHub", "Cain", "Seth", "Enos", "Noam", "Abel", "Awan", "Enoch", "Azura"],
-        parent=["", "GitHub", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve" ],
+        character=["Eve", "Cain", "Seth", "Enos", "Noam", "Abel", "Awan", "Enoch", "Azura"],
+        parent=["", "Eve", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve" ],
         value=[10, 14, 12, 10, 2, 6, 6, 4, 4])
 
     fig = px.sunburst(
@@ -63,11 +63,26 @@ else:
 
     # Assuming you have the 'nadia_df' DataFrame with columns: 'application', 'application_type', 'application_duration_min'
 
-    fig = go.Figure(go.Sunburst(
+    fig_2 = go.Figure(go.Sunburst(
         labels=['GitHub', 'Google Colab', 'ChatGPT', 'Google Colab', 'Stack Overflow', 'Facebook', 'TikTok'],
         parents=['', 'Coding Notebook', 'AI Chatbot', 'Coding Notebook', 'Programming Q&A', 'Social Media', 'Social Media'],
         values=[30, 45, 15, 15, 15, 90, 150],
     ))
     fig.update_layout(margin=dict(t=0, l=0, r=0, b=0))
 
+    st.plotly_chart(fig)
 
+
+
+    data = dict(
+        character=['GitHub', 'Google Colab', 'ChatGPT', 'Google Colab', 'Stack Overflow', 'Facebook', 'TikTok'],
+        parent=['Coding Notebook', 'AI Chatbot', 'Coding Notebook', 'Programming Q&A', 'Social Media', 'Social Media'],
+        value=[30, 45, 15, 15, 15, 90, 150])
+
+    fig_2 = px.sunburst(
+        data,
+        names='character',
+        parents='parent',
+        values='value',
+    )
+    st.plotly_chart(fig_2)
