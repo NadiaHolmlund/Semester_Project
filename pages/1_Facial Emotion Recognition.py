@@ -167,7 +167,10 @@ with tab2:
             cam_classification, logits_values = predict_class(img_camera)
 
     with col2:
-        col2.metric(label='', value=cam_classification, delta="Emotion", delta_color="off")
+        if img_file_buffer is None:
+            st.write('')
+        if img_file_buffer is not None:
+            col2.metric(label='', value=cam_classification, delta="Emotion", delta_color="off")
 
 
 
