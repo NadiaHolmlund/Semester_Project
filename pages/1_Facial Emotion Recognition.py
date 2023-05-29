@@ -87,6 +87,5 @@ with tab1:
     col1, col2 = st.columns(2)
 
     with col1:
-        option = st.selectbox('',('Select an image', 'Image 1', 'Image 2', 'Image 3'))
-        col1.image(option)
+        col1.image(img_1_rd)
 
