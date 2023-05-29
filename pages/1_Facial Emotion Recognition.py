@@ -175,7 +175,12 @@ with tab2:
             st.write('')
             st.write('')
             st.write('')
+            st.write('')
+            col1, col2, col3 = st.columns([1, 1.5, 0.5])
+            col1.write('')
             col2.metric(label='', value=cam_classification, delta="Emotion", delta_color="off")
+            col3.write('')
+            
 
 if img_file_buffer is None:
     st.write('')
