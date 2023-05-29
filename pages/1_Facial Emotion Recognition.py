@@ -101,23 +101,27 @@ with tab1:
 
     # Displaying the logits_values of the different classes
     with col2:
-        fig, ax = plt.subplots(figsize=(8, 10))
-        bars = ax.barh(class_label, logits_values, height=0.1)
+        if option == 'Select an image':
+            st.write('')
 
-        ax.spines['right'].set_visible(False)
-        ax.spines['top'].set_visible(False)
-        ax.spines['left'].set_visible(False)
-        ax.spines['bottom'].set_visible(False)
+        else:
+            fig, ax = plt.subplots(figsize=(8, 10))
+            bars = ax.barh(class_label, logits_values, height=0.1)
 
-        text_position = max(logits_values) + 0.05
+            ax.spines['right'].set_visible(False)
+            ax.spines['top'].set_visible(False)
+            ax.spines['left'].set_visible(False)
+            ax.spines['bottom'].set_visible(False)
 
-        for i, bar in enumerate(bars):
-            ax.text(text_position, bar.get_y() + bar.get_height() / 2,
-                    f'{logits_values[i]*100:.2f}%', va='center', ha='right')
+            text_position = max(logits_values) + 0.05
 
-        plt.xticks([])
+            for i, bar in enumerate(bars):
+                ax.text(text_position, bar.get_y() + bar.get_height() / 2,
+                        f'{logits_values[i]*100:.2f}%', va='center', ha='right')
 
-        st.pyplot(fig)
+            plt.xticks([])
+
+            st.pyplot(fig)
 
 
 
