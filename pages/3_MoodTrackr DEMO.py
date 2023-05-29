@@ -48,7 +48,7 @@ else:
     st.markdown('Hi ' + avatar +'! I\'m so glad to see you, let\'s have a look at how you\'re feeling today, shall we?')
 
     fig =go.Figure(go.Sunburst(
-    labels=nadia_df['application'],
+    labels=["Mood", "Cain", "Seth", "Enos", "Noam", "Abel", "Awan", "Enoch", "Azura"],
     parents=["", "Eve", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve" ],
     values=nadia_df['application_duration_min'],
     ))
