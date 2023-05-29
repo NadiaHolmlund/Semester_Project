@@ -143,7 +143,7 @@ with tab2:
     with col2:
         st.write('')
         st.write('')
-        fig, ax = plt.subplots(figsize=(8, 5.5))
+        fig, ax = plt.subplots(figsize=(8, 6))
         bars = ax.barh(class_label, logits_values, height=0.1)
 
         ax.spines['right'].set_visible(False)
