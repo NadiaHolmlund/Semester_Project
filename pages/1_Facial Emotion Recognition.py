@@ -186,14 +186,14 @@ if img_file_buffer is None:
     st.write('')
 if img_file_buffer is not None:
     fig, ax = plt.subplots(figsize=(8, 4))
-    bars = ax.barh(class_label, logits_values, height=0.8, color=plt.cm.plasma(logits_values))
+    bars = ax.barh(class_label, logits_values, height=0.5, color=plt.cm.plasma(logits_values))
 
     ax.spines['right'].set_visible(False)
     ax.spines['top'].set_visible(False)
     ax.spines['left'].set_visible(False)
     ax.spines['bottom'].set_visible(False)
 
-    text_position = max(logits_values) + 0.05  # Define the fixed position for the text
+    text_position = max(logits_values) + 1  # Define the fixed position for the text
 
     for i, bar in enumerate(bars):
         ax.text(text_position, bar.get_y() + bar.get_height() / 2,
@@ -201,38 +201,14 @@ if img_file_buffer is not None:
 
     plt.xticks([])  # Hide the x-axis tick labels
 
-    # Display the plot using st.pyplot()
+    # Change background and text color
+    fig.set_facecolor('#0E1117')
+    ax.set_facecolor('#0E1117')
+    ax.xaxis.label.set_color('white')
+    ax.yaxis.label.set_color('white')
+    ax.tick_params(axis='x', colors='white')
+    ax.tick_params(axis='y', colors='white')
+
     st.pyplot(fig)
-
-
-
-import matplotlib.pyplot as plt
-import numpy as np
-
-fig, ax = plt.subplots(figsize=(8, 4))
-bars = ax.barh(class_label, logits_values, height=0.5, color=plt.cm.plasma(logits_values))
-
-ax.spines['right'].set_visible(False)
-ax.spines['top'].set_visible(False)
-ax.spines['left'].set_visible(False)
-ax.spines['bottom'].set_visible(False)
-
-text_position = max(logits_values) + 1  # Define the fixed position for the text
-
-for i, bar in enumerate(bars):
-    ax.text(text_position, bar.get_y() + bar.get_height() / 2,
-            f'{logits_values[i]*100:.2f}%', va='center', ha='right')
-
-plt.xticks([])  # Hide the x-axis tick labels
-
-# Change background and text color
-fig.set_facecolor('#0E1117')
-ax.set_facecolor('#0E1117')
-ax.xaxis.label.set_color('white')
-ax.yaxis.label.set_color('white')
-ax.tick_params(axis='x', colors='white')
-ax.tick_params(axis='y', colors='white')
-
-st.pyplot(fig)
 
 
