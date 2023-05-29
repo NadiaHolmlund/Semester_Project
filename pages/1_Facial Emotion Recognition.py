@@ -206,3 +206,33 @@ if img_file_buffer is not None:
 
 
 
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig, ax = plt.subplots(figsize=(8, 4))
+bars = ax.barh(class_label, logits_values, height=0.8, color=plt.cm.plasma(logits_values))
+
+ax.spines['right'].set_visible(False)
+ax.spines['top'].set_visible(False)
+ax.spines['left'].set_visible(False)
+ax.spines['bottom'].set_visible(False)
+
+text_position = max(logits_values) + 0.05  # Define the fixed position for the text
+
+for i, bar in enumerate(bars):
+    ax.text(text_position, bar.get_y() + bar.get_height() / 2,
+            f'{logits_values[i]*100:.2f}%', va='center', ha='right')
+
+plt.xticks([])  # Hide the x-axis tick labels
+
+# Change background and text color
+fig.set_facecolor('black')
+ax.set_facecolor('black')
+ax.xaxis.label.set_color('white')
+ax.yaxis.label.set_color('white')
+ax.tick_params(axis='x', colors='white')
+ax.tick_params(axis='y', colors='white')
+
+plt.show()
+
+
