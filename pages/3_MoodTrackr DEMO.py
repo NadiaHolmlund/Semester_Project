@@ -52,3 +52,4 @@ else:
                 values='application_duration_min',
                 color='class_label',
                 hover_data={'class_label':False})
+    st.plotly_chart(fig)
