@@ -157,7 +157,7 @@ with tab2:
     col1, col2 = st.columns(2)
 
     with col1:
-        img_file_buffer = st.camera_input("")
+        img_file_buffer = st.camera_input("Get a prediction")
 
         if img_file_buffer is not None:
             # Read image file buffer as a PIL Image:
