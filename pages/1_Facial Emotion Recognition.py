@@ -125,7 +125,7 @@ with tab1:
 
     # Plotting the probability of each class
     with col2:
-        fig, ax = plt.subplots()
+        fig, ax = plt.subplots(figsize=(8, 8))
         bars = ax.barh(class_label, probabilities, height=0.8, color=plt.cm.plasma(probabilities))
 
         ax.spines['right'].set_visible(False)
