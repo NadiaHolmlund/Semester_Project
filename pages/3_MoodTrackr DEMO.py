@@ -115,7 +115,7 @@ else:
                     go.layout.Annotation(
                         text=f"<b>Dominant Mood</b>",
                         x=0.5, xanchor="center", xref="paper",
-                        y=0.4, yanchor="bottom", yref="paper",
+                        y=0.35, yanchor="bottom", yref="paper",
                         showarrow=False,
                     )
                 ],
