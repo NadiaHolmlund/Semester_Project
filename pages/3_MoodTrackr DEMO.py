@@ -143,7 +143,7 @@ fig = px.sunburst(
 
 # Update the plot layout
 fig.update_layout(
-    template="plotly_dark",  # Change to "plotly_white" for grayscale
+    template="plotly_white",  # Change to "plotly_white" for grayscale
     paper_bgcolor="#262730",
     margin=dict(t=20, b=20, l=30, r=30),
 )
