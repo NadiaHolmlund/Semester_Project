@@ -108,8 +108,8 @@ else:
             layout=go.Layout(
                 showlegend=False,
                 margin=dict(t=20, b=20, l=30, r=30),
-                width=450,
-                height=450,
+                #width=450,
+                #height=450,
                 paper_bgcolor=plot_bgcolor,
                 annotations=[
                     go.layout.Annotation(
