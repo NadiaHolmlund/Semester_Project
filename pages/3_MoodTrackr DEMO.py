@@ -69,7 +69,14 @@ else:
         avatar_df = nikolaj_df
 
 
-    selected_df = (avatar_df['time_of_day'] >= start_time) & (avatar_df['time_of_day'] <= end_time)
+    # Convert 'time_of_day' column to datetime type
+    avatar_df['time_of_day'] = pd.to_datetime(avatar_df['time_of_day'])
+
+    # Extract time component from the datetime objects
+    avatar_df['time_of_day'] = avatar_df['time_of_day'].dt.time
+
+    # Get the selected data based on the time range
+    selected_df = avatar_df[(avatar_df['time_of_day'] >= start_time) & (avatar_df['time_of_day'] <= end_time)]
 
 
     col1, col2 = st.columns(2)
