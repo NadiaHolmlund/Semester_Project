@@ -7,11 +7,11 @@ st.write("application illustrates how the model would output would be applied on
 col1, col2 = st.columns(2)
 
 with col1:
-    st.write('bla')
+    st.header('Facial Emotion Recognition')
     st.write('bla')
     st.write('bla')
 
 with col2:
-    st.write('bla')
+    st.write('MoodTrackr DEMO')
     st.write('bla')
     st.write('bla')
