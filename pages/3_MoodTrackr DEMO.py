@@ -125,28 +125,33 @@ import plotly.graph_objects as go
 import numpy as np
 
 plot_bgcolor = "#def"
-quadrant_colors = [plot_bgcolor, "#f25829", "#f2a529", "#eff229", "#85e043", "#2bad4e", "#2bad4e", "#2bad4e"]
+quadrant_colors = [plot_bgcolor, "#f25829", "#f2a529", "#eff229", "#85e043", "#2bad4e"]
 class_labels = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
 smileys = ['😡', '🤢', '😨', '😄', '😢', '😮', '😐']
 n_quadrants = len(quadrant_colors) - 1
 
-current_value = 19
+# Example dataset counts
+dataset_counts = [10, 15, 5, 20, 8, 12, 7]
+
+# Find the index of the class label with the maximum count
+max_count_index = np.argmax(dataset_counts)
+
+current_value = dataset_counts[max_count_index]
 min_value = 0
-max_value = 50
-hand_length = np.sqrt(2) / 6  # Adjust the hand length as desired
+max_value = np.max(dataset_counts)
+hand_length = np.sqrt(2) / 4
 hand_angle = np.pi * (1 - (max(min_value, min(max_value, current_value)) - min_value) / (max_value - min_value))
 
 fig = go.Figure(
     data=[
         go.Pie(
-            values=[1 / 7] * 7,
+            values=[0.5] + (np.ones(n_quadrants) / 2 / n_quadrants).tolist(),
             rotation=90,
             hole=0.5,
             marker_colors=quadrant_colors,
             text=smileys,
             textinfo="text",
             hoverinfo="skip",
-            textfont=dict(size=40)  # Adjust the text size as desired
         ),
     ],
     layout=go.Layout(
