@@ -29,8 +29,8 @@ with col1:
 with col2:
     st.image(img_fer)
     st.header('MoodTrackr DEMO')
-    st.subheader('bla')
-    st.subheader('bla')
-    st.subheader('bla')
-    st.subheader('bla')
-    st.subheader('bla')
+    st.write('bla')
+    st.write('bla')
+    st.write('bla')
+    st.write('bla')  
+    st.write('bla')  
