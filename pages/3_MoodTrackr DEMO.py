@@ -153,75 +153,75 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-    # Calculate value counts for each emoji
-    emoji_counts = avatar_df['class_emotion'].value_counts()
+# Calculate value counts for each emoji
+emoji_counts = avatar_df['class_emotion'].value_counts()
 
-    # Determine emoji with maximum value count
-    max_count_emoji = emoji_counts.idxmax()
+# Determine emoji with maximum value count
+max_count_emoji = emoji_counts.idxmax()
 
-    # Define the emoji and class labels
-    smileys = ['😡', '🤢', '😨', '😄', '😢', '😮', '😐']
-    class_labels = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
+# Define the emoji and class labels
+smileys = ['😡', '🤢', '😨', '😄', '😢', '😮', '😐']
+class_labels = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
 
-    # Find the index of the emoji with the maximum value count
-    max_count_index = class_labels.index(max_count_emoji)
+# Find the index of the emoji with the maximum value count
+max_count_index = class_labels.index(max_count_emoji)
 
-    # Update quadrant colors and arrow angle
-    plot_bgcolor = "#262730"
-    quadrant_colors = ["#0E1117"] * 7
-    quadrant_colors[max_count_index] = "#FF0000"  # Replace with the desired color, e.g., red
-    current_value = emoji_counts[max_count_emoji]
-    min_value = 0
-    max_value = avatar_df.shape[0]
-    hand_length = np.sqrt(2) / 7
-    hand_angle = np.pi * (1 - (max(min_value, min(max_value, current_value)) - min_value) / (max_value - min_value))
+# Update quadrant colors and arrow angle
+plot_bgcolor = "#262730"
+quadrant_colors = ["#0E1117"] * 7
+quadrant_colors[max_count_index] = "#FF0000"  # Replace with the desired color, e.g., red
+current_value = emoji_counts[max_count_emoji]
+min_value = 0
+max_value = avatar_df.shape[0]
+hand_length = np.sqrt(2) / 7
+hand_angle = np.pi * (1 - (max(min_value, min(max_value, current_value)) - min_value) / (max_value - min_value))
 
-    # Update text labels
-    text_labels = [smileys[i] for i in range(len(smileys))]
+# Update text labels
+text_labels = [smileys[i] for i in range(len(smileys))]
 
-    # Create the figure
-    fig = go.Figure(
-        data=[
-            go.Pie(
-                values=[1 / 7] * 7,
-                rotation=90,
-                hole=0.5,
-                marker_colors=quadrant_colors,
-                text=text_labels,
-                textinfo="text",
-                hoverinfo="skip",
-                textfont=dict(size=40)
-            ),
+# Create the figure
+fig = go.Figure(
+    data=[
+        go.Pie(
+            values=[1 / 7] * 7,
+            rotation=90,
+            hole=0.5,
+            marker_colors=quadrant_colors,
+            text=text_labels,
+            textinfo="text",
+            hoverinfo="skip",
+            textfont=dict(size=40)
+        ),
+    ],
+    layout=go.Layout(
+        showlegend=False,
+        margin=dict(t=20, b=20, l=30, r=30),
+        paper_bgcolor=plot_bgcolor,
+        annotations=[
+            go.layout.Annotation(
+                text=f"<b>Today\'s Dominant<br>Mood</b>",
+                x=0.5, xanchor="center", xref="paper",
+                y=0.35, yanchor="bottom", yref="paper",
+                showarrow=False,
+            )
         ],
-        layout=go.Layout(
-            showlegend=False,
-            margin=dict(t=20, b=20, l=30, r=30),
-            paper_bgcolor=plot_bgcolor,
-            annotations=[
-                go.layout.Annotation(
-                    text=f"<b>Today\'s Dominant<br>Mood</b>",
-                    x=0.5, xanchor="center", xref="paper",
-                    y=0.35, yanchor="bottom", yref="paper",
-                    showarrow=False,
-                )
-            ],
-            shapes=[
-                go.layout.Shape(
-                    type="circle",
-                    x0=0.48, x1=0.52,
-                    y0=0.48, y1=0.52,
-                    fillcolor="#FAFAFA",
-                    line_color="#FAFAFA",
-                ),
-                go.layout.Shape(
-                    type="line",
-                    x0=0.5, x1=0.5 + hand_length * np.cos(hand_angle),
-                    y0=0.5, y1=0.5 + hand_length * np.sin(hand_angle),
-                    line=dict(color="#FAFAFA", width=4)
-                )
-            ]
-        )
+        shapes=[
+            go.layout.Shape(
+                type="circle",
+                x0=0.48, x1=0.52,
+                y0=0.48, y1=0.52,
+                fillcolor="#FAFAFA",
+                line_color="#FAFAFA",
+            ),
+            go.layout.Shape(
+                type="line",
+                x0=0.5, x1=0.5 + hand_length * np.cos(hand_angle),
+                y0=0.5, y1=0.5 + hand_length * np.sin(hand_angle),
+                line=dict(color="#FAFAFA", width=4)
+            )
+        ]
     )
+)
 
-    # Display the chart
-    st.plotly_chart(fig, use_container_width=True)
+# Display the chart
+st.plotly_chart(fig, use_container_width=True)
