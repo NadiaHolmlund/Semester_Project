@@ -53,11 +53,11 @@ with st.sidebar:
         ('Select', 'Nadia', 'Nicklas', 'Nikolaj'))
     
     col1, col2 = st.columns(2)
-    start_time = col1.text_input(label='Select Start Time', value='HH:MM')
-    end_time = col2.text_input(label='Select End Time', value='HH:MM')
+    start_time_str = col1.text_input(label='Select Start Time', value='HH:MM')
+    end_time_str = col2.text_input(label='Select End Time', value='HH:MM')
 
-    start_time = datetime.strptime(start_time, '%H:%M').time()
-    end_time = datetime.strptime(end_time, '%H:%M').time()
+    start_time = datetime.strptime(start_time_str, '%H:%M').time()
+    end_time = datetime.strptime(end_time_str, '%H:%M').time()
     
 
 if avatar == 'Select':
