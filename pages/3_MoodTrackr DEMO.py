@@ -84,7 +84,7 @@ else:
         quadrant_colors = [plot_bgcolor, "#f25829", "#f2a529", "#eff229", "#85e043", "#2bad4e", "#f25829", "#f25829"]
         class_labels = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
         smileys = ['😡', '🤢', '😨', '😄', '😢', '😮', '😐']
-        n_quadrants = len(quadrant_colors) - 1
+        n_quadrants = len(quadrant_colors)
 
         current_value = 19
         min_value = 0
