@@ -83,7 +83,7 @@ else:
         st.sidebar.error('ERROR: No observations are made before 08:30, please select a broader timeframe')
 
     else:
-       col1, col2 = st.columns(2)
+        col1, col2 = st.columns(2)
 
         # Defining the pie chart in column 1
         with col1:
