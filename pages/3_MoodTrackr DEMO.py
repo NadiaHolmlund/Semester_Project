@@ -157,7 +157,7 @@ fig = go.Figure(
         paper_bgcolor=plot_bgcolor,
         annotations=[
             go.layout.Annotation(
-                text=f"<b>IOT sensor value:</b><br>{current_value} units",
+                text=f"<b>Dominant Mood</b>",
                 x=0.5, xanchor="center", xref="paper",
                 y=0.25, yanchor="bottom", yref="paper",
                 showarrow=False,
