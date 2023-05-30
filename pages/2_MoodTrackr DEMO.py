@@ -59,6 +59,9 @@ with st.sidebar:
     start_time = col1.text_input(label='Select Start Time', value='08:00')
     end_time = col2.text_input(label='Select End Time', value='23:00')
 
+    if end_time < '08:31':
+        st.error('ERROR: No observations have been made before 08:30, please select a broader timeframe')
+
 # If no avatar is selected, a defualt page is displayed
 if avatar == 'Select':
     st.header('Choose Your Avatar to interact with MoodTrackr DEMO')
@@ -142,8 +145,7 @@ else:
         st.plotly_chart(fig, use_container_width=True)
 
 
-    # Defining the metrics below the charts
-    # Grouping the dataset by application and duration and identifying mode class_label
+    # Grouping the dataset by website and duration and identifying mode class_label
     grouped_df = timeframe_df.groupby('website').agg({'website_dur_min': 'sum', 'class_label': lambda x: x.mode()[0]}).reset_index().sort_values('website_dur_min', ascending=False)
 
     # Mapping class labels to text
