@@ -162,3 +162,5 @@ else:
     col2.metric(label="Duration: " + str(grouped_df.iloc[1]['application_duration_min']) + ' min.', value=str(grouped_df.iloc[1]['application']), delta=str(grouped_df.iloc[1]['class_label']))
     col3.metric(label="Duration: " + str(grouped_df.iloc[2]['application_duration_min']) + ' min.', value=str(grouped_df.iloc[2]['application']), delta=str(grouped_df.iloc[2]['class_label']))
     col4.metric(label="Duration: " + str(grouped_df.iloc[3]['application_duration_min']) + ' min.', value=str(grouped_df.iloc[3]['application']), delta=str(grouped_df.iloc[3]['class_label']))
+
+    st.print_df('timeframe_df')
