@@ -72,7 +72,7 @@ else:
                     path=['application_type', 'application', 'class_label'],
                     values='application_duration_min',
                     color='class_label',
-                    hover_data={'class_label':False, 'labels':False},)
+                    hover_data={'class_label':False},)
         fig.update_layout(template="plotly_white", paper_bgcolor="#262730", margin=dict(t=20, b=20, l=30, r=30))
 
         st.plotly_chart(fig, use_container_width=True)
