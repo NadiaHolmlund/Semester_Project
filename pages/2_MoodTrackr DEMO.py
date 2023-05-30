@@ -80,7 +80,7 @@ else:
     timeframe_df = (avatar_df[avatar_df['timestamp'].between(start_time, end_time)])
 
     if end_time < '08:31':
-        st.sidebar.error('ERROR: No observations have been made before 08:30, please select a later end time')
+        st.sidebar.error('ERROR: No observations have been made before 08:30, please select an end time later than 08:30')
 
     else:
         col1, col2 = st.columns(2)
