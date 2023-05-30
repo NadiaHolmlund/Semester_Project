@@ -81,7 +81,7 @@ else:
         import plotly.graph_objects as go
 
         class_label = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
-        counts = [10, 5, 7, 15, 8, 12, 20]  # Replace with your actual counts data
+        counts = [10, 5, 30, 15, 8, 12, 20]  # Replace with your actual counts data
 
         # Find the index of the class with the highest count
         max_count_index = counts.index(max(counts))
