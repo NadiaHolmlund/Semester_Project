@@ -78,9 +78,45 @@ else:
         st.plotly_chart(fig, use_container_width=True)
 
     with col2:
-        fig = px.sunburst(data_frame=avatar_df,
-                    path=['application_type', 'application', 'class_label'],
-                    values='application_duration_min',
-                    color='class_label',
-                    hover_data={'class_label':False},)
-        st.plotly_chart(fig)
+        import plotly.graph_objects as go
+
+        class_label = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
+        counts = [10, 5, 7, 15, 8, 12, 20]  # Replace with your actual counts data
+
+        # Find the index of the class with the highest count
+        max_count_index = counts.index(max(counts))
+
+        # Create the gauge chart
+        fig = go.Figure(go.Indicator(
+            mode = "gauge+number",
+            value = max_count_index,
+            gauge = {
+                'axis': {'range': [None, len(class_label) - 1]},
+                'bar': {'color': 'gray'},
+                'steps': [
+                    {'range': [0, len(class_label) - 1], 'color': 'lightgray'}
+                ],
+                'threshold': {
+                    'line': {'color': 'red', 'width': 4},
+                    'thickness': 0.75,
+                    'value': max_count_index
+                }
+            },
+        ))
+
+        # Set the labels
+        fig.update_layout(
+            annotations=[
+                dict(
+                    x=0.5,
+                    y=0.5,
+                    text=class_label[max_count_index],
+                    showarrow=False,
+                    font=dict(size=20)
+                )
+            ]
+        )
+
+        # Display the chart
+        st.plotly_chart(fig, use_container_width=True)
+
