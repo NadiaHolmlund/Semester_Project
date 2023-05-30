@@ -56,8 +56,8 @@ with st.sidebar:
     start_time = col1.text_input(label='Select Start Time', value='HH:MM')
     end_time = col2.text_input(label='Select End Time', value='HH:MM')
     
-    #if start_time >= start_time:
-    #    st.error('Start time must be before end time')
+    start_time = pd.to_datetime(start_time)
+    end_time = pd.to_datetime(end_time)
 
 if avatar == 'Select':
     st.header('Choose Your Avatar to interact with MoodTrackr DEMO')
