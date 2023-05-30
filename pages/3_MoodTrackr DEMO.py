@@ -135,7 +135,7 @@ st.markdown(
     """
 <style>
 [data-testid="stMetricValue"] {
-    font-size: 100px;
+    font-size: 20px;
 }
 </style>
 """,
