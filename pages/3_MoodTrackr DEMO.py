@@ -73,7 +73,7 @@ else:
                     values='application_duration_min',
                     color='class_label',
                     hover_data={'class_label':False},)
-        fig.update_layout(template="plotly_dark", paper_bgcolor="#262730", margin=dict(t=5, b=5, l=5, r=5))
+        fig.update_layout(template="plotly_dark", paper_bgcolor="#262730", margin=dict(t=20, b=20, l=20, r=20))
 
         st.plotly_chart(fig, use_container_width=True)
 
