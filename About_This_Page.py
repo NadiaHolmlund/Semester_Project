@@ -23,7 +23,7 @@ with col1:
     st.write('bla')
     st.write('bla')
     st.write('bla')  
-    st.write('bla')  
+    st.write('')  
     st.image(img_moodtrackr)
 
 with col2:
@@ -32,5 +32,4 @@ with col2:
     st.write('bla')
     st.write('bla')
     st.write('bla')
-    st.write('bla')  
     st.write('bla')  
