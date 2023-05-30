@@ -18,7 +18,7 @@ img_fer, img_moodtrackr = read_objects()
 col1, col2 = st.columns(2)
 
 with col1:
-    st.header('Facial Emotion Recognition')
+    st.subheader('Facial Emotion Recognition')
     st.write('bla')
     st.write('bla')
     st.write('bla')
@@ -34,7 +34,7 @@ with col1:
 
 with col2:
     st.image(img_fer)
-    st.header('MoodTrackr DEMO')
+    st.subheader('MoodTrackr DEMO')
     st.write('bla')
     st.write('bla')
     st.write('bla')
