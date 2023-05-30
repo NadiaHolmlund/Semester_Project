@@ -137,6 +137,9 @@ else:
                 margin=dict(t=20, b=20, l=30, r=30))
 
             st.plotly_chart(fig, use_container_width=True)
+        
+        else:
+            st.sidebar.write('hello')
 
 
     # Grouping the dataset by application and duration and identifying mode class_label
