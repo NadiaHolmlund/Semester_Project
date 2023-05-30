@@ -90,7 +90,7 @@ with tab1:
     col9.image(img_9_rd, 'Image 9')
 
     # Inserting a selectbox to select an image for classification
-    option = st.selectbox('Select an image below to classify the emotion',('Image 1', 'Image 2', 'Image 3', 'Image 4', 'Image 5', 'Image 6', 'Image 7', 'Image 8', 'Image 9'))
+    option = st.selectbox('',('Image 1', 'Image 2', 'Image 3', 'Image 4', 'Image 5', 'Image 6', 'Image 7', 'Image 8', 'Image 9'))
 
     col1, col2 = st.columns([0.8, 1.2])
     # Predicting the class of the selected image and displaying it in a larger format
