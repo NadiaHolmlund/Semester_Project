@@ -157,6 +157,17 @@ col4.metric(label="Duration: 15 min.", value="Facebook", delta="Increases Surpri
 # Assuming your dataframe is named "df"
 grouped_df = avatar_df.groupby('application').agg({'application_duration_min': 'sum', 'class_label': lambda x: x.mode()[0]}).reset_index().sort_values('application_duration_min', ascending=False)
 
+# Define a mapping of class labels to text
+label_mapping = {
+    'Anger': '-Increases Anger',
+    'Disgust': '-Increases Disgust',
+    'Fear': '-Increases Fear',
+    'Happiness': '+Increases Happiness',
+    'Sadness': '-Increases Sadness',
+    'Surprise': '+Increases Surprise',
+    'Neutral': '+Increases Neutral'}
 
+# Add text to class_label values
+grouped_df['class_label'] = grouped_df['class_label'].apply(lambda x: label_mapping.get(x, x))
 
-st.metric(label="Duration: " + str(grouped_df.iloc[0]['application_duration_min']), value=str(grouped_df.iloc[0]['application']), delta="Increases Happiness")
+st.metric(label="Duration: " + str(grouped_df.iloc[0]['application_duration_min']), value=str(grouped_df.iloc[0]['application']), delta=str(grouped_df.iloc[0]['class_label']))
