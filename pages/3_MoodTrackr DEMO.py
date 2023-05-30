@@ -113,7 +113,7 @@ else:
                     go.layout.Annotation(
                         text=f"<b>Today\'s Overall<br>Mood</b><br><br>{max_count_emoji}",
                         x=0.5, xanchor="center", xref="paper",
-                        y=0.45, yanchor="bottom", yref="paper",
+                        y=0.4, yanchor="bottom", yref="paper",
                         showarrow=False)]))
 
         st.plotly_chart(fig, use_container_width=True)
