@@ -75,7 +75,7 @@ else:
                     hover_data={'class_label':False},)
         fig.update_layout(template="plotly_dark", paper_bgcolor="#262730", margin=dict(t=0, b=0, l=0, r=0))
 
-        st.plotly_chart(fig)
+        st.plotly_chart(fig, use_container_width=True)
 
     with col2:
         fig = px.sunburst(data_frame=avatar_df,
