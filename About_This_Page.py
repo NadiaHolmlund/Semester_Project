@@ -12,6 +12,6 @@ with col1:
     st.write('bla')
 
 with col2:
-    st.write('MoodTrackr DEMO')
+    st.header('MoodTrackr DEMO')
     st.write('bla')
     st.write('bla')
