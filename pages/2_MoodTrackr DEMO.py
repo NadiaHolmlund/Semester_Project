@@ -65,24 +65,24 @@ if avatar == 'Select':
 
 # If an avatar is selected, the dashboard is displayed
 else:    
-    st.title("MoodTrackr")
-    st.markdown('Hi ' + avatar +'! I\'m so glad to see you, let\'s have a look at how you\'re feeling today, shall we?')
-
-    # Selecting the dataframe based on the selected avatar
-    if avatar == 'Nadia':
-        avatar_df = nadia_df
-    if avatar == 'Nicklas':
-        avatar_df = nicklas_df
-    if avatar == 'Nikolaj':
-        avatar_df = nikolaj_df
-
-    # Filtering the dataframe based on the selected timeframe
-    timeframe_df = (avatar_df[avatar_df['timestamp'].between(start_time, end_time)])
 
     if end_time < '08:31':
-        st.sidebar.error('ERROR: No observations are made before 08:30, please select a broader timeframe')
+        st.sidebar.error('ERROR: No observations are made before 08:30, please select a later end time')
 
     else:
+        st.title("MoodTrackr")
+        st.markdown('Hi ' + avatar +'! I\'m so glad to see you, let\'s have a look at how you\'re feeling today, shall we?')
+
+        # Selecting the dataframe based on the selected avatar
+        if avatar == 'Nadia':
+            avatar_df = nadia_df
+        if avatar == 'Nicklas':
+            avatar_df = nicklas_df
+        if avatar == 'Nikolaj':
+            avatar_df = nikolaj_df
+
+        # Filtering the dataframe based on the selected timeframe
+        timeframe_df = (avatar_df[avatar_df['timestamp'].between(start_time, end_time)])
         col1, col2 = st.columns(2)
 
         # Defining the pie chart in column 1
