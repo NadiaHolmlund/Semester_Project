@@ -1,5 +1,5 @@
 user_id,user_name,date,time_of_day,application,application_type,application_duration_min,image,class_id,class_label
-0001,Nadia,2023-05-21,2023-05-29 10:00:00,GitHub,Code Collaboration,30,"[[[199 178 151]
+0001,Nadia,2023-05-21,10:00,GitHub,Code Collaboration,30,"[[[199 178 151]
   [199 178 151]
   [199 178 151]
   ...
@@ -48,7 +48,7 @@ user_id,user_name,date,time_of_day,application,application_type,application_dura
   [ 56  99 134]
   [ 55  98 133]
   [ 54  97 132]]]",3,Happiness
-0001,Nadia,2023-05-21,2023-05-29 10:30:00,Google Colab,Coding Notebook,45,"[[[199 179 154]
+0001,Nadia,2023-05-21,10:30,Google Colab,Coding Notebook,45,"[[[199 179 154]
   [199 179 154]
   [199 179 154]
   ...
@@ -97,7 +97,7 @@ user_id,user_name,date,time_of_day,application,application_type,application_dura
   [ 65 109 148]
   [ 64 108 147]
   [ 63 107 144]]]",3,Happiness
-0001,Nadia,2023-05-21,2023-05-29 10:45:00,ChatGPT,AI Chatbot,15,"[[[191 171 147]
+0001,Nadia,2023-05-21,10:45,ChatGPT,AI Chatbot,15,"[[[191 171 147]
   [191 171 147]
   [190 170 146]
   ...
@@ -146,7 +146,7 @@ user_id,user_name,date,time_of_day,application,application_type,application_dura
   [ 57  97 132]
   [ 55  95 130]
   [ 54  92 128]]]",6,Neutral
-0001,Nadia,2023-05-21,2023-05-29 11:00:00,Google Colab,Coding Notebook,15,"[[[201 176 146]
+0001,Nadia,2023-05-21,11:00,Google Colab,Coding Notebook,15,"[[[201 176 146]
   [201 176 146]
   [201 176 146]
   ...
@@ -195,7 +195,7 @@ user_id,user_name,date,time_of_day,application,application_type,application_dura
   [ 33  83 120]
   [ 34  84 121]
   [ 35  85 122]]]",4,Sadness
-0001,Nadia,2023-05-21,2023-05-29 15:30:00,Stack Overflow,Programming Q&A,15,"[[[190 169 142]
+0001,Nadia,2023-05-21,15:30,Stack Overflow,Programming Q&A,15,"[[[190 169 142]
   [189 168 141]
   [189 168 141]
   ...
@@ -244,7 +244,7 @@ user_id,user_name,date,time_of_day,application,application_type,application_dura
   [ 32  84 124]
   [ 34  85 128]
   [ 35  86 129]]]",3,Happiness
-0001,Nadia,2023-05-21,2023-05-29 15:45:00,Facebook,Social Media,90,"[[[201 180 151]
+0001,Nadia,2023-05-21,15:45,Facebook,Social Media,90,"[[[201 180 151]
   [201 180 151]
   [201 180 151]
   ...
@@ -293,7 +293,7 @@ user_id,user_name,date,time_of_day,application,application_type,application_dura
   [ 35  84 124]
   [ 37  86 126]
   [ 38  87 128]]]",3,Happiness
-0001,Nadia,2023-05-21,2023-05-29 22:00:00,TikTok,Social Media,150,"[[[214 197 171]
+0001,Nadia,2023-05-21,22:00,TikTok,Social Media,150,"[[[214 197 171]
   [214 197 171]
   [214 197 171]
   ...
