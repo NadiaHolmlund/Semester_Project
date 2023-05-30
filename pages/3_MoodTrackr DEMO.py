@@ -157,3 +157,5 @@ import streamlit as st
 
 
 emoji_counts = avatar_df['class_label'].value_counts()
+max_count_emoji = emoji_counts.idxmax()
+
