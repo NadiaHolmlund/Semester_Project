@@ -166,3 +166,5 @@ max_count_index = class_labels.index(max_count_emoji)
 
 quadrant_colors[max_count_index] = "#FF0000"  # Replace with the desired color, e.g., red
 
+text_labels = [smileys[i] for i in range(len(smileys))]
+
