@@ -132,9 +132,9 @@ else:
 
 col1, col2, col3, col4 = st.columns(4)
 col1.metric(label="Duration: 150 min.", value="TikTok", delta="Increases Happiness")
-col1.metric(label="Duration: 150 min.", value="TikTok", delta="Increases Happiness")
-col1.metric(label="Duration: 150 min.", value="TikTok", delta="Increases Happiness")
-col1.metric(label="Duration: 150 min.", value="TikTok", delta="Increases Happiness")
+col2.metric(label="Duration: 150 min.", value="TikTok", delta="Increases Happiness")
+col3.metric(label="Duration: 150 min.", value="TikTok", delta="Increases Happiness")
+col4.metric(label="Duration: 150 min.", value="TikTok", delta="Increases Happiness")
 
 
 
