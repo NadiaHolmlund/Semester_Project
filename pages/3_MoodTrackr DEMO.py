@@ -151,3 +151,13 @@ col1.metric(label="Duration: 150 min.", value="TikTok", delta="Increases Happine
 col2.metric(label="Duration: 45 min.", value="Stack Overflow", delta="-Increases Anger")
 col3.metric(label="Duration: 35 min.", value="GitHub", delta="-Increases Sadness")
 col4.metric(label="Duration: 15 min.", value="Facebook", delta="Increases Surprise")
+
+
+
+# Assuming your dataframe is named "df"
+grouped_df = df.groupby('application').agg({'application_duration_min': 'sum', 'class_label': lambda x: x.mode()[0]}).reset_index()
+
+# Sort the dataframe by 'application_duration_min'
+grouped_df.sort_values('application_duration_min', inplace=True)
+
+st.metric(label="Duration: " + grouped_df['application_duration_min'][0], value="TikTok", delta="Increases Happiness")
