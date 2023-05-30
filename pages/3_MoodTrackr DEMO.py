@@ -209,7 +209,7 @@ with col1:
                 go.layout.Annotation(
                     text=f"<b>Today\'s Dominant<br>Mood</b>",
                     x=0.5, xanchor="center", xref="paper",
-                    y=0.4, yanchor="bottom", yref="paper",
+                    y=0.5, yanchor="center", yref="paper",
                     showarrow=False,
                 )
             ],
