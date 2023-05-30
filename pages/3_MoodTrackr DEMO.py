@@ -44,6 +44,8 @@ with st.sidebar:
     start_time = st.slider(label='Select Start Time', value=time(7, 30))
     end_time = st.slider(label='Select End Time', value=time(16, 30))
 
+    timeframe = st.slider(label='Select Start Time', value=(start_time, end_time))
+
     if start_time < end_time:
         pass
     else:
