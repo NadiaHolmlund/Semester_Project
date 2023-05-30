@@ -126,10 +126,10 @@ import numpy as np
 
 plot_bgcolor = "#def"
 quadrant_colors = [plot_bgcolor, "#f25829", "#f2a529", "#eff229", "#85e043", "#2bad4e"]
-quadrant_text = ["", "<b>Very high</b>", "<b>High</b>", "<b>Medium</b>", "<b>Low</b>", "<b>Very low</b>"]
+class_labels = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
+smileys = ['😡', '🤢', '😨', '😄', '😢', '😮', '😐']
 n_quadrants = len(quadrant_colors) - 1
 
-class_labels = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
 counts = [10, 5, 7, 15, 8, 12, 20]  # Replace with your actual counts data
 
 # Find the index of the class with the highest count
@@ -148,8 +148,7 @@ fig = go.Figure(
             rotation=90,
             hole=0.5,
             marker_colors=quadrant_colors,
-            text=quadrant_text,
-            textinfo="text",
+            textposition='inside',
             hoverinfo="skip",
         ),
     ],
@@ -171,7 +170,7 @@ fig = go.Figure(
                 showarrow=False,
             ),
             go.layout.Annotation(
-                text=class_labels[max_count_index],
+                text=smileys[max_count_index],
                 x=0.5 + 0.25 * np.cos(hand_angle),
                 xanchor="center",
                 xref="paper",
@@ -179,7 +178,7 @@ fig = go.Figure(
                 yanchor="middle",
                 yref="paper",
                 showarrow=False,
-                font=dict(size=30),
+                font=dict(size=50),
             )
         ],
         shapes=[
