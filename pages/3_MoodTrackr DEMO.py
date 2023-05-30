@@ -184,16 +184,6 @@ with col1:
     quadrant_colors = ["#0E1117"] * 7
     quadrant_colors[max_count_index] = "#FF0000"  # Replace with the desired color, e.g., red
 
-    # Update arrow angle and position
-    current_value = emoji_counts[max_count_emoji]
-    min_value = 0
-    max_value = avatar_df.shape[0]
-    hand_length = np.sqrt(2) / 7
-    hand_angle = np.pi * (1 - (max_count_index - min_value) / (max_value - min_value))
-
-    arrow_x = 0.5 + 0.4 * np.cos(hand_angle)  # Adjust the 0.4 factor as desired
-    arrow_y = 0.5 + 0.4 * np.sin(hand_angle)  # Adjust the 0.4 factor as desired
-
     # Update text labels
     text_labels = [smileys[i] for i in range(len(smileys))]
 
@@ -231,12 +221,6 @@ with col1:
                     fillcolor="#FAFAFA",
                     line_color="#FAFAFA",
                 ),
-                go.layout.Shape(
-                    type="line",
-                    x0=0.5, x1=arrow_x,
-                    y0=0.5, y1=arrow_y,
-                    line=dict(color="#FAFAFA", width=4)
-                )
             ]
         )
     )
