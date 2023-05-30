@@ -53,8 +53,8 @@ with st.sidebar:
         ('Select', 'Nadia', 'Nicklas', 'Nikolaj'))
     
     col1, col2 = st.columns(2)
-    col1.text_input(label='Select Timeframe', value='Start Time')
-    col2.text_input(label='', value='End Time')
+    col1.text_input(label='Select Start Time', value='HH:MM)
+    col2.text_input(label='Select End Time', value='HH:MM')
     
     #timeframe = st.slider('Select a Timeframe', value=((7, 30), (16, 30)))
 
