@@ -77,7 +77,7 @@ else:
         avatar_df = nikolaj_df
 
     # Filtering the dataframe based on the selected timeframe
-    timeframe_df = (avatar_df[avatar_df['datetime'].between(start_time, end_time)])
+    timeframe_df = (avatar_df[avatar_df['timestamp'].between(start_time, end_time)])
 
     col1, col2 = st.columns(2)
 
