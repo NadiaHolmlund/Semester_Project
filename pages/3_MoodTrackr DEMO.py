@@ -151,38 +151,3 @@ col1.metric(label="Duration: 150 min.", value="TikTok", delta="Increases Happine
 col2.metric(label="Duration: 45 min.", value="Stack Overflow", delta="-Increases Anger")
 col3.metric(label="Duration: 35 min.", value="GitHub", delta="-Increases Sadness")
 col4.metric(label="Duration: 15 min.", value="Facebook", delta="Increases Surprise")
-
-
-
-
-
-# Create a container using HTML and CSS with a custom background color
-st.markdown(
-    """
-    <div style="background-color: #F0F0F0; padding: 10px; border-radius: 10px;">
-        <div style="display: flex; justify-content: space-between;">
-            <div>
-                <h2>Duration: 150 min.</h2>
-                <p>TikTok</p>
-                <p style="color: green;">Increases Happiness</p>
-            </div>
-            <div>
-                <h2>Duration: 45 min.</h2>
-                <p>Stack Overflow</p>
-                <p style="color: red;">Increases Anger</p>
-            </div>
-            <div>
-                <h2>Duration: 35 min.</h2>
-                <p>GitHub</p>
-                <p style="color: red;">Increases Sadness</p>
-            </div>
-            <div>
-                <h2>Duration: 15 min.</h2>
-                <p>Facebook</p>
-                <p style="color: green;">Increases Surprise</p>
-            </div>
-        </div>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
