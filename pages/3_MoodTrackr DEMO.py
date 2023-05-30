@@ -158,6 +158,6 @@ col4.metric(label="Duration: 15 min.", value="Facebook", delta="Increases Surpri
 grouped_df = avatar_df.groupby('application').agg({'application_duration_min': 'sum', 'class_label': lambda x: x.mode()[0]}).reset_index()
 
 # Sort the dataframe by 'application_duration_min'
-grouped_df.sort_values('application_duration_min', inplace=True)
+grouped_df_sorted = grouped_df.sort_values('application_duration_min', inplace=True)
 
-st.metric(label="Duration: " + str(grouped_df.iloc[0]['application_duration_min']), value=str(grouped_df.iloc[0]['application']), delta="Increases Happiness")
+st.metric(label="Duration: " + str(grouped_df_sorted.iloc[0]['application_duration_min']), value=str(grouped_df_sorted.iloc[0]['application']), delta="Increases Happiness")
