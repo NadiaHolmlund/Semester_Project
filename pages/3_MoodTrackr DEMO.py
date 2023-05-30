@@ -55,10 +55,6 @@ with st.sidebar:
     col1, col2 = st.columns(2)
     start_time = col1.text_input(label='Select Start Time', value='HH:MM')
     end_time = col2.text_input(label='Select End Time', value='HH:MM')
-
-    # Convert start_time and end_time to datetime objects
-    start_time = pd.to_datetime(start_time, format='%H:%M')
-    end_time = pd.to_datetime(end_time, format='%H:%M')
     
     #if start_time >= start_time:
     #    st.error('Start time must be before end time')
