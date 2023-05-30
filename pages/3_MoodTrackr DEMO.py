@@ -159,3 +159,8 @@ import streamlit as st
 emoji_counts = avatar_df['class_label'].value_counts()
 max_count_emoji = emoji_counts.idxmax()
 
+smileys = ['😡', '🤢', '😨', '😄', '😢', '😮', '😐']
+class_labels = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
+
+max_count_index = class_labels.index(max_count_emoji)
+
