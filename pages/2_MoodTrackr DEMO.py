@@ -131,11 +131,7 @@ else:
             data_frame=timeframe_df,
             path=['user_name', 'website_cat', 'website', 'class_label'],
             values='website_cat',
-            color_discrete_sequence=['#0E1117'],
-            hover_data={'user_name':False,
-                        'website_cat':False,
-                        'website':False,
-                        'website_cat':False})
+            color_discrete_sequence=['#0E1117'])
 
         # Updating plot layout
         fig.update_layout(
