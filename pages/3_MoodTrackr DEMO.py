@@ -98,7 +98,7 @@ else:
                     values=[1 / 7] * 7,
                     rotation=90,
                     hole=0.5,
-                    marker_colors=0E1117f,
+                    marker_colors='#E1117f',
                     text=smileys,
                     textinfo="text",
                     hoverinfo="skip",
