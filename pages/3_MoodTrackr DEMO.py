@@ -153,9 +153,6 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-    # Load the dataset
-    avatar_df = pd.read_csv('your_dataset.csv')  # Replace 'your_dataset.csv' with the actual filename or path
-
     # Calculate value counts for each emoji
     emoji_counts = avatar_df['class_emotion'].value_counts()
 
