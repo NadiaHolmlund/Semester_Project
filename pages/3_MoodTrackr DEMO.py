@@ -123,6 +123,7 @@ else:
 
 import plotly.graph_objects as go
 import numpy as np
+
 plot_bgcolor = "#def"
 quadrant_colors = [plot_bgcolor, "#f25829", "#f2a529", "#eff229", "#85e043", "#2bad4e"]
 class_labels = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
@@ -138,7 +139,7 @@ hand_angle = np.pi * (1 - (max(min_value, min(max_value, current_value)) - min_v
 fig = go.Figure(
     data=[
         go.Pie(
-            values=[0.5] + (np.ones(n_quadrants) / 2 / n_quadrants).tolist(),
+            values=[1 / 7] * 7,
             rotation=90,
             hole=0.5,
             marker_colors=quadrant_colors,
