@@ -81,7 +81,8 @@ else:
         import plotly.graph_objects as go
 
         class_label = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
-        counts = [10, 5, 30, 15, 8, 12, 20]  # Replace with your actual counts data
+        smileys = ['😡', '🤢', '😨', '😄', '😢', '😮', '😐']
+        counts = [10, 5, 7, 15, 8, 12, 20]  # Replace with your actual counts data
 
         # Find the index of the class with the highest count
         max_count_index = counts.index(max(counts))
@@ -91,7 +92,7 @@ else:
             mode = "gauge+number",
             value = max_count_index,
             gauge = {
-                'axis': {'range': [None, len(class_label) - 1]},
+                'axis': {'range': [None, len(class_label) - 1], 'ticktext': smileys, 'tickvals': list(range(len(class_label)))},
                 'bar': {'color': 'gray'},
                 'steps': [
                     {'range': [0, len(class_label) - 1], 'color': 'lightgray'}
@@ -116,6 +117,7 @@ else:
                 )
             ]
         )
+
 
         # Display the chart
         st.plotly_chart(fig, use_container_width=True)
