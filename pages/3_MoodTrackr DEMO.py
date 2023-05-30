@@ -81,7 +81,7 @@ else:
 
     with col2:
         plot_bgcolor = "#262730"
-        quadrant_colors = [plot_bgcolor, "#0E1117", "#0E1117", "#0E1117", "#0E1117", "#0E1117", "#E1117", "#E1117"]
+        quadrant_colors = "#E1117"
         class_labels = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
         smileys = ['😡', '🤢', '😨', '😄', '😢', '😮', '😐']
 
