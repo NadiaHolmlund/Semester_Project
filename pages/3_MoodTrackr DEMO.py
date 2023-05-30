@@ -89,19 +89,19 @@ else:
 
         # Create the gauge chart
         fig = go.Figure(go.Indicator(
-            mode = "gauge+number",
-            value = max_count_index,
-            gauge = {
+            mode="gauge+number",
+            value=max_count_index,
+            gauge={
                 'axis': {'range': [None, len(class_label) - 1], 'ticktext': smileys, 'tickvals': list(range(len(class_label)))},
-                'bar': {'color': 'gray'},
+                'bar': {'color': 'gray', 'thickness': 0.4},
                 'steps': [
                     {'range': [0, len(class_label) - 1], 'color': 'lightgray'}
                 ],
                 'threshold': {
-                    'line': {'color': 'red', 'width': 4},
+                    'line': {'color': 'red', 'width': 3},
                     'thickness': 0.75,
                     'value': max_count_index
-                }
+                },
             },
         ))
 
@@ -113,11 +113,10 @@ else:
                     y=0.5,
                     text=class_label[max_count_index],
                     showarrow=False,
-                    font=dict(size=20)
+                    font=dict(size=40)  # Adjust the font size for smileys
                 )
             ]
         )
-
 
         # Display the chart
         st.plotly_chart(fig, use_container_width=True)
