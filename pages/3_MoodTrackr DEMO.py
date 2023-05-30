@@ -81,10 +81,10 @@ else:
 
     with col2:
         plot_bgcolor = "#262730"
-        quadrant_colors = [plot_bgcolor, "#f25829", "#f2a529", "#eff229", "#85e043", "#2bad4e", "#f25829", "#f25829"]
+        quadrant_colors = [plot_bgcolor, "#f25829", "#f2a529", "#eff229", "#85e043", "#2bad4e"]
         class_labels = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
         smileys = ['😡', '🤢', '😨', '😄', '😢', '😮', '😐']
-        n_quadrants = len(quadrant_colors)
+        n_quadrants = len(quadrant_colors) - 1
 
         current_value = 19
         min_value = 0
