@@ -135,7 +135,7 @@ import streamlit as st
 # Create the sunburst figure
 fig = px.sunburst(
     data_frame=avatar_df,
-    path=['application_type', 'application', 'class_label'],
+    path=['user_name', 'application_type', 'application', 'class_label'],
     values='application_duration_min',
     hover_data={'class_label': False},
     color_discrete_sequence=['black'],  # Set the desired color (e.g., 'black' or 'gray')
