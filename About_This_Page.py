@@ -19,9 +19,7 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.subheader('Facial Emotion Recognition')
-    st.write('The page Facial Emotion Recognition allows stakeholders to interact with the fine-tuned model,')
-    st.write('thus observing how the model classifies images and webcam snapshots in real-time.')
-    st.write('The page includes two tabs, image and camera')
+    st.write('The page Facial Emotion Recognition allows stakeholders to interact with the fine-tuned model, thus observing how the model classifies images and webcam snapshots in real-time.')
     st.write('bla')  
     st.write('')  
     st.write('')  
