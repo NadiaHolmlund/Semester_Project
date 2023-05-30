@@ -162,4 +162,4 @@ grouped_df.sort_values('application_duration_min', inplace=True)
 
 duration_0 = grouped_df.iloc[0]['application_duration_min']
 
-st.metric(label="Duration: " + duration_0, value="TikTok", delta="Increases Happiness")
+st.metric(label="Duration: " + str(duration_0), value="TikTok", delta="Increases Happiness")
