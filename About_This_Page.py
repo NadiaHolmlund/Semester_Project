@@ -21,19 +21,15 @@ with col1:
     st.subheader('Facial Emotion Recognition')
     st.write("The page 'Facial Emotion Recognition' allows stakeholders to interact with the fine-tuned model, thus observing how the model classifies images and webcam snapshots in real-time.")
     st.write("The page includes two tabs, namely 'Images' and 'Camera', in which emotions are classified and displayed along with the probability of each class labelling.")  
-    st.write('')  
-    st.write('')  
-    st.write('')  
-    st.write('')  
-    st.write('')  
-    st.write('') 
-    st.write('') 
-    st.image(img_moodtrackr)
 
 with col2:
     st.image(img_fer)
+
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.image(img_moodtrackr)
+
+with col2:
     st.subheader('MoodTrackr DEMO')
-    st.write('bla')
-    st.write('bla')
-    st.write('bla')
-    st.write('bla')  
