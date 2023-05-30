@@ -70,7 +70,7 @@ else:
     if avatar == 'Nikolaj':
         avatar_df = nikolaj_df
     
-    avatar_df['time_of_day'] = avatar_df['time_of_day'].astype(str)
+    #avatar_df['time_of_day'] = avatar_df['time_of_day'].astype(str)
 
     # Filter the dataset based on the time_of_day column
     timeframe_df = avatar_df[(avatar_df['time_of_day'] >= start_time) & (avatar_df['time_of_day'] <= end_time)]
