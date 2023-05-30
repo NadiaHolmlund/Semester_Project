@@ -133,7 +133,7 @@ n_quadrants = len(quadrant_colors) - 1
 current_value = 19
 min_value = 0
 max_value = 50
-hand_length = np.sqrt(2) / 4
+hand_length = np.sqrt(2) / 6  # Adjust the hand length as desired
 hand_angle = np.pi * (1 - (max(min_value, min(max_value, current_value)) - min_value) / (max_value - min_value))
 
 fig = go.Figure(
@@ -146,6 +146,7 @@ fig = go.Figure(
             text=smileys,
             textinfo="text",
             hoverinfo="skip",
+            textfont=dict(size=40)  # Adjust the text size as desired
         ),
     ],
     layout=go.Layout(
