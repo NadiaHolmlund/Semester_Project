@@ -20,6 +20,9 @@ with col1:
     st.subheader('Welcome to this page')
     st.write('This is a PoC for the project bla bla bla')
 
+with col2:
+    st.write('maybe general picture of faces etc. - AI ish')
+
 col1, col2 = st.columns(2)
 
 with col1:
