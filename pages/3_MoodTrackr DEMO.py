@@ -89,7 +89,7 @@ else:
         current_value = 19
         min_value = 0
         max_value = 50
-        hand_length = np.sqrt(2) / 5  # Adjust the hand length as desired
+        hand_length = np.sqrt(2) / 7  # Adjust the hand length as desired
         hand_angle = np.pi * (1 - (max(min_value, min(max_value, current_value)) - min_value) / (max_value - min_value))
 
         fig = go.Figure(
@@ -124,8 +124,8 @@ else:
                         type="circle",
                         x0=0.48, x1=0.52,
                         y0=0.48, y1=0.52,
-                        fillcolor="#333",
-                        line_color="#333",
+                        fillcolor="#FAFAFA",
+                        line_color="#FAFAFA",
                     ),
                     go.layout.Shape(
                         type="line",
