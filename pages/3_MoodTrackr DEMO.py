@@ -132,7 +132,7 @@ else:
 
 
 col1, col2 = st.columns(2)
-col1.metric(label="Emotion", value="TikTok", delta="Increases Happiness")
+col1.metric(label="Duration: 150 min.", value="TikTok", delta="Increases Happiness")
 col2.write('')
 
 
