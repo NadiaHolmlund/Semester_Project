@@ -71,9 +71,7 @@ else:
         avatar_df = nikolaj_df
 
     # Filter the dataset based on the time_of_day column
-    timeframe_df = pd.DataFrame(avatar_df[avatar_df['time_of_day'].between(start_time, end_time)])
-
-    st.dataframe('timeframe_df')
+    timeframe_df = (avatar_df[avatar_df['time_of_day'].between(start_time, end_time)])
 
     # Check if timeframe_df has zero rows
     if timeframe_df.empty:
