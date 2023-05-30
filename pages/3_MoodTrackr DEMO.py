@@ -2,7 +2,7 @@
 import streamlit as st
 from PIL import Image
 import requests
-import datetime
+from datetime import datetime
 import plotly.express as px
 import pandas as pd
 import plotly.graph_objects as go
