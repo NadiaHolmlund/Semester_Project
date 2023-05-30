@@ -118,28 +118,24 @@ else:
     
 
     with col2:
-        if len(timeframe_df) > 0:
-            # Creating the figure
-            fig = px.sunburst(
-                data_frame=timeframe_df,
-                path=['user_name', 'application_type', 'application', 'class_label'],
-                values='application_duration_min',
-                color_discrete_sequence=['#0E1117'],
-                hover_data={'user_name':False,
-                            'application_type':False,
-                            'application':False,
-                            'application_duration_min':False})
+        # Creating the figure
+        fig = px.sunburst(
+            data_frame=timeframe_df,
+            path=['user_name', 'application_type', 'application', 'class_label'],
+            values='application_duration_min',
+            color_discrete_sequence=['#0E1117'],
+            hover_data={'user_name':False,
+                        'application_type':False,
+                        'application':False,
+                        'application_duration_min':False})
 
-            # Updating plot layout
-            fig.update_layout(
-                template="plotly_dark",
-                paper_bgcolor="#262730",
-                margin=dict(t=20, b=20, l=30, r=30))
+        # Updating plot layout
+        fig.update_layout(
+            template="plotly_dark",
+            paper_bgcolor="#262730",
+            margin=dict(t=20, b=20, l=30, r=30))
 
-            st.plotly_chart(fig, use_container_width=True)
-        
-        else:
-            st.sidebar.write('hello')
+        st.plotly_chart(fig, use_container_width=True)
 
 
     # Grouping the dataset by application and duration and identifying mode class_label
