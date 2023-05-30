@@ -122,12 +122,6 @@ with tab1:
         if option == 'Image 9':
             img_classification, probabilities = predict_class(img_9_sq)
             st.image(img_9_rd)
-        
-        # Displaying the class of the selected image
-        col1, col2, col3 = st.columns([0.5, 2, 0.5])
-        col1.write('')
-        col2.metric(label='', value=img_classification, delta="Emotion", delta_color="off")
-        col3.write('')
 
     # Plotting the probability of each class
     with col2:
@@ -156,6 +150,12 @@ with tab1:
         ax.tick_params(axis='y', colors='#FAFAFA')
 
         st.pyplot(fig)
+
+        # Displaying the class of the selected image
+        col1, col2, col3 = st.columns([0.5, 2, 0.5])
+        col1.write('')
+        col2.metric(label='', value=img_classification, delta="Emotion", delta_color="off")
+        col3.write('')
 
 
 # Setting up the tab for Camera
