@@ -77,7 +77,7 @@ else:
     if timeframe_df.empty:
         st.error('The timeframe you selected has no observations, please choose a broader timeframe')
 
-        else:
+    else:
             col1, col2 = st.columns(2)
 
             with col1:
