@@ -138,12 +138,12 @@ fig = px.sunburst(
     path=['application_type', 'application', 'class_label'],
     values='application_duration_min',
     hover_data={'class_label': False},
-    color_discrete_sequence=['gray'],  # Set the desired color (e.g., 'black' or 'gray')
+    color_discrete_sequence=['black'],  # Set the desired color (e.g., 'black' or 'gray')
 )
 
 # Update the plot layout
 fig.update_layout(
-    template="plotly_white",  # Change to "plotly_white" for grayscale
+    template="plotly_dark",  # Change to "plotly_white" for grayscale
     paper_bgcolor="#262730",
     margin=dict(t=20, b=20, l=30, r=30),
 )
