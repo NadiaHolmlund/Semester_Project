@@ -29,6 +29,7 @@ with col1:
     st.write('')  
     st.write('')  
     st.write('') 
+    st.write('') 
     st.image(img_moodtrackr)
 
 with col2:
