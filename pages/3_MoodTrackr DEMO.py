@@ -120,6 +120,8 @@ else:
             #hover_data={'class_label': False},
             color_discrete_sequence=['#0E1117'],
             hover_data={'user_name':False,
+                        'application_type':False,
+                        'application':False,
                         'application_duration_min':False})
 
         # Updating plot layout
