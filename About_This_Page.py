@@ -7,8 +7,8 @@ import requests
 @st.cache_resource
 def read_objects():
     # Importing images
-    img_fer = Image.open(requests.get('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/rounded_images/img_1.png', stream=True).raw)
-    img_moodtrackr = Image.open(requests.get('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/rounded_images/img_2.png', stream=True).raw)
+    img_fer = Image.open(requests.get('https://github.com/NadiaHolmlund/Semester_Project/blob/main/Streamlit_content/rounded_images/img_fer.png', stream=True).raw)
+    img_moodtrackr = Image.open(requests.get('https://github.com/NadiaHolmlund/Semester_Project/blob/main/Streamlit_content/rounded_images/img_moodtrackr.png', stream=True).raw)
 
     return img_fer, img_moodtrackr
 
@@ -21,8 +21,10 @@ with col1:
     st.header('Facial Emotion Recognition')
     st.write('bla')
     st.write('bla')
+    st.image(img_moodtrackr)
 
 with col2:
+    st.image(img_moodtrackr)
+    st.write('bla')
+    st.write('bla')
     st.header('MoodTrackr DEMO')
-    st.write('bla')
-    st.write('bla')
