@@ -143,7 +143,7 @@ else:
 
 
 # Grouping the dataset by application and duration, identifying the mode class_label
-grouped_df = avatar_df.groupby('application').agg({'application_duration_min': 'sum', 'class_label': lambda x: x.mode()[0]}).reset_index(drop=True).sort_values('application_duration_min', ascending=False)
+grouped_df = avatar_df.groupby('application').agg({'application_duration_min': 'sum', 'class_label': lambda x: x.mode()[0]}).reset_index().sort_values('application_duration_min', ascending=False)
 
 # Defining a mapping of class labels to text
 label_mapping = {
