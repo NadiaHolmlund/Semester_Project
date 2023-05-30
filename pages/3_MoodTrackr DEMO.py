@@ -117,7 +117,7 @@ else:
             data_frame=avatar_df,
             path=['user_name', 'application_type', 'application', 'class_label'],
             values='application_duration_min',
-            hover_data={'class_label': False},
+            #hover_data={'class_label': False},
             color_discrete_sequence=['#0E1117'])
 
         # Updating plot layout
@@ -127,28 +127,6 @@ else:
             margin=dict(t=20, b=20, l=30, r=30))
 
         st.plotly_chart(fig, use_container_width=True)
-
-
-
-
-# Create the sunburst figure
-fig = go.Figure(go.Sunburst(
-    labels=avatar_df['class_label'],
-    parents=avatar_df['application'] + ' > ' + avatar_df['application_type'] + ' > ' + avatar_df['user_name'],
-    values=avatar_df['application_duration_min'],
-    branchvalues="total",
-    marker=dict(colors=['#0E1117']),
-))
-
-# Update the plot layout
-fig.update_layout(
-    template="plotly_dark",
-    paper_bgcolor="#262730",
-    margin=dict(t=20, b=20, l=30, r=30),
-)
-
-# Display the chart
-st.plotly_chart(fig, use_container_width=True)
 
 
 
