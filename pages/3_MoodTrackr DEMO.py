@@ -49,10 +49,10 @@ with st.sidebar:
 
     timeframe = st.slider(label='Select Timeframe', value=(start_time, end_time))
 
-    if start_time < end_time:
-        pass
-    else:
-        st.error('Error: End time must be later than start time.')
+    #if start_time < end_time:
+    #    pass
+    #else:
+    #    st.error('Error: End time must be later than start time.')
 
 if avatar == 'Select':
     st.header('Choose Your Avatar to interact with MoodTrackr DEMO')
@@ -69,7 +69,7 @@ else:
         avatar_df = nikolaj_df
 
 
-    #selected_df = (avatar_df['time_of_day'] >= start_time) & (avatar_df['time_of_day'] <= end_time)
+    selected_df = (avatar_df['time_of_day'] >= start_time) & (avatar_df['time_of_day'] <= end_time)
 
 
     col1, col2 = st.columns(2)
