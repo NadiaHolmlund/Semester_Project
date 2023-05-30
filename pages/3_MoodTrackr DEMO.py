@@ -126,7 +126,7 @@ import numpy as np
 
 plot_bgcolor = "#262730"
 quadrant_colors = [plot_bgcolor, "#f25829", "#f2a529", "#eff229", "#85e043", "#2bad4e"] 
-quadrant_text = ["", "<b>Very high</b>", "<b>High</b>", "<b>Medium</b>", "<b>Low</b>", "<b>Very low</b>"]
+quadrant_text = ["", "<b>Very High</b>", "<b>High</b>", "<b>Medium</b>", "<b>Low</b>", "<b>😡</b>"]
 n_quadrants = len(quadrant_colors) - 1
 
 current_value = 19
