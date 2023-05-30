@@ -24,7 +24,7 @@ with col1:
     st.image(img_moodtrackr)
 
 with col2:
-    st.image(img_moodtrackr)
+    st.image(img_fer)
     st.write('bla')
     st.write('bla')
     st.header('MoodTrackr DEMO')
