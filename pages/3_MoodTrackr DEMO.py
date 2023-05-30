@@ -113,7 +113,7 @@ else:
                 paper_bgcolor=plot_bgcolor,
                 annotations=[
                     go.layout.Annotation(
-                        text=f"<b>Today's Dominant</b></b>Mood</b>",
+                        text=f"<b>Today's Dominant</b></br>Mood",
                         x=0.5, xanchor="center", xref="paper",
                         y=0.37, yanchor="bottom", yref="paper",
                         showarrow=False,
