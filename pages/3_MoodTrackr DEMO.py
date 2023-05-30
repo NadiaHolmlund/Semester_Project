@@ -168,3 +168,5 @@ quadrant_colors[max_count_index] = "#FF0000"  # Replace with the desired color, 
 
 text_labels = [smileys[i] for i in range(len(smileys))]
 
+hand_angle = np.pi * (1 - (max_count_index - min_value) / (max_value - min_value))
+
