@@ -77,10 +77,11 @@ else:
         avatar_df = nikolaj_df
 
     # Filtering the dataframe based on the selected timeframe
-    timeframe_df = (avatar_df[avatar_df['time_of_day'].between(start_time, end_time)])
+    timeframe_df = (avatar_df[avatar_df['datetime'].between(start_time, end_time)])
 
     col1, col2 = st.columns(2)
 
+    # Defining the pie chart in column 1
     with col1:
         # Calculating the class_label with most counts and connecting it to the emoji
         emoji_counts = timeframe_df['class_label'].value_counts()
@@ -123,6 +124,7 @@ else:
         st.plotly_chart(fig, use_container_width=True)
         
 
+    # Defining the sunburst chart in column 2
     with col2:
         # Creating the figure
         fig = px.sunburst(
@@ -144,6 +146,7 @@ else:
         st.plotly_chart(fig, use_container_width=True)
 
 
+    # Defining the metrics below the charts
     # Grouping the dataset by application and duration and identifying mode class_label
     grouped_df = timeframe_df.groupby('application').agg({'application_duration_min': 'sum', 'class_label': lambda x: x.mode()[0]}).reset_index().sort_values('application_duration_min', ascending=False)
 
