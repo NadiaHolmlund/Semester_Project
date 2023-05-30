@@ -142,25 +142,25 @@ else:
         st.plotly_chart(fig, use_container_width=True)
 
 
-# Grouping the dataset by application and duration, identifying the mode class_label
-grouped_df = avatar_df.groupby('application').agg({'application_duration_min': 'sum', 'class_label': lambda x: x.mode()[0]}).reset_index().sort_values('application_duration_min', ascending=False)
+    # Grouping the dataset by application and duration, identifying the mode class_label
+    grouped_df = avatar_df.groupby('application').agg({'application_duration_min': 'sum', 'class_label': lambda x: x.mode()[0]}).reset_index().sort_values('application_duration_min', ascending=False)
 
-# Defining a mapping of class labels to text
-label_mapping = {
-    'Anger': '-Increases Anger',
-    'Disgust': '-Increases Disgust',
-    'Fear': '-Increases Fear',
-    'Happiness': 'Increases Happiness',
-    'Sadness': '-Increases Sadness',
-    'Surprise': 'Increases Surprise',
-    'Neutral': 'Increases Neutral'}
+    # Defining a mapping of class labels to text
+    label_mapping = {
+        'Anger': '-Increases Anger',
+        'Disgust': '-Increases Disgust',
+        'Fear': '-Increases Fear',
+        'Happiness': 'Increases Happiness',
+        'Sadness': '-Increases Sadness',
+        'Surprise': 'Increases Surprise',
+        'Neutral': 'Increases Neutral'}
 
-# Adding text to class_label values
-grouped_df['class_label'] = grouped_df['class_label'].apply(lambda x: label_mapping.get(x, x))
+    # Adding text to class_label values
+    grouped_df['class_label'] = grouped_df['class_label'].apply(lambda x: label_mapping.get(x, x))
 
-# Displaying information in metrics
-col1, col2, col3, col4 = st.columns(4)
-col1.metric(label="Duration: " + str(grouped_df.iloc[0]['application_duration_min']) + ' min.', value=str(grouped_df.iloc[0]['application']), delta=str(grouped_df.iloc[0]['class_label']))
-col2.metric(label="Duration: " + str(grouped_df.iloc[1]['application_duration_min']) + ' min.', value=str(grouped_df.iloc[1]['application']), delta=str(grouped_df.iloc[1]['class_label']))
-col3.metric(label="Duration: " + str(grouped_df.iloc[2]['application_duration_min']) + ' min.', value=str(grouped_df.iloc[2]['application']), delta=str(grouped_df.iloc[2]['class_label']))
-col4.metric(label="Duration: " + str(grouped_df.iloc[3]['application_duration_min']) + ' min.', value=str(grouped_df.iloc[3]['application']), delta=str(grouped_df.iloc[3]['class_label']))
+    # Displaying information in metrics
+    col1, col2, col3, col4 = st.columns(4)
+    col1.metric(label="Duration: " + str(grouped_df.iloc[0]['application_duration_min']) + ' min.', value=str(grouped_df.iloc[0]['application']), delta=str(grouped_df.iloc[0]['class_label']))
+    col2.metric(label="Duration: " + str(grouped_df.iloc[1]['application_duration_min']) + ' min.', value=str(grouped_df.iloc[1]['application']), delta=str(grouped_df.iloc[1]['class_label']))
+    col3.metric(label="Duration: " + str(grouped_df.iloc[2]['application_duration_min']) + ' min.', value=str(grouped_df.iloc[2]['application']), delta=str(grouped_df.iloc[2]['class_label']))
+    col4.metric(label="Duration: " + str(grouped_df.iloc[3]['application_duration_min']) + ' min.', value=str(grouped_df.iloc[3]['application']), delta=str(grouped_df.iloc[3]['class_label']))
