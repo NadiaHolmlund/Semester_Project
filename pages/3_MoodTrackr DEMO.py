@@ -80,7 +80,7 @@ else:
 
     with col1:
         # Calculating the class_label with most counts and connecting it to the emoji
-        emoji_counts = avatar_df['class_label'].value_counts()
+        emoji_counts = filtered_df['class_label'].value_counts()
         max_count_emoji = emoji_counts.idxmax()
         class_labels = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
         smileys = ['😡', '🤢', '😨', '😄', '😢', '😮', '😐']
