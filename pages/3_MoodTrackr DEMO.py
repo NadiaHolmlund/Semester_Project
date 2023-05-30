@@ -56,15 +56,8 @@ with st.sidebar:
     start_time = col1.text_input(label='Select Start Time', value='HH:MM')
     end_time = col2.text_input(label='Select End Time', value='HH:MM')
     
-    #timeframe = st.slider('Select a Timeframe', value=((7, 30), (16, 30)))
-
-    #start_time = st.slider(label='Select Start Time', value=time(7, 30))
-    #end_time = st.slider(label='Select End Time', value=time(16, 30))
-
-    start_time = time(7, 30)
-    end_time = time(16, 30)
-
-    timeframe = st.slider(label='Select Timeframe', value=(start_time, end_time))
+    if start_time >= start_time:
+        st.error('Start time must be before end time')
 
 if avatar == 'Select':
     st.header('Choose Your Avatar to interact with MoodTrackr DEMO')
