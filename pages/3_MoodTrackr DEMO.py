@@ -73,7 +73,7 @@ else:
     if avatar == 'Nikolaj':
         avatar_df = nikolaj_df
 
-    selected_df = 
+    #selected_df = 
 
     col1, col2 = st.columns(2)
 
