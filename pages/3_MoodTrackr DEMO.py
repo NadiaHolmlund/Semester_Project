@@ -162,12 +162,12 @@ label_mapping = {
     'Anger': '-Increases Anger',
     'Disgust': '-Increases Disgust',
     'Fear': '-Increases Fear',
-    'Happiness': '+Increases Happiness',
+    'Happiness': 'Increases Happiness',
     'Sadness': '-Increases Sadness',
-    'Surprise': '+Increases Surprise',
-    'Neutral': '+Increases Neutral'}
+    'Surprise': 'Increases Surprise',
+    'Neutral': 'Increases Neutral'}
 
 # Add text to class_label values
 grouped_df['class_label'] = grouped_df['class_label'].apply(lambda x: label_mapping.get(x, x))
 
-st.metric(label="Duration: " + str(grouped_df.iloc[0]['application_duration_min']), value=str(grouped_df.iloc[0]['application']), delta=-(str(grouped_df.iloc[0]['class_label'])))
+st.metric(label="Duration: " + str(grouped_df.iloc[0]['application_duration_min']), value=str(grouped_df.iloc[0]['application']), delta=str(grouped_df.iloc[0]['class_label']))
