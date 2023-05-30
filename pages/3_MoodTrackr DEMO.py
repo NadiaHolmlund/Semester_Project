@@ -71,7 +71,7 @@ else:
         avatar_df = nikolaj_df
 
     # Filter the dataset based on the time_of_day column
-
+    #timeframe_df = (avatar_df[avatar_df['time_of_day'].between(start_time, end_time)])
 
     timeframe_df = avatar_df[
         (avatar_df['time_of_day'] > start_time) &
