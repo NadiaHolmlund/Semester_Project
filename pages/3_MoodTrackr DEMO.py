@@ -154,7 +154,7 @@ import plotly.graph_objects as go
 import streamlit as st
 
 # Calculate value counts for each emoji
-emoji_counts = avatar_df['class_emotion'].value_counts()
+emoji_counts = avatar_df['class_label'].value_counts()
 
 # Determine emoji with maximum value count
 max_count_emoji = emoji_counts.idxmax()
