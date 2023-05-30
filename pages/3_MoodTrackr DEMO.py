@@ -160,7 +160,7 @@ st.markdown(
     """
     <style>
     .container-style {
-        background-color: #F0F0F0;
+        background-color: #0E1117;
         padding: 10px;
         border-radius: 10px;
     }
