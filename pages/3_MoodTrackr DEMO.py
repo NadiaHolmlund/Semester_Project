@@ -52,6 +52,10 @@ with st.sidebar:
         "Choose Your Avatar",
         ('Select', 'Nadia', 'Nicklas', 'Nikolaj'))
     
+    col1, col2 = st.columns(2)
+    col1.text_input(label='Select Timeframe', value='Start Time')
+    col2.text_input(label='', value='End Time')
+    
     #timeframe = st.slider('Select a Timeframe', value=((7, 30), (16, 30)))
 
     #start_time = st.slider(label='Select Start Time', value=time(7, 30))
@@ -142,10 +146,10 @@ else:
         st.plotly_chart(fig, use_container_width=True)
 
 
-    # Grouping the dataset by application and duration, identifying the mode class_label
+    # Grouping the dataset by application and duration and identifying mode class_label
     grouped_df = avatar_df.groupby('application').agg({'application_duration_min': 'sum', 'class_label': lambda x: x.mode()[0]}).reset_index().sort_values('application_duration_min', ascending=False)
 
-    # Defining a mapping of class labels to text
+    # Mapping class labels to text
     label_mapping = {
         'Anger': '-Increases Anger',
         'Disgust': '-Increases Disgust',
