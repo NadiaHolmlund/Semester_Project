@@ -74,13 +74,13 @@ else:
     avatar_df['time_of_day'] = avatar_df['time_of_day'].astype(str)
 
     # Filter the dataset based on the time_of_day column
-    filtered_df = avatar_df[(avatar_df['time_of_day'] >= start_time) & (avatar_df['time_of_day'] <= end_time)]
+    timeframe_df = avatar_df[(avatar_df['time_of_day'] >= start_time) & (avatar_df['time_of_day'] <= end_time)]
 
     col1, col2 = st.columns(2)
 
     with col1:
         # Calculating the class_label with most counts and connecting it to the emoji
-        emoji_counts = filtered_df['class_label'].value_counts()
+        emoji_counts = timeframe_df['class_label'].value_counts()
         max_count_emoji = emoji_counts.idxmax()
         class_labels = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
         smileys = ['😡', '🤢', '😨', '😄', '😢', '😮', '😐']
@@ -123,7 +123,7 @@ else:
     with col2:
         # Creating the figure
         fig = px.sunburst(
-            data_frame=avatar_df,
+            data_frame=timeframe_df,
             path=['user_name', 'application_type', 'application', 'class_label'],
             values='application_duration_min',
             color_discrete_sequence=['#0E1117'],
@@ -142,7 +142,7 @@ else:
 
 
     # Grouping the dataset by application and duration and identifying mode class_label
-    grouped_df = avatar_df.groupby('application').agg({'application_duration_min': 'sum', 'class_label': lambda x: x.mode()[0]}).reset_index().sort_values('application_duration_min', ascending=False)
+    grouped_df = timeframe_df.groupby('application').agg({'application_duration_min': 'sum', 'class_label': lambda x: x.mode()[0]}).reset_index().sort_values('application_duration_min', ascending=False)
 
     # Mapping class labels to text
     label_mapping = {
