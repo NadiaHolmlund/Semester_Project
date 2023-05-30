@@ -208,4 +208,4 @@ fig = go.Figure(
                 x0=0.5, x1=0.5 + hand_length * np.cos(hand_angle),
                 y0=0.5, y1=0.5 + hand
 
-st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True)
