@@ -146,7 +146,7 @@ col1, col2, col3, col4 = st.columns(4)
 col1.metric(label="Duration: 150 min.", value="TikTok", delta="Increases Happiness")
 col2.metric(label="Duration: 45 min.", value="Stack Overflow", delta="-Increases Anger")
 col3.metric(label="Duration: 35 min.", value="GitHub", delta="-Increases Sadness")
-col4.metric(label="Duration: 15 min.", value="Facebook", delta="Increases Neutral")
+col4.metric(label="Duration: 15 min.", value="Facebook", delta="Increases Surprise")
 
 
 
