@@ -82,7 +82,7 @@ else:
 
         class_label = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
         smileys = ['😡', '🤢', '😨', '😄', '😢', '😮', '😐']
-        counts = [10, 30, 7, 15, 8, 12, 20]  # Replace with your actual counts data
+        counts = [10, 5, 7, 15, 8, 12, 20]  # Replace with your actual counts data
 
         # Find the index of the class with the highest count
         max_count_index = counts.index(max(counts))
@@ -105,18 +105,15 @@ else:
             },
         ))
 
-        # Set the labels
-        fig.update_layout(
-            annotations=[
-                dict(
-                    x=0.5,
-                    y=0.5,
-                    text=class_label[max_count_index],
-                    showarrow=False,
-                    font=dict(size=40)  # Adjust the font size for smileys
-                )
-            ]
+        # Set the smileys as annotations with adjusted font size
+        fig.add_annotation(
+            x=0.5,
+            y=0.5,
+            text=smileys[max_count_index],
+            font={'size': 100},  # Adjust the font size for smileys
+            showarrow=False,
         )
+
 
         # Display the chart
         st.plotly_chart(fig, use_container_width=True)
