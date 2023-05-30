@@ -130,28 +130,23 @@ class_labels = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 
 smileys = ['😡', '🤢', '😨', '😄', '😢', '😮', '😐']
 n_quadrants = len(quadrant_colors) - 1
 
-# Example dataset counts
-dataset_counts = [10, 15, 5, 20, 8, 12, 7]
-
-# Find the index of the class label with the maximum count
-max_count_index = np.argmax(dataset_counts)
-
-current_value = dataset_counts[max_count_index]
+current_value = 19
 min_value = 0
-max_value = np.max(dataset_counts)
-hand_length = np.sqrt(2) / 4
+max_value = 50
+hand_length = np.sqrt(2) / 6  # Adjust the hand length as desired
 hand_angle = np.pi * (1 - (max(min_value, min(max_value, current_value)) - min_value) / (max_value - min_value))
 
 fig = go.Figure(
     data=[
         go.Pie(
-            values=[0.5] + (np.ones(n_quadrants) / 2 / n_quadrants).tolist(),
+            values=[1 / 7] * 7,
             rotation=90,
             hole=0.5,
             marker_colors=quadrant_colors,
             text=smileys,
             textinfo="text",
             hoverinfo="skip",
+            textfont=dict(size=40)  # Adjust the text size as desired
         ),
     ],
     layout=go.Layout(
