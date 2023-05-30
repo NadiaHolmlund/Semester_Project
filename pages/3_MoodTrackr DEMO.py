@@ -70,20 +70,16 @@ else:
     col1, col2 = st.columns(2)
 
     with col1:
-        # Calculate value counts for each emoji
+        # Calculating the class_label with most counts and connecting it to the emoji
         emoji_counts = avatar_df['class_label'].value_counts()
-
-        # Determine emoji with maximum value count
         max_count_emoji = emoji_counts.idxmax()
 
-        # Define the emoji and class labels
-        smileys = ['😡', '🤢', '😨', '😄', '😢', '😮', '😐']
         class_labels = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
+        smileys = ['😡', '🤢', '😨', '😄', '😢', '😮', '😐']
 
-        # Find the index of the emoji with the maximum value count
         max_count_index = class_labels.index(max_count_emoji)
 
-        # Update quadrant colors
+        # Update plot colors
         plot_bgcolor = "#262730"
         quadrant_colors = ["#0E1117"] * 7
         quadrant_colors[max_count_index] = "#262730"  # Replace with the desired color, e.g., red
