@@ -170,3 +170,42 @@ text_labels = [smileys[i] for i in range(len(smileys))]
 
 hand_angle = np.pi * (1 - (max_count_index - min_value) / (max_value - min_value))
 
+fig = go.Figure(
+    data=[
+        go.Pie(
+            values=[1 / 7] * 7,
+            rotation=90,
+            hole=0.5,
+            marker_colors=quadrant_colors,
+            text=text_labels,
+            textinfo="text",
+            hoverinfo="skip",
+            textfont=dict(size=40)  # Adjust the text size as desired
+        ),
+    ],
+    layout=go.Layout(
+        showlegend=False,
+        margin=dict(t=20, b=20, l=30, r=30),
+        paper_bgcolor=plot_bgcolor,
+        annotations=[
+            go.layout.Annotation(
+                text=f"<b>Today\'s Dominant<br>Mood</b>",
+                x=0.5, xanchor="center", xref="paper",
+                y=0.35, yanchor="bottom", yref="paper",
+                showarrow=False,
+            )
+        ],
+        shapes=[
+            go.layout.Shape(
+                type="circle",
+                x0=0.48, x1=0.52,
+                y0=0.48, y1=0.52,
+                fillcolor="#FAFAFA",
+                line_color="#FAFAFA",
+            ),
+            go.layout.Shape(
+                type="line",
+                x0=0.5, x1=0.5 + hand_length * np.cos(hand_angle),
+                y0=0.5, y1=0.5 + hand
+
+st.plotly_chart(fig, use_container_width=True)
