@@ -49,21 +49,26 @@ with st.sidebar:
     col2.image(img_nicklas, caption='Nicklas')
     col3.image(img_nikolaj, caption='Nikolaj')
 
+    # Adding a selectbox to choose the avatar
     avatar = st.selectbox(
         "Choose Your Avatar",
         ('Select', 'Nadia', 'Nicklas', 'Nikolaj'))
     
+    # Adding a text input to select the timeframe
     col1, col2 = st.columns(2)
-    start_time = col1.text_input(label='Select Start Time', value='07:30')
-    end_time = col2.text_input(label='Select End Time', value='16:30')
+    start_time = col1.text_input(label='Select Start Time', value='08:00')
+    end_time = col2.text_input(label='Select End Time', value='23:00')
 
+# If no avatar is selected, a defualt page is displayed
 if avatar == 'Select':
     st.header('Choose Your Avatar to interact with MoodTrackr DEMO')
 
+# If an avatar is selected, the dashboard is displayed
 else:    
     st.title("MoodTrackr")
     st.markdown('Hi ' + avatar +'! I\'m so glad to see you, let\'s have a look at how you\'re feeling today, shall we?')
 
+    # Selecting the dataframe based on the selected avatar
     if avatar == 'Nadia':
         avatar_df = nadia_df
     if avatar == 'Nicklas':
@@ -71,13 +76,8 @@ else:
     if avatar == 'Nikolaj':
         avatar_df = nikolaj_df
 
-    # Filter the dataset based on the time_of_day column
-    #timeframe_df = (avatar_df[avatar_df['time_of_day'].between(start_time, end_time)])
-
-    timeframe_df = avatar_df[
-        (avatar_df['time_of_day'] > start_time) &
-        (avatar_df['time_of_day'] < end_time)
-    ]
+    # Filtering the dataframe based on the selected timeframe
+    timeframe_df = (avatar_df[avatar_df['time_of_day'].between(start_time, end_time)])
 
     if timeframe_df.empty:
         st.sidebar.error('ERROR: The timeframe you selected has no observations, please choose a broader timeframe')
