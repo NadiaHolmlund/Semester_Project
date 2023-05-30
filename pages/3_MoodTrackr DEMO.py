@@ -182,7 +182,7 @@ with col1:
     # Update quadrant colors
     plot_bgcolor = "#262730"
     quadrant_colors = ["#0E1117"] * 7
-    quadrant_colors[max_count_index] = "#FF0000"  # Replace with the desired color, e.g., red
+    quadrant_colors[max_count_index] = "#FAFAFA"  # Replace with the desired color, e.g., red
 
     # Update text labels
     text_labels = [smileys[i] for i in range(len(smileys))]
@@ -209,19 +209,10 @@ with col1:
                 go.layout.Annotation(
                     text=f"<b>Today\'s Dominant<br>Mood</b>",
                     x=0.5, xanchor="center", xref="paper",
-                    y=0.35, yanchor="bottom", yref="paper",
+                    y=0.5, yanchor="bottom", yref="paper",
                     showarrow=False,
                 )
             ],
-            shapes=[
-                go.layout.Shape(
-                    type="circle",
-                    x0=0.48, x1=0.52,
-                    y0=0.48, y1=0.52,
-                    fillcolor="#FAFAFA",
-                    line_color="#FAFAFA",
-                ),
-            ]
         )
     )
 
