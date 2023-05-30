@@ -74,7 +74,7 @@ else:
     timeframe_df = (avatar_df[avatar_df['time_of_day'].between(start_time, end_time)])
 
     if len(timeframe_df) <= 0:
-        st.error('The timeframe you selected has no observations, please choose a broader timeframe')
+        st.sidebar.error('The timeframe you selected has no observations, please choose a broader timeframe')
 
     else:
         col1, col2 = st.columns(2)
