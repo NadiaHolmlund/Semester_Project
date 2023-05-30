@@ -144,7 +144,7 @@ else:
 
     # Defining the metrics below the charts
     # Grouping the dataset by application and duration and identifying mode class_label
-    grouped_df = timeframe_df.groupby('website').agg({'website_dur_min': 'sum', 'class_label': lambda x: x.mode()[0]}).reset_index().sort_values('application_duration_min', ascending=False)
+    grouped_df = timeframe_df.groupby('website').agg({'website_dur_min': 'sum', 'class_label': lambda x: x.mode()[0]}).reset_index().sort_values('website_dur_min', ascending=False)
 
     # Mapping class labels to text
     label_mapping = {
