@@ -55,6 +55,9 @@ with st.sidebar:
     col1, col2 = st.columns(2)
     start_time = col1.text_input(label='Select Start Time', value='HH:MM')
     end_time = col2.text_input(label='Select End Time', value='HH:MM')
+
+    start_time = datetime.strptime(start_time, '%H:%M').time()
+    end_time = datetime.strptime(end_time, '%H:%M').time()
     
 
 if avatar == 'Select':
@@ -71,7 +74,7 @@ else:
     if avatar == 'Nikolaj':
         avatar_df = nikolaj_df
     
-    avatar_df['time_of_day'] = avatar_df['time_of_day'].astype(str)
+    #avatar_df['time_of_day'] = avatar_df['time_of_day'].astype(str)
 
     # Filter the dataset based on the time_of_day column
     timeframe_df = avatar_df[(avatar_df['time_of_day'] >= start_time) & (avatar_df['time_of_day'] <= end_time)]
