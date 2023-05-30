@@ -56,8 +56,7 @@ with st.sidebar:
     start_time = col1.text_input(label='Select Start Time', value='HH:MM')
     end_time = col2.text_input(label='Select End Time', value='HH:MM')
     
-    start_time = pd.to_datetime.time(start_time)
-    end_time = pd.to_datetime.time(end_time)
+    avatar_df['time_of_day'].astype(str)
 
 if avatar == 'Select':
     st.header('Choose Your Avatar to interact with MoodTrackr DEMO')
