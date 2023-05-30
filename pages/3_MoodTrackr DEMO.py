@@ -119,7 +119,7 @@ else:
             values='application_duration_min',
             #hover_data={'class_label': False},
             color_discrete_sequence=['#0E1117'],
-            hoverinfo='skip')
+            hover_data={labels:False}')
 
         # Updating plot layout
         fig.update_layout(
