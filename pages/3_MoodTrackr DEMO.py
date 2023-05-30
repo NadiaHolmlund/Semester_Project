@@ -53,12 +53,8 @@ with st.sidebar:
         ('Select', 'Nadia', 'Nicklas', 'Nikolaj'))
     
     col1, col2 = st.columns(2)
-    start_time_str = col1.text_input(label='Select Start Time', value='HH:MM')
-    end_time_str = col2.text_input(label='Select End Time', value='HH:MM')
-
-    start_time = datetime.strptime(start_time_str, '%H:%M').time()
-    end_time = datetime.strptime(end_time_str, '%H:%M').time()
-    
+    start_time = col1.text_input(label='Select Start Time', value='07:30')
+    end_time = col2.text_input(label='Select End Time', value='16:30')
 
 if avatar == 'Select':
     st.header('Choose Your Avatar to interact with MoodTrackr DEMO')
@@ -74,7 +70,7 @@ else:
     if avatar == 'Nikolaj':
         avatar_df = nikolaj_df
     
-    #avatar_df['time_of_day'] = avatar_df['time_of_day'].astype(str)
+    avatar_df['time_of_day'] = avatar_df['time_of_day'].astype(str)
 
     # Filter the dataset based on the time_of_day column
     timeframe_df = avatar_df[(avatar_df['time_of_day'] >= start_time) & (avatar_df['time_of_day'] <= end_time)]
