@@ -170,4 +170,7 @@ label_mapping = {
 # Add text to class_label values
 grouped_df['class_label'] = grouped_df['class_label'].apply(lambda x: label_mapping.get(x, x))
 
-st.metric(label="Duration: " + str(grouped_df.iloc[0]['application_duration_min']), value=str(grouped_df.iloc[0]['application']), delta=str(grouped_df.iloc[0]['class_label']))
+st.metric(label="Duration: " + str(grouped_df.iloc[0]['application_duration_min']) + ' min.', value=str(grouped_df.iloc[0]['application']), delta=str(grouped_df.iloc[0]['class_label']))
+st.metric(label="Duration: " + str(grouped_df.iloc[1]['application_duration_min']) + ' min.', value=str(grouped_df.iloc[1]['application']), delta=str(grouped_df.iloc[1]['class_label']))
+st.metric(label="Duration: " + str(grouped_df.iloc[2]['application_duration_min']) + ' min.', value=str(grouped_df.iloc[2]['application']), delta=str(grouped_df.iloc[2]['class_label']))
+st.metric(label="Duration: " + str(grouped_df.iloc[3]['application_duration_min']) + ' min.', value=str(grouped_df.iloc[3]['application']), delta=str(grouped_df.iloc[3]['class_label']))
