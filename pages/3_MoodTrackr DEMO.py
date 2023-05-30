@@ -123,21 +123,15 @@ else:
 
 import plotly.graph_objects as go
 import numpy as np
-
 plot_bgcolor = "#def"
 quadrant_colors = [plot_bgcolor, "#f25829", "#f2a529", "#eff229", "#85e043", "#2bad4e"]
 class_labels = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
 smileys = ['😡', '🤢', '😨', '😄', '😢', '😮', '😐']
 n_quadrants = len(quadrant_colors) - 1
 
-counts = [10, 5, 7, 15, 8, 12, 20]  # Replace with your actual counts data
-
-# Find the index of the class with the highest count
-max_count_index = counts.index(max(counts))
-
-current_value = counts[max_count_index]
+current_value = 19
 min_value = 0
-max_value = max(counts)
+max_value = 50
 hand_length = np.sqrt(2) / 4
 hand_angle = np.pi * (1 - (max(min_value, min(max_value, current_value)) - min_value) / (max_value - min_value))
 
@@ -148,7 +142,8 @@ fig = go.Figure(
             rotation=90,
             hole=0.5,
             marker_colors=quadrant_colors,
-            textposition='inside',
+            text=smileys,
+            textinfo="text",
             hoverinfo="skip",
         ),
     ],
@@ -161,42 +156,23 @@ fig = go.Figure(
         annotations=[
             go.layout.Annotation(
                 text=f"<b>IOT sensor value:</b><br>{current_value} units",
-                x=0.5,
-                xanchor="center",
-                xref="paper",
-                y=0.25,
-                yanchor="bottom",
-                yref="paper",
+                x=0.5, xanchor="center", xref="paper",
+                y=0.25, yanchor="bottom", yref="paper",
                 showarrow=False,
-            ),
-            go.layout.Annotation(
-                text=smileys[max_count_index],
-                x=0.5 + 0.25 * np.cos(hand_angle),
-                xanchor="center",
-                xref="paper",
-                y=0.5 + 0.25 * np.sin(hand_angle),
-                yanchor="middle",
-                yref="paper",
-                showarrow=False,
-                font=dict(size=50),
             )
         ],
         shapes=[
             go.layout.Shape(
                 type="circle",
-                x0=0.48,
-                x1=0.52,
-                y0=0.48,
-                y1=0.52,
+                x0=0.48, x1=0.52,
+                y0=0.48, y1=0.52,
                 fillcolor="#333",
                 line_color="#333",
             ),
             go.layout.Shape(
                 type="line",
-                x0=0.5,
-                x1=0.5 + hand_length * np.cos(hand_angle),
-                y0=0.5,
-                y1=0.5 + hand_length * np.sin(hand_angle),
+                x0=0.5, x1=0.5 + hand_length * np.cos(hand_angle),
+                y0=0.5, y1=0.5 + hand_length * np.sin(hand_angle),
                 line=dict(color="#333", width=4)
             )
         ]
