@@ -108,11 +108,7 @@ else:
                         text=f"<b>Today\'s Dominant<br>Mood</b>",
                         x=0.5, xanchor="center", xref="paper",
                         y=0.45, yanchor="bottom", yref="paper",
-                        showarrow=False,
-                    )
-                ],
-            )
-        )
+                        showarrow=False)]))
 
         st.plotly_chart(fig, use_container_width=True)
     
