@@ -136,7 +136,8 @@ else:
                 path=['user_name', 'website_cat', 'website', 'class_label'],
                 values='website_dur_min',
                 color_discrete_sequence=['#0E1117'],
-                hover_data={'website_dur_min':False})
+                hover_data={'website_dur_min':False,
+                            'duration':website_dur_min})
 
             # Updating plot layout
             fig.update_layout(
