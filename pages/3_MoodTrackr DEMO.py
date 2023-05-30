@@ -169,7 +169,7 @@ max_count_index = class_labels.index(max_count_emoji)
 # Update quadrant colors and arrow angle
 plot_bgcolor = "#262730"
 quadrant_colors = ["#0E1117"] * 7
-quadrant_colors[max_count_index] = "#FF0000"  # Replace with the desired color, e.g., red
+quadrant_colors[max_count_index] = "#FAFAFA"  # Replace with the desired color, e.g., red
 current_value = emoji_counts[max_count_emoji]
 min_value = 0
 max_value = avatar_df.shape[0]
