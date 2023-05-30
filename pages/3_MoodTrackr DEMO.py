@@ -182,7 +182,7 @@ with col1:
     # Update quadrant colors
     plot_bgcolor = "#262730"
     quadrant_colors = ["#0E1117"] * 7
-    quadrant_colors[max_count_index] = "#FAFAFA"  # Replace with the desired color, e.g., red
+    quadrant_colors[max_count_index] = "#262730"  # Replace with the desired color, e.g., red
 
     # Update text labels
     text_labels = [smileys[i] for i in range(len(smileys))]
