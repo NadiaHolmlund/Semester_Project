@@ -131,8 +131,28 @@ else:
 
 
 
+col1, col2 = st.columns(2)
+col1.metric(label="Emotion", value="TikTok", delta="Increases Happiness")
+col2.write('')
 
 
 
 
 
+
+# Create a dictionary to map the class labels
+class_label_mapping = {
+    'Anger': 'Negative',
+    'Disgust': 'Negative',
+    'Fear': 'Negative',
+    'Sadness': 'Negative',
+    'Happiness': 'Positive',
+    'Surprise': 'Positive',
+    'Neutral': 'Positive'
+}
+
+# Replace the emotion labels with the mapped values
+avatar_df['mapped_class_label'] = avatar_df['class_label'].replace(class_label_mapping)
+
+# Group by 'application' and count 'emotion_label' within each group
+grouped_df = avatar_df.groupby('application')['mapped_class_label'].value_counts().reset_index(name='count')
