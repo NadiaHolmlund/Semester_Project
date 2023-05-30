@@ -156,13 +156,6 @@ else:
 
     # Displaying information in metrics
     col1, col2, col3, col4 = st.columns(4)
-    col1.metric(label="Duration: " + str(grouped_df.iloc[0]['application_duration_min']) + ' min.', value=str(grouped_df.iloc[0]['application']), delta=str(grouped_df.iloc[0]['class_label']))
-    col2.metric(label="Duration: " + str(grouped_df.iloc[1]['application_duration_min']) + ' min.', value=str(grouped_df.iloc[1]['application']), delta=str(grouped_df.iloc[1]['class_label']))
-    col3.metric(label="Duration: " + str(grouped_df.iloc[2]['application_duration_min']) + ' min.', value=str(grouped_df.iloc[2]['application']), delta=str(grouped_df.iloc[2]['class_label']))
-    col4.metric(label="Duration: " + str(grouped_df.iloc[3]['application_duration_min']) + ' min.', value=str(grouped_df.iloc[3]['application']), delta=str(grouped_df.iloc[3]['class_label']))
-
-    # Displaying information in metrics
-    col1, col2, col3, col4 = st.columns(4)
 
     if len(grouped_df) > 0:
         col1.metric(label="Duration: " + str(grouped_df.iloc[0]['application_duration_min']) + ' min.', value=str(grouped_df.iloc[0]['application']), delta=str(grouped_df.iloc[0]['class_label']))
@@ -172,3 +165,11 @@ else:
         col3.metric(label="Duration: " + str(grouped_df.iloc[2]['application_duration_min']) + ' min.', value=str(grouped_df.iloc[2]['application']), delta=str(grouped_df.iloc[2]['class_label']))
     if len(grouped_df) > 3:
         col4.metric(label="Duration: " + str(grouped_df.iloc[3]['application_duration_min']) + ' min.', value=str(grouped_df.iloc[3]['application']), delta=str(grouped_df.iloc[3]['class_label']))
+
+
+    # Displaying information in metrics
+    col1, col2, col3, col4 = st.columns(4)
+    col1.metric(label="Duration: " + str(grouped_df.iloc[0]['application_duration_min']) + ' min.', value=str(grouped_df.iloc[0]['application']), delta=str(grouped_df.iloc[0]['class_label']))
+    col2.metric(label="Duration: " + str(grouped_df.iloc[1]['application_duration_min']) + ' min.', value=str(grouped_df.iloc[1]['application']), delta=str(grouped_df.iloc[1]['class_label']))
+    col3.metric(label="Duration: " + str(grouped_df.iloc[2]['application_duration_min']) + ' min.', value=str(grouped_df.iloc[2]['application']), delta=str(grouped_df.iloc[2]['class_label']))
+    col4.metric(label="Duration: " + str(grouped_df.iloc[3]['application_duration_min']) + ' min.', value=str(grouped_df.iloc[3]['application']), delta=str(grouped_df.iloc[3]['class_label']))
