@@ -118,7 +118,8 @@ else:
             path=['user_name', 'application_type', 'application', 'class_label'],
             values='application_duration_min',
             hover_data={'class_label': False},
-            color_discrete_sequence=['#0E1117'])
+            color_discrete_sequence=['#0E1117'],
+            hoverinfo="skip")
 
         # Updating plot layout
         fig.update_layout(
