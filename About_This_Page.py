@@ -19,14 +19,14 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.header('Facial Emotion Recognition')
-    st.caption('bla')
-    st.caption('bla')
-    st.caption('bla')
+    st.subheader('bla')
+    st.subheader('bla')
+    st.subheader('bla')
     st.image(img_moodtrackr)
 
 with col2:
     st.image(img_fer)
     st.header('MoodTrackr DEMO')
-    st.caption('bla')
-    st.caption('bla')
-    st.caption('bla')
+    st.subheader('bla')
+    st.subheader('bla')
+    st.subheader('bla')
