@@ -75,7 +75,7 @@ else:
     # Filter the dataset based on the time_of_day column
     timeframe_df = avatar_df[(avatar_df['time_of_day'] >= start_time) & (avatar_df['time_of_day'] <= end_time)]
 
-    st.print_df('timeframe_df')
+    st.dataframe('timeframe_df')
 
     col1, col2 = st.columns(2)
 
