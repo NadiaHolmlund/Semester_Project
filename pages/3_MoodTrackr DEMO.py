@@ -14,6 +14,19 @@ st.set_page_config(
     page_icon="😐",
     layout="wide")
 
+# Setting the font size of metrics
+st.markdown(
+    """
+<style>
+[data-testid="stMetricValue"] {
+    font-size: 20px;
+}
+</style>
+""",
+    unsafe_allow_html=True,
+)
+
+
 # Loading the datasets and images only once
 @st.cache_resource
 def read_objects():
@@ -131,16 +144,7 @@ else:
 
 
 
-st.markdown(
-    """
-<style>
-[data-testid="stMetricValue"] {
-    font-size: 20px;
-}
-</style>
-""",
-    unsafe_allow_html=True,
-)
+
 
 col1, col2, col3, col4 = st.columns(4)
 col1.metric(label="Duration: 150 min.", value="TikTok", delta="Increases Happiness")
@@ -151,21 +155,20 @@ col4.metric(label="Duration: 15 min.", value="Facebook", delta="Increases Surpri
 
 
 
+# Add CSS styling to the container
+st.markdown(
+    """
+    <style>
+    .container-style {
+        background-color: #F0F0F0;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
-
-# Create a dictionary to map the class labels
-class_label_mapping = {
-    'Anger': 'Negative',
-    'Disgust': 'Negative',
-    'Fear': 'Negative',
-    'Sadness': 'Negative',
-    'Happiness': 'Positive',
-    'Surprise': 'Positive',
-    'Neutral': 'Positive'
-}
-
-# Replace the emotion labels with the mapped values
-avatar_df['mapped_class_label'] = avatar_df['class_label'].replace(class_label_mapping)
-
-# Group by 'application' and count 'emotion_label' within each group
-grouped_df = avatar_df.groupby('application')['mapped_class_label'].value_counts().reset_index(name='count')
+# Create a container and apply the CSS class to it
+container = st.container()
+container.markdown('<div class="container-style">This is a container with a custom background color.</div>', unsafe_allow_html=True)
