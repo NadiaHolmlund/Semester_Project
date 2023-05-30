@@ -130,7 +130,7 @@ else:
         fig = px.sunburst(
             data_frame=timeframe_df,
             path=['user_name', 'website_cat', 'website', 'class_label'],
-            values='website_cat',
+            values='website_dur_min',
             color_discrete_sequence=['#0E1117'])
 
         # Updating plot layout
