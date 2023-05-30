@@ -119,15 +119,14 @@ else:
             values='application_duration_min',
             #hover_data={'class_label': False},
             color_discrete_sequence=['#0E1117'],
-            hover_data={'application_duration_min':False})
+            hover_data={'user_name':False,
+                        'application_duration_min':False})
 
         # Updating plot layout
         fig.update_layout(
             template="plotly_dark",
             paper_bgcolor="#262730",
             margin=dict(t=20, b=20, l=30, r=30))
-        
-        fig.update_traces(hoverinfo = "skip")
 
         st.plotly_chart(fig, use_container_width=True)
 
