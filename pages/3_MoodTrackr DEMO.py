@@ -56,8 +56,8 @@ with st.sidebar:
     start_time = col1.text_input(label='Select Start Time', value='HH:MM')
     end_time = col2.text_input(label='Select End Time', value='HH:MM')
     
-    if start_time >= start_time:
-        st.error('Start time must be before end time')
+    #if start_time >= start_time:
+    #    st.error('Start time must be before end time')
 
 if avatar == 'Select':
     st.header('Choose Your Avatar to interact with MoodTrackr DEMO')
@@ -73,6 +73,7 @@ else:
     if avatar == 'Nikolaj':
         avatar_df = nikolaj_df
 
+    selected_df = 
 
     col1, col2 = st.columns(2)
 
@@ -110,7 +111,7 @@ else:
                 paper_bgcolor=plot_bgcolor,
                 annotations=[
                     go.layout.Annotation(
-                        text=f"<b>Today\'s Overall<br>Mood</b>",
+                        text=f"<b>Today\'s Overall<br>Mood</b><br>{max_count_index}",
                         x=0.5, xanchor="center", xref="paper",
                         y=0.45, yanchor="bottom", yref="paper",
                         showarrow=False)]))
