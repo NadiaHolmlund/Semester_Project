@@ -53,8 +53,8 @@ with st.sidebar:
         ('Select', 'Nadia', 'Nicklas', 'Nikolaj'))
     
     col1, col2 = st.columns(2)
-    start_time = col1.text_input(label='Select Start Time', value='07:30')
-    end_time = col2.text_input(label='Select End Time', value='16:30')
+    start_time = col1.text_input(label='Input Start Time', value='07:30')
+    end_time = col2.text_input(label='Input End Time', value='16:30')
 
 if avatar == 'Select':
     st.header('Choose Your Avatar to interact with MoodTrackr DEMO')
