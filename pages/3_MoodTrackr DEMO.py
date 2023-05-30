@@ -79,15 +79,15 @@ else:
 
         max_count_index = class_labels.index(max_count_emoji)
 
-        # Update plot colors
+        # Updating plot colors
         plot_bgcolor = "#262730"
         quadrant_colors = ["#0E1117"] * 7
         quadrant_colors[max_count_index] = "#262730"  # Replace with the desired color, e.g., red
 
-        # Update text labels
+        # Updating text labels
         text_labels = [smileys[i] for i in range(len(smileys))]
 
-        # Create the figure
+        # Creating the figure
         fig = go.Figure(
             data=[
                 go.Pie(
@@ -98,9 +98,7 @@ else:
                     text=text_labels,
                     textinfo="text",
                     hoverinfo="skip",
-                    textfont=dict(size=40)
-                ),
-            ],
+                    textfont=dict(size=40))],
             layout=go.Layout(
                 showlegend=False,
                 margin=dict(t=20, b=20, l=30, r=30),
@@ -116,9 +114,9 @@ else:
             )
         )
 
-        # Display the chart
         st.plotly_chart(fig, use_container_width=True)
     
+
     with col2:
         fig = px.sunburst(data_frame=avatar_df,
                     path=['application_type', 'application', 'class_label'],
