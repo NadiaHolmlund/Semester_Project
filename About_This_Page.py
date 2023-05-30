@@ -26,7 +26,7 @@ with col1:
 
 with col2:
     st.image(img_fer)
-    st.caption('bla')
-    st.caption('bla')
-    st.caption('bla')
     st.header('MoodTrackr DEMO')
+    st.caption('bla')
+    st.caption('bla')
+    st.caption('bla')
