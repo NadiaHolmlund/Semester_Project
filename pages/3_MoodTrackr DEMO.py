@@ -84,11 +84,10 @@ else:
         quadrant_colors = [plot_bgcolor, "#0E1117", "#0E1117", "#0E1117", "#0E1117", "#0E1117", "#E1117", "#E1117"]
         class_labels = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
         smileys = ['😡', '🤢', '😨', '😄', '😢', '😮', '😐']
-        #n_quadrants = len(quadrant_colors) - 1
 
         current_value = 19
-        min_value = 0
-        max_value = 50
+        #min_value = 0
+        #max_value = 50
         hand_length = np.sqrt(2) / 7  # Adjust the hand length as desired
         hand_angle = np.pi * (1 - (max(min_value, min(max_value, current_value)) - min_value) / (max_value - min_value))
 
@@ -108,8 +107,6 @@ else:
             layout=go.Layout(
                 showlegend=False,
                 margin=dict(t=20, b=20, l=30, r=30),
-                #width=450,
-                #height=450,
                 paper_bgcolor=plot_bgcolor,
                 annotations=[
                     go.layout.Annotation(
