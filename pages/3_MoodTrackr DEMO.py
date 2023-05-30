@@ -111,7 +111,7 @@ else:
                 paper_bgcolor=plot_bgcolor,
                 annotations=[
                     go.layout.Annotation(
-                        text=f"<b>Today\'s Overall<br>Mood</b><br>{max_count_index}",
+                        text=f"<b>Today\'s Overall<br>Mood</b><br>{max_count_emoji}",
                         x=0.5, xanchor="center", xref="paper",
                         y=0.45, yanchor="bottom", yref="paper",
                         showarrow=False)]))
