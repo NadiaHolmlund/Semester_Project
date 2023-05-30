@@ -160,6 +160,4 @@ grouped_df = avatar_df.groupby('application').agg({'application_duration_min': '
 # Sort the dataframe by 'application_duration_min'
 grouped_df.sort_values('application_duration_min', inplace=True)
 
-duration_0 = grouped_df.iloc[0]['application_duration_min']
-
-st.metric(label="Duration: " + str(duration_0), value="TikTok", delta="Increases Happiness")
+st.metric(label="Duration: " + str(grouped_df.iloc[0]['application_duration_min']), value="TikTok", delta="Increases Happiness")
