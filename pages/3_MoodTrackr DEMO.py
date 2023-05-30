@@ -118,11 +118,11 @@ else:
             path=['user_name', 'application_type', 'application', 'class_label'],
             values='application_duration_min',
             hover_data={'class_label': False},
-            color_discrete_sequence=['gray'])
+            color_discrete_sequence=['black'])
 
         # Updating plot layout
         fig.update_layout(
-            template="plotly_dark",  # Change to "plotly_white" for grayscale
+            template="plotly_dark",
             paper_bgcolor="#262730",
             margin=dict(t=20, b=20, l=30, r=30))
 
