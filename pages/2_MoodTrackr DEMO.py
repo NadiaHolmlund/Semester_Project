@@ -59,9 +59,6 @@ with st.sidebar:
     start_time = col1.text_input(label='Select Start Time', value='08:00')
     end_time = col2.text_input(label='Select End Time', value='23:00')
 
-    if end_time < '08:31':
-        st.error('ERROR: No observations have been made before 08:30, please select a broader timeframe')
-
 # If no avatar is selected, a defualt page is displayed
 if avatar == 'Select':
     st.header('Choose Your Avatar to interact with MoodTrackr DEMO')
@@ -81,6 +78,9 @@ else:
 
     # Filtering the dataframe based on the selected timeframe
     timeframe_df = (avatar_df[avatar_df['timestamp'].between(start_time, end_time)])
+
+    if end_time < '08:31':
+        st.error('ERROR: No observations are made before 08:30, please select a broader timeframe')
 
     col1, col2 = st.columns(2)
 
