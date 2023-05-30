@@ -81,10 +81,10 @@ else:
 
     with col2:
         plot_bgcolor = "#262730"
-        quadrant_colors = [plot_bgcolor, "#0E1117", "#f2a529", "#eff229", "#85e043", "#2bad4e"]
+        quadrant_colors = [plot_bgcolor, "#0E1117", "#0E1117", "#0E1117", "#0E1117", "#0E1117", "#E1117", "#E1117"]
         class_labels = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 'Neutral']
         smileys = ['😡', '🤢', '😨', '😄', '😢', '😮', '😐']
-        n_quadrants = len(quadrant_colors) - 1
+        #n_quadrants = len(quadrant_colors) - 1
 
         current_value = 19
         min_value = 0
@@ -98,7 +98,7 @@ else:
                     values=[1 / 7] * 7,
                     rotation=90,
                     hole=0.5,
-                    marker_colors='#E1117f',
+                    marker_colors=quadrant_colors,
                     text=smileys,
                     textinfo="text",
                     hoverinfo="skip",
