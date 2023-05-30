@@ -166,15 +166,17 @@ class_labels = ['Anger', 'Disgust', 'Fear', 'Happiness', 'Sadness', 'Surprise', 
 # Find the index of the emoji with the maximum value count
 max_count_index = class_labels.index(max_count_emoji)
 
-# Update quadrant colors and arrow angle
+# Update quadrant colors
 plot_bgcolor = "#262730"
 quadrant_colors = ["#0E1117"] * 7
-quadrant_colors[max_count_index] = "#FF4B4B"  # Replace with the desired color, e.g., red
+quadrant_colors[max_count_index] = "#FF0000"  # Replace with the desired color, e.g., red
+
+# Update arrow angle
 current_value = emoji_counts[max_count_emoji]
 min_value = 0
 max_value = avatar_df.shape[0]
 hand_length = np.sqrt(2) / 7
-hand_angle = np.pi * (1 - (max(min_value, min(max_value, current_value)) - min_value) / (max_value - min_value))
+hand_angle = np.pi * (1 - (max_count_index - min_value) / (max_value - min_value))
 
 # Update text labels
 text_labels = [smileys[i] for i in range(len(smileys))]
@@ -225,3 +227,4 @@ fig = go.Figure(
 
 # Display the chart
 st.plotly_chart(fig, use_container_width=True)
+
