@@ -170,6 +170,6 @@ st.markdown(
 )
 
 # Create a container and apply the CSS class to it
-container = st.container()
+with st.container():
     st.write('hello')
 #container.markdown('<div class="container-style">This is a container with a custom background color.</div>', unsafe_allow_html=True)
