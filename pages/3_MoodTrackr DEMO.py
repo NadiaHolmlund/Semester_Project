@@ -127,9 +127,7 @@ else:
             paper_bgcolor="#262730",
             margin=dict(t=20, b=20, l=30, r=30))
         
-        fig.update_traces(mode="markers+lines",
-                  hovertemplate = None,
-                  hoverinfo = "skip")
+        fig.update_traces(hoverinfo = "skip")
 
         st.plotly_chart(fig, use_container_width=True)
 
