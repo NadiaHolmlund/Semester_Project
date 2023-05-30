@@ -135,14 +135,12 @@ st.markdown(
     """
 <style>
 [data-testid="stMetricValue"] {
-    font-size: 100px;
+    font-size: 10px;
 }
 </style>
 """,
     unsafe_allow_html=True,
 )
-
-st.metric(label="Metric", value=1000, delta=100)
 
 col1, col2, col3, col4 = st.columns(4)
 col1.metric(label="Duration: 150 min.", value="TikTok", delta="Increases Happiness")
