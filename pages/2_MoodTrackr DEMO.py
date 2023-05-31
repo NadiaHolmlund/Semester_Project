@@ -36,10 +36,12 @@ def read_objects():
     img_nikolaj = Image.open(requests.get('https://github.com/NadiaHolmlund/Semester_Project/raw/main/Streamlit_content/avatars/nikolaj_avatar_img.png', stream=True).raw)
 
     nadia_df = pd.read_csv('https://raw.githubusercontent.com/NadiaHolmlund/Semester_Project/main/Streamlit_content/avatars/nadia_df.csv')
+    nicklas_df = pd.read_csv('https://raw.githubusercontent.com/NadiaHolmlund/Semester_Project/main/Streamlit_content/avatars/nicklas_df.csv')
+    nikolaj_df = pd.read_csv('https://raw.githubusercontent.com/NadiaHolmlund/Semester_Project/main/Streamlit_content/avatars/nikolaj_df.csv')
 
-    return img_nadia, img_nicklas, img_nikolaj, nadia_df
+    return img_nadia, img_nicklas, img_nikolaj, nadia_df, nicklas_df, nikolaj_df
 
-img_nadia, img_nicklas, img_nikolaj, nadia_df = read_objects()
+img_nadia, img_nicklas, img_nikolaj, nadia_df, nicklas_df, nikolaj_df = read_objects()
 
 
 # Setting up the sidebar
