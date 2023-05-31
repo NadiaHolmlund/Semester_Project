@@ -17,7 +17,7 @@ img_default, img_fer, img_moodtrackr = read_objects()
 
 
 # Defining the introduction columns
-col1, col2 = st.columns([2, 1])
+col1, col2 = st.columns()
 with col1:
     st.subheader('Welcome to this page')
     st.write('This is a PoC for the project bla bla bla')
@@ -27,7 +27,7 @@ with col2:
 
 
 # Defining the Facial Emotion Recognition columns
-col1, col2 = st.columns([1, 2])
+col1, col2 = st.columns()
 with col1:
     st.image(img_fer)
 
@@ -38,7 +38,7 @@ with col2:
 
 
 # Defining the MoodTrackr columns
-col1, col2 = st.columns([2,1])
+col1, col2 = st.columns()
 with col1:
     st.subheader('MoodTrackr DEMO')
     st.write("MoodTrackr DEMO showcases the envisioned appearance of the dashboard which is to be presented to the end user when engaging with the product.")
