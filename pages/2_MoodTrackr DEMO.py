@@ -136,7 +136,7 @@ else:
             fig = px.sunburst(
                 data_frame=timeframe_df,
                 path=['user_name', 'website_cat', 'website', 'class_label'],
-                values='website_dur_min',
+                values='duration',
                 color_discrete_sequence=['#0E1117'])
 
             # Updating plot layout
@@ -149,7 +149,7 @@ else:
 
 
         # Grouping the dataset by website and duration and identifying mode class_label
-        grouped_df = timeframe_df.groupby('website').agg({'website_dur_min': 'sum', 'class_label': lambda x: x.mode()[0]}).reset_index().sort_values('website_dur_min', ascending=False)
+        grouped_df = timeframe_df.groupby('website').agg({'duration': 'sum', 'class_label': lambda x: x.mode()[0]}).reset_index().sort_values('duration', ascending=False)
 
         # Mapping class labels to text
         label_mapping = {
@@ -168,11 +168,11 @@ else:
         col1, col2, col3, col4 = st.columns(4)
 
         if len(grouped_df) > 0:
-            col1.metric(label="Duration: " + str(grouped_df.iloc[0]['website_dur_min']) + ' min.', value=str(grouped_df.iloc[0]['website']), delta=str(grouped_df.iloc[0]['class_label']))
+            col1.metric(label="Duration: " + str(grouped_df.iloc[0]['duration']) + ' min.', value=str(grouped_df.iloc[0]['website']), delta=str(grouped_df.iloc[0]['class_label']))
         if len(grouped_df) > 1:
-            col2.metric(label="Duration: " + str(grouped_df.iloc[1]['website_dur_min']) + ' min.', value=str(grouped_df.iloc[1]['website']), delta=str(grouped_df.iloc[1]['class_label']))
+            col2.metric(label="Duration: " + str(grouped_df.iloc[1]['duration']) + ' min.', value=str(grouped_df.iloc[1]['website']), delta=str(grouped_df.iloc[1]['class_label']))
         if len(grouped_df) > 2:
-            col3.metric(label="Duration: " + str(grouped_df.iloc[2]['website_dur_min']) + ' min.', value=str(grouped_df.iloc[2]['website']), delta=str(grouped_df.iloc[2]['class_label']))
+            col3.metric(label="Duration: " + str(grouped_df.iloc[2]['duration']) + ' min.', value=str(grouped_df.iloc[2]['website']), delta=str(grouped_df.iloc[2]['class_label']))
         if len(grouped_df) > 3:
-            col4.metric(label="Duration: " + str(grouped_df.iloc[3]['website_dur_min']) + ' min.', value=str(grouped_df.iloc[3]['website']), delta=str(grouped_df.iloc[3]['class_label']))
+            col4.metric(label="Duration: " + str(grouped_df.iloc[3]['duration']) + ' min.', value=str(grouped_df.iloc[3]['website']), delta=str(grouped_df.iloc[3]['class_label']))
                 
