@@ -19,8 +19,9 @@ img_default, img_fer, img_moodtrackr = read_objects()
 # Defining the introduction columns
 col1, col2 = st.columns(2)
 with col1:
-    st.subheader('Welcome to this page')
-    st.write('This is a PoC for the project bla bla bla')
+    st.subheader('Welcome!')
+    st.write("This application showcases the product of the project. The application is divided into two main sections, Facial Emotion Recognition and MoodTrackr DEMO, both og which showcase the model's capabilities on a proof-of-concept level")
+
 
 with col2:
     st.image(img_default)
