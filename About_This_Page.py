@@ -35,7 +35,7 @@ with col1:
 with col2:
     st.subheader('Facial Emotion Recognition')
     st.write("The page 'Facial Emotion Recognition' allows stakeholders to interact with the fine-tuned model, thus observing how the model classifies images and webcam snapshots in real-time.")
-    st.write("Explore the tabs on the page, Images and Camera, the test out the model!")
+    st.write("Explore the tabs on the page, Images and Camera, to test out the model!")
 
 
 # Defining the MoodTrackr columns
@@ -43,7 +43,7 @@ col1, col2 = st.columns(2)
 with col1:
     st.subheader('MoodTrackr DEMO')
     st.write("MoodTrackr DEMO showcases the envisioned appearance of the dashboard which is to be presented to the end user when engaging with the product.")
-    st.write("The dashboard presents three informative elements: Today’s Overall Mood, a sunburst graph displaying the composition and structure of websites used and the emotions classified, as well as metrics displaying whether a website has a positive or negative impact on user mental health.")
+    st.write("The dashboard presents three informative elements: Today’s Overall Mood, a sunburst graph displaying websites and emotions, as well as metrics displaying whether a website has a positive or negative impact on user mental health.")
 
 with col2:
     st.image(img_moodtrackr)
