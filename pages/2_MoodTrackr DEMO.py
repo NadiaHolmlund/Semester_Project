@@ -65,7 +65,8 @@ with st.sidebar:
 if avatar == 'Select':
     st.header('Choose Your Avatar to interact with MoodTrackr DEMO')
     st.write('Choose an avatar in the sidebar to see how their day evolves in terms of emotions and websites visited.')
-    st.write('By default, a full day is displayed on the MoodTrackr DEMO dashboard. Use the start time and end time in the sidebar to adjust the timeframe displayed, and see how the dashboard updates throughout the day.')
+    st.write('By default, a full day is displayed on the MoodTrackr DEMO dashboard.')
+    st.write('Use the start time and end time in the sidebar to adjust the timeframe displayed, and see how the dashboard updates throughout the day.')
 
 # If an avatar is selected, the dashboard is displayed
 else:    
