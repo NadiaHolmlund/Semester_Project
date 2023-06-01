@@ -43,7 +43,7 @@ col1, col2 = st.columns(2)
 with col1:
     st.subheader('MoodTrackr DEMO')
     st.write("MoodTrackr DEMO showcases the envisioned appearance of the dashboard, which is presented to the end user when engaging with the product.")
-    st.write("The dashboard presents three informative elements: Today’s Overall Mood, a sunburst graph of websites and emotions, as well as metrics displaying the impact of certain websites on user mental health.")
+    st.write("The dashboard presents three informative elements: Today’s Overall Mood, a sunburst graph of websites and emotions and metrics displaying the impact of certain websites on user mental health.")
 
 with col2:
     st.image(img_moodtrackr)
