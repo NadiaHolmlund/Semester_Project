@@ -20,7 +20,7 @@ img_default, img_fer, img_moodtrackr = read_objects()
 col1, col2 = st.columns(2)
 with col1:
     st.subheader('Welcome!')
-    st.write("This application showcases the product of the project. The application is divided into two main sections, Facial Emotion Recognition and MoodTrackr DEMO, both og which showcase the capabilities of the fine-tuned vision transformer model on a proof-of-concept level")
+    st.write("This application showcases the product of the project. The application is divided into two sections, Facial Emotion Recognition and MoodTrackr DEMO, both og which showcase the capabilities of the fine-tuned vision transformer model on a proof-of-concept level")
 
 
 with col2:
