@@ -35,7 +35,7 @@ with col1:
 with col2:
     st.subheader('Facial Emotion Recognition')
     st.write("The page 'Facial Emotion Recognition' allows stakeholders to interact with the fine-tuned model, thus observing how the model classifies images and webcam snapshots in real-time.")
-    st.write("Explore the tabs on the page, Images and Camera, the test out the model!
+    st.write("Explore the tabs on the page, Images and Camera, the test out the model!")
 
 
 # Defining the MoodTrackr columns
